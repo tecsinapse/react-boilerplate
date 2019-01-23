@@ -1,6 +1,4 @@
-import ReactGA from 'react-ga';
 import localforage from 'localforage';
-import Raven from 'raven-js';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { ApolloLink } from 'apollo-link';
 import { setContext } from 'apollo-link-context';
@@ -8,18 +6,35 @@ import { HttpLink } from 'apollo-link-http';
 import ApolloClient from 'apollo-client';
 import { Keycloak } from './Keycloak';
 import { isRunningStandalone } from './offline/offlineUtils';
+import { GlobalAfterInitObjects } from './GlobalAfterInitUtils';
 
-export const init = ({
-  analyticsCode,
-  ravenCode,
-  appState,
-  apolloOptions: { offlineApolloCacheOptions = null, uri },
-  keycloakOptions: { keycloakConfig, logoutFunction },
+export const init = async ({
+  analyticsCode = null,
+  ravenCode = null,
+  reduxOptions: { appState = null } = {},
+  apolloOptions: { offlineApolloCacheOptions = null, uri } = {},
+  keycloakOptions: { keycloakConfig, logoutFunction } = {},
   renderFunction,
 }) => {
   const keycloak = Keycloak(keycloakConfig);
-  ReactGA.initialize(analyticsCode);
-  Raven.config(ravenCode).install();
+  if (analyticsCode) {
+    const ReactGA = await import('react-ga');
+    ReactGA.initialize(analyticsCode);
+  }
+  if (ravenCode) {
+    const Raven = await import('raven-js');
+    Raven.config(ravenCode).install();
+  }
+
+  let store = null;
+  if (appState) {
+    const { createStore } = await import('redux');
+    store = createStore(
+      appState,
+      window.__REDUX_DEVTOOLS_EXTENSION__ &&
+        window.__REDUX_DEVTOOLS_EXTENSION__()
+    );
+  }
 
   const cache = new InMemoryCache({});
 
@@ -30,22 +45,21 @@ export const init = ({
    ************ */
   if (offlineApolloCacheOptions) {
     const { maxSize = 1048576 * 20 } = offlineApolloCacheOptions;
-    import('apollo-cache-persist').then(({ persistCache }) => {
-      persistCache({
-        cache,
-        storage: localforage,
-        maxSize,
-      });
-      defaultOptions = {
-        watchQuery: {
-          fetchPolicy: 'cache-and-network',
-        },
-        query: {
-          fetchPolicy: 'cache-and-network',
-          notifyOnNetworkStatusChange: true, // needed for networkStatus
-        },
-      };
+    const { persistCache } = await import('apollo-cache-persist');
+    persistCache({
+      cache,
+      storage: localforage,
+      maxSize,
     });
+    defaultOptions = {
+      watchQuery: {
+        fetchPolicy: 'cache-and-network',
+      },
+      query: {
+        fetchPolicy: 'cache-and-network',
+        notifyOnNetworkStatusChange: true, // needed for networkStatus
+      },
+    };
   }
 
   const authMiddleware = setContext((operation, { headers }) =>
@@ -107,7 +121,11 @@ export const init = ({
           localforage.setItem('token', keycloak.token);
           localforage.setItem('refreshToken', keycloak.refreshToken);
           keycloak.loadUserProfile().then(() => {
-            renderFunction();
+            renderFunction({
+              keycloak,
+              client,
+              store,
+            });
           });
         }
       };
@@ -123,8 +141,13 @@ export const init = ({
           }
         });
     });
+
+  GlobalAfterInitObjects.apolloClient = client;
+  GlobalAfterInitObjects.keycloak = keycloak;
+  GlobalAfterInitObjects.reduxStore = store;
   return {
     keycloak,
     client,
+    store,
   };
 };
