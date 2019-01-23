@@ -8,7 +8,7 @@ import { appHistory } from './router/history';
 export const Providers = ({ keycloak, client, store, children }) => {
   const ReduxProvider = store == null ? Fragment : Provider;
   return (
-    <ReduxProvider store={store || undefined}>
+    <ReduxProvider {...(store == null ? {} : { store })}>
       <ApolloProvider client={client}>
         <ThemeProvider variant="orange">
           <Router history={appHistory}>{children}</Router>

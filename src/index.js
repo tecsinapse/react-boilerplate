@@ -101,14 +101,15 @@ export const init = async ({
         checkLoginIframe: false,
       };
 
-      if (token !== null) {
-        initOptions.token = token;
+      // only set token for standalone pwa
+      if (isRunningStandalone()) {
+        if (token !== null) {
+          initOptions.token = token;
+        }
+        if (refreshToken !== null) {
+          initOptions.refreshToken = refreshToken;
+        }
       }
-
-      if (refreshToken !== null) {
-        initOptions.refreshToken = refreshToken;
-      }
-
       const afterKcInit = authenticated => {
         if (!authenticated && navigator.onLine) {
           const options = isRunningStandalone()

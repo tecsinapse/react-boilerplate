@@ -6,7 +6,7 @@ import { isRunningStandalone } from './offline/offlineUtils';
 const oldLoadUserProfile = kc.loadUserProfile;
 kc.loadUserProfile = async function getUserProfile() {
   const profile = await localforage.getItem('userProfile');
-  if (profile == null) {
+  if (navigator.onLine) {
     await oldLoadUserProfile();
     await localforage.setItem('userProfile', kc.profile);
   } else {
