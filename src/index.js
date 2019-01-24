@@ -4,7 +4,9 @@ import { ApolloLink } from 'apollo-link';
 import { setContext } from 'apollo-link-context';
 import { HttpLink } from 'apollo-link-http';
 import ApolloClient from 'apollo-client';
+import axios from 'axios';
 import { Keycloak } from './Keycloak';
+
 import { isRunningStandalone } from './offline/offlineUtils';
 import { GlobalAfterInitObjects } from './GlobalAfterInitUtils';
 
@@ -41,6 +43,7 @@ export const init = async ({
   let defaultOptions = {};
 
   /** *********
+   *
    * offline cache config options
    ************ */
   if (offlineApolloCacheOptions) {
@@ -61,16 +64,41 @@ export const init = async ({
       },
     };
   }
+  const refreshKeycloakToken = (minValidity = 5) =>
+    new Promise((resolve, reject) => {
+      if (navigator.onLine || !isRunningStandalone()) {
+        keycloak
+          .updateToken(minValidity)
+          .success(() => {
+            localforage.setItem('token', keycloak.token);
+            localforage.setItem('refreshToken', keycloak.refreshToken);
+            resolve();
+          })
+          .error(error => reject(error));
+      } else {
+        resolve();
+      }
+    });
 
   const authMiddleware = setContext((operation, { headers }) =>
-    keycloak
-      .refreshKeycloakToken()
+    refreshKeycloakToken()
       .then(() => ({
         headers: {
           ...headers,
           authorization: `Bearer ${keycloak.token}`,
         },
       }))
+      .catch(() => {
+        keycloak.login({ prompt: 'none' });
+      })
+  );
+  axios.interceptors.request.use(config =>
+    refreshKeycloakToken()
+      .then(() => {
+        const newConfig = config;
+        newConfig.headers.Authorization = `Bearer ${keycloak.token}`;
+        return Promise.resolve(newConfig);
+      })
       .catch(() => {
         keycloak.login({ prompt: 'none' });
       })

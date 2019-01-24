@@ -16,6 +16,7 @@
     "apollo-link-context": "1.0.12",
     "apollo-link-error": "1.1.5",
     "apollo-link-http": "1.5.9",
+    "axios": "^0.18.0",
     "graphql": "14.1.1",
     "graphql-tag": "2.10.0",
     "keycloak-js": "4.4.0",

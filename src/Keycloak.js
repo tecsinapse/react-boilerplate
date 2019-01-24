@@ -18,19 +18,4 @@ kc.loadUserProfile = async function getUserProfile() {
   return kc.profile;
 };
 
-kc.refreshKeycloakToken = (minValidity = 5) =>
-  new Promise((resolve, reject) => {
-    if (navigator.onLine || !isRunningStandalone()) {
-      kc.updateToken(minValidity)
-        .success(() => {
-          localforage.setItem('token', kc.token);
-          localforage.setItem('refreshToken', kc.refreshToken);
-          resolve();
-        })
-        .error(error => reject(error));
-    } else {
-      resolve();
-    }
-  });
-
 export { kc as Keycloak };
