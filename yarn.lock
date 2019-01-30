@@ -911,6 +911,16 @@
     prop-types "^15.6.0"
     react-is "^16.6.3"
 
+"@mdi/js@^3.0.39":
+  version "3.4.93"
+  resolved "https://registry.yarnpkg.com/@mdi/js/-/js-3.4.93.tgz#998c64d15668de156ef35ec0c8c50f39e7808ebd"
+  integrity sha512-SEzolEqT8ErlWdHz4AAtQ1lTfAnM6j67Ppm6k5s/I1aIuuoFP/D8d/z838C28xHO1KOqrsS1fw2wlf6fRiEEJA==
+
+"@mdi/react@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@mdi/react/-/react-1.1.0.tgz#22b014e40152adbe0d7d36631fc9979854603c7a"
+  integrity sha512-c0+avMYEZ6i7Pg1ULLFs+p7k8bDPiie9rrgGYs8VWQhw2tUUYz7r0lIPVzD3bzMghWfyhfkArj88K5Of0WTMNw==
+
 "@mdx-js/loader@^0.16.3":
   version "0.16.4"
   resolved "https://registry.yarnpkg.com/@mdx-js/loader/-/loader-0.16.4.tgz#660f159513de6029482d5f32872dd044be37f9b1"
@@ -1101,6 +1111,13 @@
     "@svgr/plugin-svgo" "^4.0.3"
     loader-utils "^1.1.0"
 
+"@tecsinapse/es-utils@^0.0.91":
+  version "0.0.91"
+  resolved "https://registry.yarnpkg.com/@tecsinapse/es-utils/-/es-utils-0.0.91.tgz#1c8ec5e1bfc8987ac8d3ba1c146e34ac8bc95ef4"
+  integrity sha512-IZldcN2m2Odf61BFznHqWfrJ++ncRzGouT7cE9V2l7La+vXgqo1qMICQMNleIisObhI7kMlcxxciLFqCcau6Tw==
+  dependencies:
+    lodash.uniq "^4.5.0"
+
 "@tecsinapse/eslint-config-tecsinapse-js@^2.0.6":
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/@tecsinapse/eslint-config-tecsinapse-js/-/eslint-config-tecsinapse-js-2.0.6.tgz#b90fed5118bad2b27fd305dd119f815c3cd2e912"
@@ -1120,10 +1137,10 @@
     eslint-plugin-react ">=7.8.2"
     prettier "^1.15.2"
 
-"@tecsinapse/ui-kit@0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@tecsinapse/ui-kit/-/ui-kit-0.0.3.tgz#854b2b3046d2b12bf775e6308a80c972d367687b"
-  integrity sha512-8DEoED9dWC/4z/ZLx7yrZY0Fz4anixkj8C97vpLZM8n6F1KIhikYL5OE1rl0ka5lUZk+VtIs58GYkZEHjSVWBA==
+"@tecsinapse/ui-kit@0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@tecsinapse/ui-kit/-/ui-kit-0.0.8.tgz#23dd3ff50fa7c00e0aa122a2e5a16ff4eb8f2b49"
+  integrity sha512-YqlMnhzXSMWPRREg3PCjuLkKd+pbDg4p2f/sH5EdbeMyddC+jxdSfJ4Z+S/fj43ev1eGskIIRJtZ8JK/IGsoYA==
 
 "@types/estree@0.0.39":
   version "0.0.39"
@@ -7407,6 +7424,11 @@ lodash.throttle@^4.1.1:
   resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
   integrity sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=
 
+lodash.uniq@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
+  integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
+
 "lodash@>=3.5 <5", lodash@^4.13.1, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.4, lodash@^4.17.5:
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
@@ -9289,6 +9311,11 @@ react-codemirror2@^5.1.0:
   resolved "https://registry.yarnpkg.com/react-codemirror2/-/react-codemirror2-5.1.0.tgz#62de4460178adea40eb52eabf7491669bf3794b8"
   integrity sha512-Cksbgbviuf2mJfMyrKmcu7ycK6zX/ukuQO8dvRZdFWqATf5joalhjFc6etnBdGCcPA2LbhIwz+OPnQxLN/j1Fw==
 
+react-confirm@^0.1.18:
+  version "0.1.18"
+  resolved "https://registry.yarnpkg.com/react-confirm/-/react-confirm-0.1.18.tgz#687ba3449112de2673ad1f67cd8930f17fe5a559"
+  integrity sha512-fHLvVj4uFrxQofEuJCQmQ7zRxANk6plyM9iWAHdnAml0o2ohR8oZNgYUoo9iSghRiW/KkVwRJoRBIaPEsAjlVw==
+
 react-dev-utils@^6.1.1:
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-6.1.1.tgz#a07e3e8923c4609d9f27e5af5207e3ca20724895"
@@ -9674,7 +9701,7 @@ recast@^0.16.0:
     private "~0.1.5"
     source-map "~0.6.1"
 
-"recompose@0.28.0 - 0.30.0":
+"recompose@0.28.0 - 0.30.0", recompose@^0.30.0:
   version "0.30.0"
   resolved "https://registry.yarnpkg.com/recompose/-/recompose-0.30.0.tgz#82773641b3927e8c7d24a0d87d65aeeba18aabd0"
   integrity sha512-ZTrzzUDa9AqUIhRk4KmVFihH0rapdCSMFXjhHbNrjAWxBuUD/guYlyysMnuHjlZC/KRiOKRtB4jf96yYSkKE8w==
