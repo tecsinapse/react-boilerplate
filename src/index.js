@@ -5,10 +5,11 @@ import { setContext } from 'apollo-link-context';
 import { HttpLink } from 'apollo-link-http';
 import ApolloClient from 'apollo-client';
 import axios from 'axios';
-import { Keycloak } from './Keycloak';
+import Keycloak from 'keycloak-js';
 
 import { isRunningStandalone } from './offline/offlineUtils';
 import { GlobalAfterInitObjects } from './GlobalAfterInitUtils';
+import { bootstrapKC } from './keycloak/Keycloak';
 
 export const init = async ({
   analyticsCode = null,
@@ -19,6 +20,7 @@ export const init = async ({
   renderFunction,
 }) => {
   const keycloak = Keycloak(keycloakConfig);
+  bootstrapKC(keycloak);
   if (analyticsCode) {
     const ReactGA = await import('react-ga');
     ReactGA.initialize(analyticsCode);
@@ -86,7 +88,7 @@ export const init = async ({
         headers: {
           ...headers,
           authorization: `Bearer ${keycloak.token}`,
-          "KeycloakRealm": keycloakConfig.realm,
+          KeycloakRealm: keycloakConfig.realm,
         },
       }))
       .catch(() => {

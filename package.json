@@ -29,7 +29,8 @@
     "react-redux": "^6.0.0",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "recompose": "latest"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
