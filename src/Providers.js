@@ -4,11 +4,11 @@ import { ApolloProvider } from 'react-apollo';
 import { ThemeProvider } from '@tecsinapse/ui-kit';
 import { Router } from 'react-router';
 import { appHistory } from './router/history';
-import { withKeycloakContext } from './keycloak/withKeycloakContext';
+import { provideKeycloakContext } from './keycloak/provideKeycloakContext';
 
 export const Providers = ({ keycloak, client, store, children }) => {
   const ReduxProvider = store == null ? Fragment : Provider;
-  const KeycloakProvider = withKeycloakContext(keycloak)(Fragment);
+  const KeycloakProvider = provideKeycloakContext(keycloak)(Fragment);
   return (
     <ReduxProvider {...(store == null ? {} : { store })}>
       <ApolloProvider client={client}>
