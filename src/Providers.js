@@ -8,11 +8,14 @@ import { withKeycloakContext } from './keycloak/withKeycloakContext';
 
 export const Providers = ({ keycloak, client, store, children }) => {
   const ReduxProvider = store == null ? Fragment : Provider;
-  return withKeycloakContext(keycloak)(
+  const KeycloakProvider = withKeycloakContext(keycloak)(Fragment);
+  return (
     <ReduxProvider {...(store == null ? {} : { store })}>
       <ApolloProvider client={client}>
         <ThemeProvider variant="orange">
-          <Router history={appHistory}>{children}</Router>
+          <KeycloakProvider>
+            <Router history={appHistory}>{children}</Router>
+          </KeycloakProvider>
         </ThemeProvider>
       </ApolloProvider>
     </ReduxProvider>
