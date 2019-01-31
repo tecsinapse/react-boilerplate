@@ -1,6 +1,6 @@
 {
   "name": "@tecsinapse/react-boilerplate",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "main": "dist/index.cjs.js",
   "module": "build/index.js",
   "browser": "dist/index.js",
@@ -28,7 +28,7 @@
     "react": "16.7.0-alpha.2",
     "react-apollo": "2.4.0",
     "react-confirm": "^0.1.18",
-    "react-dom": "^16.7.0-alpha.2",
+    "react-dom": "16.7.0-alpha.2",
     "react-ga": "^2.5.6",
     "react-redux": "^6.0.0",
     "react-router": "^4.3.1",
@@ -51,7 +51,7 @@
     "enzyme-adapter-react-16": "^1.6.0",
     "jest": "^23.6.0",
     "prop-types": "^15.6.2",
-    "react-test-renderer": "^16.6.0",
+    "react-test-renderer": "16.7.0-alpha.2",
     "regenerator-runtime": "^0.12.1",
     "rollup": "^0.66.6",
     "rollup-plugin-auto-external": "^2.0.0",
@@ -70,9 +70,7 @@
     "docz:build": "docz build -d docs/docz/ --base='/ui-kit/docz/' ",
     "test": "NODE_ENV=test jest test/"
   },
-  "peerDependencies": {
-    "react": ">= 16.3.x"
-  },
+  "peerDependencies": {},
   "files": [
     "dist",
     "build"
