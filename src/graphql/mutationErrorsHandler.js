@@ -1,9 +1,10 @@
 import { Logger } from '../logger/logUtils';
+import { showSnackbar } from '../ui/showSnackbar';
 
 export const mutationsErrorsHandler = ({
-  showSnackbar = true,
+  showSnackbar: showSnackbarOnScreen = true,
   hideLoadingFunction = null,
-  setSubmittingFunction = null,
+  setSubmitting = null,
 }) => ({ graphQLErrors = [] }) => {
   if (navigator.onLine) {
     Logger.error(JSON.stringify(graphQLErrors));
@@ -14,13 +15,13 @@ export const mutationsErrorsHandler = ({
   if (hideLoadingFunction) {
     hideLoadingFunction();
   }
-  if (setSubmittingFunction) {
-    setSubmittingFunction();
+  if (setSubmitting) {
+    setSubmitting(false);
   }
 
   const params = { title, message };
 
-  if (showSnackbar) {
+  if (showSnackbarOnScreen) {
     params.chip = true;
     params.variant = 'error';
     params.text = `${title}:${message}`;

@@ -6,13 +6,19 @@ import { Router } from 'react-router';
 import { appHistory } from './router/history';
 import { provideKeycloakContext } from './keycloak/provideKeycloakContext';
 
-export const Providers = ({ keycloak, client, store, children }) => {
+export const Providers = ({
+  keycloak,
+  client,
+  store,
+  children,
+  themeVariant = 'orange',
+}) => {
   const ReduxProvider = store == null ? Fragment : Provider;
   const KeycloakProvider = provideKeycloakContext(keycloak)(Fragment);
   return (
     <ReduxProvider {...(store == null ? {} : { store })}>
       <ApolloProvider client={client}>
-        <ThemeProvider variant="orange">
+        <ThemeProvider variant={themeVariant}>
           <KeycloakProvider>
             <Router history={appHistory}>{children}</Router>
           </KeycloakProvider>
