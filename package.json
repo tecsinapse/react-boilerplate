@@ -1,7 +1,7 @@
 {
   "name": "@tecsinapse/react-boilerplate",
   "description": "TecSinapse boilerplate for react projects",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "browser": "dist/index.js",
   "main": "dist/index.cjs.js",
   "module": "build/index.js",
@@ -13,7 +13,7 @@
     "@mdi/js": "^3.0.39",
     "@mdi/react": "^1.1.0",
     "@tecsinapse/es-utils": "^0.0.92",
-    "@tecsinapse/ui-kit": "^0.0.29",
+    "@tecsinapse/ui-kit": "^0.0.30",
     "apollo-cache-inmemory": "1.4.2",
     "apollo-cache-persist": "^0.1.1",
     "apollo-client": "2.4.12",
