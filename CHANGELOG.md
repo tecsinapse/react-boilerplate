@@ -1,3 +1,12 @@
+<a name="0.0.23"></a>
+## <small>0.0.23 (2019-02-12)</small>
+
+* Release 0.0.21 ([35280e5](https://github.com/tecsinapse/react-boilerplate/commit/35280e5))
+* Release 0.0.22 ([233a411](https://github.com/tecsinapse/react-boilerplate/commit/233a411))
+* ui-kit bump ([8bf53f7](https://github.com/tecsinapse/react-boilerplate/commit/8bf53f7))
+
+
+
 <a name="0.0.22"></a>
 ## <small>0.0.22 (2019-02-12)</small>
 
