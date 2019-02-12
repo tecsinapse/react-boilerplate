@@ -896,6 +896,17 @@
     "@babel/runtime" "^7.2.0"
     recompose "0.28.0 - 0.30.0"
 
+"@material-ui/lab@^3.0.0-alpha.30":
+  version "3.0.0-alpha.30"
+  resolved "https://registry.yarnpkg.com/@material-ui/lab/-/lab-3.0.0-alpha.30.tgz#c6c64d0ff2b28410a09e4009f3677499461f3df8"
+  integrity sha512-d8IXbkQO92Ln7f/Tzy8Q5cLi/sMWH/Uz1xrOO5NKUgg42whwyCuoT9ErddDPFNQmPi9d1C7A5AG8ONjEAbAIyQ==
+  dependencies:
+    "@babel/runtime" "^7.2.0"
+    "@material-ui/utils" "^3.0.0-alpha.2"
+    classnames "^2.2.5"
+    keycode "^2.1.9"
+    prop-types "^15.6.0"
+
 "@material-ui/styles@^3.0.0-alpha.10":
   version "3.0.0-alpha.10"
   resolved "https://registry.yarnpkg.com/@material-ui/styles/-/styles-3.0.0-alpha.10.tgz#4c28a6d6dacb1fb71aff4642f92b63232a3f298d"
@@ -1163,10 +1174,10 @@
     eslint-plugin-react ">=7.8.2"
     prettier "^1.15.2"
 
-"@tecsinapse/ui-kit@^0.0.13":
-  version "0.0.13"
-  resolved "https://registry.yarnpkg.com/@tecsinapse/ui-kit/-/ui-kit-0.0.13.tgz#d04fbdc9f557ffe322f5e58882b3c5616926730b"
-  integrity sha512-fyYXconGx2J74OxQ5WdyKNIEU2Pu8ecDvV2x+VNwZFDMYbF3SgDw1u8AHsrlFsg4IVJx0DsagxrKM36yLku9eQ==
+"@tecsinapse/ui-kit@^0.0.28":
+  version "0.0.28"
+  resolved "https://registry.yarnpkg.com/@tecsinapse/ui-kit/-/ui-kit-0.0.28.tgz#0094d7a8d93d11e4c6bebe56db0b6904d40527b5"
+  integrity sha512-rv732VuNOAcfjaLM64J8W8Gh9c1xwGiKcSjMnlsFX6qxbvgkHAQeFNBdG84SE8K50E+curYJ0H6csxzEKvmqWA==
 
 "@types/estree@0.0.39":
   version "0.0.39"
@@ -7058,6 +7069,11 @@ keycloak-js@4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/keycloak-js/-/keycloak-js-4.4.0.tgz#08d019bf250c0fb1d52f93cab7b6892db84c14f6"
   integrity sha512-MIVF8dJ77s+13xvwLUCnNRHXGzzTSRS2yM4Ho81qhu026okkDseVbrQSIBZ5jiexEZwlVf8sjhwcaZA2vLTmAQ==
+
+keycode@^2.1.9:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/keycode/-/keycode-2.2.0.tgz#3d0af56dc7b8b8e5cba8d0a97f107204eec22b04"
+  integrity sha1-PQr1bce4uOXLqNCpfxByBO7CKwQ=
 
 keygrip@~1.0.3:
   version "1.0.3"
