@@ -1,10 +1,10 @@
 {
   "name": "@tecsinapse/react-boilerplate",
-  "version": "0.0.20",
+  "description": "TecSinapse boilerplate for react projects",
+  "version": "0.0.21",
+  "browser": "dist/index.js",
   "main": "dist/index.cjs.js",
   "module": "build/index.js",
-  "browser": "dist/index.js",
-  "sideEffects": false,
   "dependencies": {
     "@material-ui/core": "3.9.1",
     "@material-ui/icons": "3.0.2",
@@ -13,7 +13,7 @@
     "@mdi/js": "^3.0.39",
     "@mdi/react": "^1.1.0",
     "@tecsinapse/es-utils": "^0.0.92",
-    "@tecsinapse/ui-kit": "^0.0.28",
+    "@tecsinapse/ui-kit": "^0.0.29",
     "apollo-cache-inmemory": "1.4.2",
     "apollo-cache-persist": "^0.1.1",
     "apollo-client": "2.4.12",
@@ -71,31 +71,18 @@
     "rollup-plugin-node-globals": "^1.4.0",
     "rollup-plugin-node-resolve": "^3.4.0"
   },
+  "files": [
+    "build",
+    "dist"
+  ],
   "scripts": {
     "build": "rm -rf build/ && babel src/ -d build/ && rollup -c",
     "dev": "rollup -c -w",
-    "docz:dev": "docz dev",
     "docz:build": "docz build -d docs/docz/ --base='/ui-kit/docz/' ",
+    "docz:dev": "docz dev",
     "test": "NODE_ENV=test jest test/"
   },
-  "peerDependencies": {},
-  "files": [
-    "dist",
-    "build"
-  ],
   "jest": {
-    "transform": {
-      "^.+\\.js$": "babel-jest"
-    },
-    "moduleFileExtensions": [
-      "js",
-      "jsx"
-    ],
-    "setupTestFrameworkScriptFile": "<rootDir>/jest-setup.js",
-    "moduleDirectories": [
-      "node_modules",
-      "bower_components"
-    ],
     "eslintConfig": {
       "extends": [
         "@tecsinapse/tecsinapse-js"
@@ -103,16 +90,30 @@
     },
     "husky": {
       "hooks": {
-        "pre-commit": "lint-staged",
-        "post-commit": "git update-index --again"
+        "post-commit": "git update-index --again",
+        "pre-commit": "lint-staged"
       }
     },
     "lint-staged": {
       "*.js": [
         "eslint --max-warnings=0 --fix",
-        "prettier --write",
-        "git add"
+        "git add",
+        "prettier --write"
       ]
+    },
+    "moduleDirectories": [
+      "bower_components",
+      "node_modules"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/jest-setup.js",
+    "transform": {
+      "^.+\\.js$": "babel-jest"
     }
-  }
+  },
+  "peerDependencies": {},
+  "sideEffects": false
 }
