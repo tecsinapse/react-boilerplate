@@ -1,3 +1,11 @@
+<a name="0.0.32"></a>
+## <small>0.0.32 (2019-02-15)</small>
+
+* i18n with dynamic loading of bundle ([5d2748c](https://github.com/tecsinapse/react-boilerplate/commit/5d2748c))
+* Release 0.0.31 ([6a76fa5](https://github.com/tecsinapse/react-boilerplate/commit/6a76fa5))
+
+
+
 <a name="0.0.31"></a>
 ## <small>0.0.31 (2019-02-15)</small>
 
