@@ -17,28 +17,23 @@ export const Providers = ({
   catalogs = {},
 }) => {
   const [locale, setLocale] = useState('pt-br');
-  const [iCatalogs, setICatalogs] = useState({});
-  useEffect(
-    async () => {
-      await loadCatalog(locale);
-    },
-    [locale]
-  );
+  const [iCatalogs, setICatalogs] = useState(catalogs);
 
   const ReduxProvider = store == null ? Fragment : Provider;
   const KeycloakProvider = provideKeycloakContext(keycloak)(Fragment);
   const I18nBoilerplateProvider = provideI18nLanguageContext({
     locale,
-    setLocale,
+    setLocale: a => loadCatalog(a),
   })(Fragment);
   const loadCatalog = async newLanguage => {
-    const catalog = await catalogs[newLanguage];
+    const catalog = await (typeof catalogs[newLanguage] === 'function'
+      ? catalogs[newLanguage]()
+      : catalogs[newLanguage]);
     setICatalogs(oldCatalogs => ({
-      catalogs: {
-        ...oldCatalogs,
-        [newLanguage]: catalog,
-      },
+      ...oldCatalogs,
+      [newLanguage]: catalog,
     }));
+    setLocale(newLanguage);
   };
 
   return (

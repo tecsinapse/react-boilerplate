@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export const provideI18nLanguageContext = ({ locale, setLocale }) => Component =>
   withContext(
     {
-      changeLanguage: PropTypes.function,
+      changeLanguage: PropTypes.func,
       currentLocale: PropTypes.string,
     },
     () => ({
