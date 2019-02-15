@@ -1,3 +1,10 @@
+<a name="0.0.30"></a>
+## <small>0.0.30 (2019-02-15)</small>
+
+* adding i18n with lingui ([d61344c](https://github.com/tecsinapse/react-boilerplate/commit/d61344c))
+
+
+
 <a name="0.0.28"></a>
 ## <small>0.0.28 (2019-02-13)</small>
 
