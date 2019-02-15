@@ -855,6 +855,39 @@
   resolved "https://registry.yarnpkg.com/@hbetts/parse-repository-url/-/parse-repository-url-2.1.2.tgz#f78e6950529be9fd0b904fc90e06b078ddf4a847"
   integrity sha512-e4GS7ATDwnrft2I99M0jV6/0YH8oVA943vWWXAHULhpzzBui29RgMBz4ZaFIY+L3BqW/6OTdlzTM88rFRq/RNg==
 
+"@lingui/babel-plugin-transform-react@2.7.3":
+  version "2.7.3"
+  resolved "https://registry.yarnpkg.com/@lingui/babel-plugin-transform-react/-/babel-plugin-transform-react-2.7.3.tgz#f80921ef2a7d7557214f17dab30128ae3f3471ef"
+  integrity sha512-RJTYdScoXJGDqLtKo2xLQmKZ+F3MnMqRazDjSFPk7bamNmSLRrc0Hwy98dvuDrHhw7vCEebfWoVSxD9N3EuDNg==
+
+"@lingui/core@2.7.3":
+  version "2.7.3"
+  resolved "https://registry.yarnpkg.com/@lingui/core/-/core-2.7.3.tgz#9b2a12a56dd6129faf692fc6f47c49763b470a3f"
+  integrity sha512-3rmL/78NpbuulR4SAnYCipRdpCIntE9R4vCzWM6l8wuPgkv425ui9eoF8p/lMSxj7/hSy0ARyE8/6+aS+L4xpA==
+  dependencies:
+    babel-runtime "^6.26.0"
+    make-plural "^4.1.1"
+    messageformat-parser "^2.0.0"
+
+"@lingui/macro@^2.7.3":
+  version "2.7.3"
+  resolved "https://registry.yarnpkg.com/@lingui/macro/-/macro-2.7.3.tgz#861655667a95d41d10aa23063e5e9ed2d2678727"
+  integrity sha512-d4vxKGIn+DOksTBPeHbGiiocpxVAilRJ/oGYIZktZjuKgl38B+79T+nUJ9vHGNB/aWfocBoi/93on1aL7w/k1Q==
+  dependencies:
+    "@lingui/babel-plugin-transform-react" "2.7.3"
+    babel-plugin-macros "^2.2.0"
+
+"@lingui/react@^2.7.3":
+  version "2.7.3"
+  resolved "https://registry.yarnpkg.com/@lingui/react/-/react-2.7.3.tgz#3b377189b04e406b225d3c1d8a196d004d7229fe"
+  integrity sha512-apKhH+QSHX9hF94gpcuPqSypkKzheWHMdiwNCy47HMEdiyBH9b16R3dMOGcAdBpiFRc9R4Gr2lRUBpL59Ey0Fw==
+  dependencies:
+    "@lingui/core" "2.7.3"
+    babel-runtime "^6.26.0"
+    hash-sum "^1.0.2"
+    hoist-non-react-statics "3.0.1"
+    prop-types "^15.6.2"
+
 "@material-ui/core@3.9.1":
   version "3.9.1"
   resolved "https://registry.yarnpkg.com/@material-ui/core/-/core-3.9.1.tgz#994fa54f0936092556d231d1055b8f76b12be06e"
@@ -1174,10 +1207,10 @@
     eslint-plugin-react ">=7.8.2"
     prettier "^1.15.2"
 
-"@tecsinapse/ui-kit@^0.0.37":
-  version "0.0.37"
-  resolved "https://registry.yarnpkg.com/@tecsinapse/ui-kit/-/ui-kit-0.0.37.tgz#5a79a206432fcfd2d3f8c6573bcbd053b6660204"
-  integrity sha512-xT2Gc3PzFSOtjd0p7ubmcvzn0dR0TBQl504snN28amcvBrx7WFUqkOemqSno3o6oVMVoIDIwbByf6ObP7jfeVA==
+"@tecsinapse/ui-kit@^0.0.38":
+  version "0.0.38"
+  resolved "https://registry.yarnpkg.com/@tecsinapse/ui-kit/-/ui-kit-0.0.38.tgz#86b79a183a14f15f0088807abdd54f5790ba1201"
+  integrity sha512-P2Y+1MR0wCvLkIIWHCmidLpjp/Pb++UsnD+uNsTteqZ8W7NFB20oGC/9HdUO7hrvFeWV+BO+ZtPsfQI+0drMOw==
 
 "@types/estree@0.0.39":
   version "0.0.39"
@@ -2065,6 +2098,14 @@ babel-plugin-macros@^2.0.0, babel-plugin-macros@^2.4.0:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/babel-plugin-macros/-/babel-plugin-macros-2.4.2.tgz#21b1a2e82e2130403c5ff785cba6548e9b644b28"
   integrity sha512-NBVpEWN4OQ/bHnu1fyDaAaTPAjnhXCEPqr1RwqxrU7b6tZ2hypp+zX4hlNfmVGfClD5c3Sl6Hfj5TJNF5VG5aA==
+  dependencies:
+    cosmiconfig "^5.0.5"
+    resolve "^1.8.1"
+
+babel-plugin-macros@^2.2.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-macros/-/babel-plugin-macros-2.5.0.tgz#01f4d3b50ed567a67b80a30b9da066e94f4097b6"
+  integrity sha512-BWw0lD0kVZAXRD3Od1kMrdmfudqzDzYv2qrN3l2ISR1HVp1EgLKfbOrYV9xmY5k3qx3RIu5uPAUZZZHpo0o5Iw==
   dependencies:
     cosmiconfig "^5.0.5"
     resolve "^1.8.1"
@@ -5553,6 +5594,11 @@ hash-base@^3.0.0:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
 
+hash-sum@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/hash-sum/-/hash-sum-1.0.2.tgz#33b40777754c6432573c120cc3808bbd10d47f04"
+  integrity sha1-M7QHd3VMZDJXPBIMw4CLvRDUfwQ=
+
 hash.js@^1.0.0, hash.js@^1.0.3:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/hash.js/-/hash.js-1.1.5.tgz#e38ab4b85dfb1e0c40fe9265c0e9b54854c23812"
@@ -5634,6 +5680,13 @@ hmac-drbg@^1.0.0:
     hash.js "^1.0.3"
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
+
+hoist-non-react-statics@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.0.1.tgz#fba3e7df0210eb9447757ca1a7cb607162f0a364"
+  integrity sha512-1kXwPsOi0OGQIZNVMPvgWJ9tSnGMiMfJdihqEzrPEXlHOBh9AAHXX/QYmAJTXztnz/K+PQ8ryCb4eGaN6HlGbQ==
+  dependencies:
+    react-is "^16.3.2"
 
 hoist-non-react-statics@^2.3.1, hoist-non-react-statics@^2.5.0:
   version "2.5.5"
@@ -7631,6 +7684,13 @@ make-dir@^1.0.0:
   dependencies:
     pify "^3.0.0"
 
+make-plural@^4.1.1:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/make-plural/-/make-plural-4.3.0.tgz#f23de08efdb0cac2e0c9ba9f315b0dff6b4c2735"
+  integrity sha512-xTYd4JVHpSCW+aqDof6w/MebaMVNTVYBZhbB/vi513xXdiPT92JMVCo0Jq8W2UZnzYRFeVbQiQ+I25l13JuKvA==
+  optionalDependencies:
+    minimist "^1.2.0"
+
 makeerror@1.0.x:
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/makeerror/-/makeerror-1.0.11.tgz#e01a5c9109f2af79660e4e8b9587790184f5a96c"
@@ -7884,6 +7944,11 @@ merge@^1.2.0:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/merge/-/merge-1.2.1.tgz#38bebf80c3220a8a487b6fcfb3941bb11720c145"
   integrity sha512-VjFo4P5Whtj4vsLzsYBu5ayHhoHJ0UqNm7ibvShmbmoz7tGi0vXaoJbGdB+GmDMLUdg8DpQXEIeVDAe8MaABvQ==
+
+messageformat-parser@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/messageformat-parser/-/messageformat-parser-2.0.0.tgz#e37efa0cb07b6784e5f3adc089cbf266208c01c7"
+  integrity sha512-C2ZjB5GlLeikkeoMCTcwEeb68LrFl9osxQzXHIPh0Wcj+43wNsoKpRRKq9rm204sAIdknrdcoeQMUnzvDuMf6g==
 
 methods@~1.1.2:
   version "1.1.2"
