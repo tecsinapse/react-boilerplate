@@ -15,7 +15,7 @@
     "@mdi/js": "^3.0.39",
     "@mdi/react": "^1.1.0",
     "@tecsinapse/es-utils": "^0.0.92",
-    "@tecsinapse/ui-kit": "^0.0.38",
+    "@tecsinapse/ui-kit": "^0.0.40",
     "apollo-cache-inmemory": "1.4.2",
     "apollo-cache-persist": "^0.1.1",
     "apollo-client": "2.4.12",
@@ -44,7 +44,8 @@
     "react-virtualized": "^9.21.0",
     "react-window": "^1.5.1",
     "recompose": "^0.30.0",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "@lingui/core": "^2.7.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",

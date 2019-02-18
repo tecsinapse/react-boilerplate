@@ -7,6 +7,7 @@ import { I18nProvider } from '@lingui/react';
 import { appHistory } from './router/history';
 import { provideKeycloakContext } from './keycloak/provideKeycloakContext';
 import { provideI18nLanguageContext } from './i18n/provideI18nLanguageContext';
+import { i18n } from './i18n/i18n';
 
 export const Providers = ({
   keycloak,
@@ -17,7 +18,6 @@ export const Providers = ({
   catalogs = {},
 }) => {
   const [locale, setLocale] = useState('pt-br');
-  const [iCatalogs, setICatalogs] = useState(catalogs);
 
   const ReduxProvider = store == null ? Fragment : Provider;
   const KeycloakProvider = provideKeycloakContext(keycloak)(Fragment);
@@ -29,10 +29,10 @@ export const Providers = ({
     const catalog = await (typeof catalogs[newLanguage] === 'function'
       ? catalogs[newLanguage]()
       : catalogs[newLanguage]);
-    setICatalogs(oldCatalogs => ({
-      ...oldCatalogs,
+    i18n.load({
       [newLanguage]: catalog,
-    }));
+    });
+    i18n.activate(newLanguage);
     setLocale(newLanguage);
   };
 
@@ -42,7 +42,7 @@ export const Providers = ({
         <ThemeProvider variant={themeVariant}>
           <KeycloakProvider>
             <I18nBoilerplateProvider>
-              <I18nProvider language={locale} catalogs={iCatalogs}>
+              <I18nProvider language={locale} i18n={i18n}>
                 <Router history={appHistory}>{children}</Router>
               </I18nProvider>
             </I18nBoilerplateProvider>

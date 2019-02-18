@@ -860,7 +860,7 @@
   resolved "https://registry.yarnpkg.com/@lingui/babel-plugin-transform-react/-/babel-plugin-transform-react-2.7.3.tgz#f80921ef2a7d7557214f17dab30128ae3f3471ef"
   integrity sha512-RJTYdScoXJGDqLtKo2xLQmKZ+F3MnMqRazDjSFPk7bamNmSLRrc0Hwy98dvuDrHhw7vCEebfWoVSxD9N3EuDNg==
 
-"@lingui/core@2.7.3":
+"@lingui/core@2.7.3", "@lingui/core@^2.7.3":
   version "2.7.3"
   resolved "https://registry.yarnpkg.com/@lingui/core/-/core-2.7.3.tgz#9b2a12a56dd6129faf692fc6f47c49763b470a3f"
   integrity sha512-3rmL/78NpbuulR4SAnYCipRdpCIntE9R4vCzWM6l8wuPgkv425ui9eoF8p/lMSxj7/hSy0ARyE8/6+aS+L4xpA==
@@ -1207,10 +1207,10 @@
     eslint-plugin-react ">=7.8.2"
     prettier "^1.15.2"
 
-"@tecsinapse/ui-kit@^0.0.38":
-  version "0.0.38"
-  resolved "https://registry.yarnpkg.com/@tecsinapse/ui-kit/-/ui-kit-0.0.38.tgz#86b79a183a14f15f0088807abdd54f5790ba1201"
-  integrity sha512-P2Y+1MR0wCvLkIIWHCmidLpjp/Pb++UsnD+uNsTteqZ8W7NFB20oGC/9HdUO7hrvFeWV+BO+ZtPsfQI+0drMOw==
+"@tecsinapse/ui-kit@^0.0.40":
+  version "0.0.40"
+  resolved "https://registry.yarnpkg.com/@tecsinapse/ui-kit/-/ui-kit-0.0.40.tgz#e9741a87c48c1084b864ec5717ec07906da389d5"
+  integrity sha512-VRfEHDKwlQJvhcwj8eM8Tpnoz8ZrqFMyTrRHkdZ0+4IQy6JeU0l24GXmLhmOz9nrE6ZdUc/EgZX8vx/9JP/zUQ==
 
 "@types/estree@0.0.39":
   version "0.0.39"
