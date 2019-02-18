@@ -1,3 +1,10 @@
+<a name="0.0.33"></a>
+## <small>0.0.33 (2019-02-18)</small>
+
+* Adding new i18n provider for internationalization outside react scope, like redux ([7fd59d2](https://github.com/tecsinapse/react-boilerplate/commit/7fd59d2))
+
+
+
 <a name="0.0.32"></a>
 ## <small>0.0.32 (2019-02-15)</small>
 
