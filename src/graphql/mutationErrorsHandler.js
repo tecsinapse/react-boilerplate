@@ -1,8 +1,7 @@
 import { Logger } from '../logger/logUtils';
-import { showSnackbar } from '../ui/showSnackbar';
 
 export const mutationsErrorsHandler = ({
-  showSnackbar: showSnackbarOnScreen = true,
+  showSnackbar,
   hideLoadingFunction = null,
   setSubmitting = null,
 }) => ({ graphQLErrors = [] }) => {
@@ -21,7 +20,7 @@ export const mutationsErrorsHandler = ({
 
   const params = { title, message };
 
-  if (showSnackbarOnScreen) {
+  if (showSnackbar) {
     params.chip = true;
     params.variant = 'error';
     params.text = `${title}:${message}`;

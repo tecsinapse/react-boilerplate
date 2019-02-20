@@ -16,7 +16,7 @@
     "@mdi/js": "^3.0.39",
     "@mdi/react": "^1.1.0",
     "@tecsinapse/es-utils": "^0.0.92",
-    "@tecsinapse/ui-kit": "^0.0.42",
+    "@tecsinapse/ui-kit": "^0.0.43",
     "apollo-cache-inmemory": "1.4.2",
     "apollo-cache-persist": "^0.1.1",
     "apollo-client": "2.4.12",
