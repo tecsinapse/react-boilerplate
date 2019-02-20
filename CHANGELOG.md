@@ -1,3 +1,10 @@
+<a name="0.0.37"></a>
+## <small>0.0.37 (2019-02-20)</small>
+
+* new providers ([31fe0b8](https://github.com/tecsinapse/react-boilerplate/commit/31fe0b8))
+
+
+
 <a name="0.0.36"></a>
 ## <small>0.0.36 (2019-02-19)</small>
 
