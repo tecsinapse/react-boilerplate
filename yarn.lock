@@ -1181,10 +1181,10 @@
     "@svgr/plugin-svgo" "^4.0.3"
     loader-utils "^1.1.0"
 
-"@tecsinapse/es-utils@^0.0.92":
-  version "0.0.92"
-  resolved "https://registry.yarnpkg.com/@tecsinapse/es-utils/-/es-utils-0.0.92.tgz#451967a7a26054e7d096aeea9320dcf98b8f3ede"
-  integrity sha512-Sba/T611PiuRqXVIzAVHAP91SxJZZ6CZX64hsDnz/dPcXmm5iNv2GEGs+0oaW3ZuPSpmHoIAcIa+RU4ccahGHA==
+"@tecsinapse/es-utils@^0.0.96":
+  version "0.0.96"
+  resolved "https://registry.yarnpkg.com/@tecsinapse/es-utils/-/es-utils-0.0.96.tgz#0f6f95d4f199268aebc1406fe29631d92267a162"
+  integrity sha512-LIovbyH5ecXcid1cmejNe2Edtjp81FyUPQZMa7RGNKN/jgyDFuqEVVWZxDACCdqT0dx28pYWCsc7613i8D++Rg==
   dependencies:
     lodash.uniq "^4.5.0"
 
@@ -1207,10 +1207,10 @@
     eslint-plugin-react ">=7.8.2"
     prettier "^1.15.2"
 
-"@tecsinapse/ui-kit@^0.0.43":
-  version "0.0.43"
-  resolved "https://registry.yarnpkg.com/@tecsinapse/ui-kit/-/ui-kit-0.0.43.tgz#579382252e8cb6dae4196c1f6968fb8a0fd1bbf6"
-  integrity sha512-D1liJw4s+ITjeMr4z+sUpYyBErpQtu2F5iMAP4tVBZh8CzzY5tXrEM0fq2QqT4+5v9LCspIpPNJyM6lEEmzhqA==
+"@tecsinapse/ui-kit@^0.0.45":
+  version "0.0.45"
+  resolved "https://registry.yarnpkg.com/@tecsinapse/ui-kit/-/ui-kit-0.0.45.tgz#5e9359b6a0d76e5b35f4ae1576eef8d2f043fdf2"
+  integrity sha512-R2HCM81YKsfzIJ+BxKL8snXEewJV9E2jKJiN1YS7qyGLPjHnDMSGhqJVz+xAqNZjtjB4ZNIZf7YY9h2UCOKb+A==
 
 "@types/estree@0.0.39":
   version "0.0.39"
