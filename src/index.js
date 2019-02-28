@@ -88,7 +88,6 @@ export const init = async ({
         headers: {
           ...headers,
           authorization: `Bearer ${keycloak.token}`,
-          KeycloakRealm: keycloakConfig.realm,
         },
       }))
       .catch(() => {
