@@ -1,3 +1,11 @@
+<a name="0.0.45"></a>
+## <small>0.0.45 (2019-03-01)</small>
+
+* default renderer ([6035d8f](https://github.com/tecsinapse/react-boilerplate/commit/6035d8f))
+* Release 0.0.44 ([de06a13](https://github.com/tecsinapse/react-boilerplate/commit/de06a13))
+
+
+
 <a name="0.0.44"></a>
 ## <small>0.0.44 (2019-03-01)</small>
 
