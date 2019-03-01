@@ -60,7 +60,7 @@ export const Providers = ({
       <ApolloProvider client={client}>
         <KeycloakProvider>
           <I18nBoilerplateProvider>
-            <I18nProvider language={locale} i18n={i18n} defaultRender="string">
+            <I18nProvider language={locale} i18n={i18n} defaultRender={String}>
               <ThemeProvider variant={themeVariant}>
                 <Fragment>
                   <Router history={appHistory}>
