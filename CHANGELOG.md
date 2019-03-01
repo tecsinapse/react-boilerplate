@@ -1,3 +1,10 @@
+<a name="0.0.47"></a>
+## <small>0.0.47 (2019-03-01)</small>
+
+* voltando defaultRenderer ([66f1bb0](https://github.com/tecsinapse/react-boilerplate/commit/66f1bb0))
+
+
+
 <a name="0.0.46"></a>
 ## <small>0.0.46 (2019-03-01)</small>
 
