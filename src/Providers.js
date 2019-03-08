@@ -8,7 +8,7 @@ import { provideKeycloakContext } from './keycloak/provideKeycloakContext';
 import { provideI18nLanguageContext } from './i18n/provideI18nLanguageContext';
 import { i18n } from './i18n/i18n';
 import { appHistory } from './router/history';
-import { SnackbarWithProps } from './ui/SnackbarWithProps';
+import { SnackbarProvider } from './ui/SnackbarProvider';
 
 export const SnackbarProviderContext = createContext(null);
 
@@ -24,13 +24,6 @@ export const Providers = ({
   const ReduxProvider = store == null ? Fragment : Provider;
   const KeycloakProvider = provideKeycloakContext(keycloak)(Fragment);
   const [locale, setLocale] = useState('pt-br');
-  const [snack, setShowSnackbar] = useState({
-    show: false,
-    variant: 'success',
-  });
-  const showSnackbar = ({ variant, text }) => {
-    setShowSnackbar({ show: true, variant, text });
-  };
 
   useEffect(
     () => {
@@ -62,19 +55,11 @@ export const Providers = ({
           <I18nBoilerplateProvider>
             <I18nProvider language={locale} i18n={i18n}>
               <ThemeProvider variant={themeVariant}>
-                <Fragment>
-                  <Router history={appHistory}>
-                    <SnackbarProviderContext.Provider value={showSnackbar}>
-                      {children}
-                      <SnackbarWithProps
-                        dismiss={() =>
-                          setShowSnackbar(obj => ({ ...obj, show: false }))
-                        }
-                        {...snack}
-                      />
-                    </SnackbarProviderContext.Provider>
-                  </Router>
-                </Fragment>
+                <SnackbarProvider>
+                  <Fragment>
+                    <Router history={appHistory} />
+                  </Fragment>
+                </SnackbarProvider>
               </ThemeProvider>
             </I18nProvider>
           </I18nBoilerplateProvider>
