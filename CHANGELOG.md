@@ -1,3 +1,10 @@
+<a name="0.0.53"></a>
+## <small>0.0.53 (2019-03-26)</small>
+
+* yarn lock ([e019ac4](https://github.com/tecsinapse/react-boilerplate/commit/e019ac4))
+
+
+
 <a name="0.0.52"></a>
 ## <small>0.0.52 (2019-03-26)</small>
 
