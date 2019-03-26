@@ -1,3 +1,10 @@
+<a name="0.0.49"></a>
+## <small>0.0.49 (2019-03-26)</small>
+
+* isolando provider de snackbar ([61cc205](https://github.com/tecsinapse/react-boilerplate/commit/61cc205))
+
+
+
 <a name="0.0.48"></a>
 ## <small>0.0.48 (2019-03-08)</small>
 
