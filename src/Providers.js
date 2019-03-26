@@ -57,7 +57,7 @@ export const Providers = ({
               <ThemeProvider variant={themeVariant}>
                 <SnackbarProvider>
                   <Fragment>
-                    <Router history={appHistory} />
+                    <Router history={appHistory}>{children}</Router>
                   </Fragment>
                 </SnackbarProvider>
               </ThemeProvider>
