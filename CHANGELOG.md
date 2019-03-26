@@ -1,3 +1,10 @@
+<a name="0.0.54"></a>
+## <small>0.0.54 (2019-03-26)</small>
+
+* bump ([0bb3dfa](https://github.com/tecsinapse/react-boilerplate/commit/0bb3dfa))
+
+
+
 <a name="0.0.53"></a>
 ## <small>0.0.53 (2019-03-26)</small>
 
