@@ -1,3 +1,10 @@
+<a name="0.0.55"></a>
+## <small>0.0.55 (2019-03-27)</small>
+
+* bump ui-kit ([5849d87](https://github.com/tecsinapse/react-boilerplate/commit/5849d87))
+
+
+
 <a name="0.0.54"></a>
 ## <small>0.0.54 (2019-03-26)</small>
 
