@@ -1,3 +1,10 @@
+<a name="0.0.57"></a>
+## <small>0.0.57 (2019-04-03)</small>
+
+* adding public urls for public routes ([cfd5779](https://github.com/tecsinapse/react-boilerplate/commit/cfd5779))
+
+
+
 <a name="0.0.56"></a>
 ## <small>0.0.56 (2019-04-02)</small>
 
