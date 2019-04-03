@@ -16,7 +16,7 @@ export const init = async ({
   ravenCode = null,
   reduxOptions: { appState = null } = {},
   apolloOptions: { offlineApolloCacheOptions = null, uri } = {},
-  keycloakOptions: { keycloakConfig, logoutFunction } = {},
+  keycloakOptions: { keycloakConfig, logoutFunction, publicUrls = [] } = {},
   renderFunction,
 }) => {
   const keycloak = Keycloak(keycloakConfig);
@@ -147,7 +147,20 @@ export const init = async ({
                 scope: 'offline_access',
               }
             : undefined;
-          keycloak.login(options);
+          if (
+            !publicUrls.some(publicUrl =>
+              window.location.pathname.startsWith(publicUrl)
+            )
+          ) {
+            keycloak.login(options);
+          } else {
+            renderFunction({
+              isPublicRoute: true,
+              keycloak,
+              client,
+              store,
+            });
+          }
         } else {
           localforage.setItem('token', keycloak.token);
           localforage.setItem('refreshToken', keycloak.refreshToken);
