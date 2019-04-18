@@ -16,6 +16,7 @@ export const init = async ({
   ravenCode = null,
   reduxOptions: { appState = null } = {},
   apolloOptions: { offlineApolloCacheOptions = null, uri } = {},
+  axiosOptions: { axiosBaseUri },
   keycloakOptions: { keycloakConfig, logoutFunction, publicUrls = [] } = {},
   renderFunction,
 }) => {
@@ -94,6 +95,9 @@ export const init = async ({
         keycloak.login({ prompt: 'none' });
       })
   );
+  if (axiosBaseUri) {
+    axios.defaults.baseURL = axiosBaseUri;
+  }
   axios.interceptors.request.use(config =>
     refreshKeycloakToken()
       .then(() => {
