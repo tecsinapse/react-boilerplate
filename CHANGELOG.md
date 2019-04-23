@@ -1,3 +1,10 @@
+<a name="0.0.62"></a>
+## <small>0.0.62 (2019-04-23)</small>
+
+* Adding axios base uri ([6dabfc6](https://github.com/tecsinapse/react-boilerplate/commit/6dabfc6))
+
+
+
 <a name="0.0.61"></a>
 ## <small>0.0.61 (2019-04-18)</small>
 
