@@ -16,7 +16,7 @@ export const init = async ({
   ravenCode = null,
   reduxOptions: { appState = null } = {},
   apolloOptions: { offlineApolloCacheOptions = null, uri } = {},
-  axiosOptions: { axiosBaseUri },
+  axiosOptions: { axiosBaseUri } = {},
   keycloakOptions: { keycloakConfig, logoutFunction, publicUrls = [] } = {},
   renderFunction,
 }) => {
