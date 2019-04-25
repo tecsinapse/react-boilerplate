@@ -1,3 +1,10 @@
+<a name="0.0.63"></a>
+## <small>0.0.63 (2019-04-25)</small>
+
+* corrigindo import errado do snackbar ([5938279](https://github.com/tecsinapse/react-boilerplate/commit/5938279))
+
+
+
 <a name="0.0.62"></a>
 ## <small>0.0.62 (2019-04-23)</small>
 
