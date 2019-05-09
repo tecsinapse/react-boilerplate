@@ -1,3 +1,10 @@
+<a name="0.0.68"></a>
+## <small>0.0.68 (2019-05-09)</small>
+
+* bump uikit ([710e4c7](https://github.com/tecsinapse/react-boilerplate/commit/710e4c7))
+
+
+
 <a name="0.0.67"></a>
 ## <small>0.0.67 (2019-05-09)</small>
 
