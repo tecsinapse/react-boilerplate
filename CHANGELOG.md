@@ -1,3 +1,10 @@
+<a name="0.0.65"></a>
+## <small>0.0.65 (2019-05-09)</small>
+
+* adding sizeme ([baf52ff](https://github.com/tecsinapse/react-boilerplate/commit/baf52ff))
+
+
+
 <a name="0.0.64"></a>
 ## <small>0.0.64 (2019-05-09)</small>
 
