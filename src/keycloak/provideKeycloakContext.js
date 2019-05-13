@@ -1,12 +1,29 @@
-import { withContext } from 'recompose';
-import PropTypes from 'prop-types';
+import { withContext, compose } from "recompose";
+import PropTypes from "prop-types";
+import localforage from "localforage";
+import { withApollo } from "react-apollo";
+
+const logout = (keycloak, client) => {
+    client
+        .clearStore()
+        .then(() => localforage.clear())
+        .then(() => {
+            localStorage.clear();
+            keycloak.logout({ redirectUri: window.location.origin });
+        });
+};
 
 export const provideKeycloakContext = keycloak => Component =>
-  withContext(
-    {
-      keycloak: PropTypes.object,
-    },
-    () => ({
-      keycloak,
-    })
-  )(Component);
+    compose(
+        withApollo,
+        withContext(
+            {
+                keycloak: PropTypes.object,
+                logout: PropTypes.func
+            },
+            ({ client }) => ({
+                keycloak,
+                logout: () => logout(keycloak, client)
+            })
+        )
+    )(Component);

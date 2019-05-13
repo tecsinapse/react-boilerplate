@@ -3,5 +3,6 @@ import PropTypes from 'prop-types';
 
 export const withKeycloak = Component =>
   getContext({
-    keycloak: PropTypes.object,
+	keycloak: PropTypes.object,
+	logout: PropTypes.func,
   })(Component);
