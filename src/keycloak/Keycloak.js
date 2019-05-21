@@ -1,6 +1,6 @@
 /* eslint-disable */
 import localforage from 'localforage';
-import Raven from 'raven-js';
+import * as Sentry from '@sentry/browser';
 
 function bootstrapKC(kc) {
   const oldLoadUserProfile = kc.loadUserProfile;
@@ -12,8 +12,8 @@ function bootstrapKC(kc) {
     } else {
       kc.profile = profile;
     }
-    Raven.setUserContext({
-      email: kc.profile.email,
+    Sentry.configureScope(scope => {
+      scope.setUser({ email: kc.profile.email });
     });
     return kc.profile;
   };

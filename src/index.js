@@ -6,6 +6,7 @@ import { HttpLink } from 'apollo-link-http';
 import ApolloClient from 'apollo-client';
 import axios from 'axios';
 import Keycloak from 'keycloak-js';
+import * as Sentry from '@sentry/browser';
 
 import { isRunningStandalone } from './offline/offlineUtils';
 import { GlobalAfterInitObjects } from './GlobalAfterInitUtils';
@@ -18,6 +19,7 @@ export const init = async ({
   apolloOptions: { offlineApolloCacheOptions = null, uri } = {},
   axiosOptions: { axiosBaseUri } = {},
   keycloakOptions: { keycloakConfig, logoutFunction, publicUrls = [] } = {},
+  sentryCode,
   renderFunction,
 }) => {
   const keycloak = Keycloak(keycloakConfig);
@@ -26,9 +28,10 @@ export const init = async ({
     const ReactGA = await import('react-ga');
     ReactGA.initialize(analyticsCode);
   }
-  if (ravenCode) {
-    const Raven = await import('raven-js');
-    Raven.config(ravenCode).install();
+  if (sentryCode) {
+    Sentry.init({
+      dsn: sentryCode,
+    });
   }
 
   let store = null;

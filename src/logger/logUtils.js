@@ -1,10 +1,9 @@
 /* eslint no-console: 0 */
+import * as Sentry from '@sentry/browser';
+
 export const Logger = {
   error(error) {
     console.log(error);
-    import('raven-js').then(Raven => {
-      // eslint-disable-next-line
-      Raven.captureException(new Error(error));
-    });
+    Sentry.captureException(new Error(error));
   },
 };
