@@ -1,3 +1,13 @@
+<a name="0.0.72"></a>
+## <small>0.0.72 (2019-05-21)</small>
+
+* Adding error boundary and OPS screen ([f49eaa1](https://github.com/tecsinapse/react-boilerplate/commit/f49eaa1))
+* Adding error boundary and OPS screen ([e850648](https://github.com/tecsinapse/react-boilerplate/commit/e850648))
+* Adding error boundary and OPS screen ([db8f890](https://github.com/tecsinapse/react-boilerplate/commit/db8f890))
+* bump uikit ([d366413](https://github.com/tecsinapse/react-boilerplate/commit/d366413))
+
+
+
 <a name="0.0.68"></a>
 ## <small>0.0.68 (2019-05-09)</small>
 
