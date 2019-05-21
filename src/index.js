@@ -18,7 +18,7 @@ export const init = async ({
   apolloOptions: { offlineApolloCacheOptions = null, uri } = {},
   axiosOptions: { axiosBaseUri } = {},
   keycloakOptions: { keycloakConfig, logoutFunction, publicUrls = [] } = {},
-  sentryCode,
+  sentryOptions,
   renderFunction,
 }) => {
   const keycloak = Keycloak(keycloakConfig);
@@ -27,10 +27,8 @@ export const init = async ({
     const ReactGA = await import('react-ga');
     ReactGA.initialize(analyticsCode);
   }
-  if (sentryCode) {
-    Sentry.init({
-      dsn: sentryCode,
-    });
+  if (sentryOptions) {
+    Sentry.init(sentryOptions);
   }
 
   let store = null;
