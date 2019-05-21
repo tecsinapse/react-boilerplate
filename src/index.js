@@ -14,7 +14,6 @@ import { bootstrapKC } from './keycloak/Keycloak';
 
 export const init = async ({
   analyticsCode = null,
-  ravenCode = null,
   reduxOptions: { appState = null } = {},
   apolloOptions: { offlineApolloCacheOptions = null, uri } = {},
   axiosOptions: { axiosBaseUri } = {},
