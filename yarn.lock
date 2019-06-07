@@ -1259,10 +1259,10 @@
     eslint-plugin-react ">=7.8.2"
     prettier "^1.15.2"
 
-"@tecsinapse/ui-kit@^0.0.148":
-  version "0.0.148"
-  resolved "https://registry.yarnpkg.com/@tecsinapse/ui-kit/-/ui-kit-0.0.148.tgz#4a3b54f2cfe147eb06ab99d892285c60084fccd2"
-  integrity sha512-mCh0IpfTiTvvn7DKOjFrGkwg92WOg/nFb25Tk+Nm0N4G6SOKna77z5py1UqQ71TNeKZEHkDOAVSGQqJClkQHxQ==
+"@tecsinapse/ui-kit@^0.0.160":
+  version "0.0.160"
+  resolved "https://registry.yarnpkg.com/@tecsinapse/ui-kit/-/ui-kit-0.0.160.tgz#428b9b59838e1f928f975375be094ec45f15c2e2"
+  integrity sha512-evwWQSSnSsL5MvKeAWNO4KcWNL3AXBAFQj46wtUnRYipu8oLbvz9PfEOR+VzcP5CF2BfxGYrH/D04sQXlKBs+g==
 
 "@types/estree@0.0.39":
   version "0.0.39"
@@ -9477,11 +9477,6 @@ range-parser@^1.0.3, range-parser@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
   integrity sha1-9JvmtIeJTdxA3MlKMi9hEJLgDV4=
-
-raven-js@^3.27.0:
-  version "3.27.0"
-  resolved "https://registry.yarnpkg.com/raven-js/-/raven-js-3.27.0.tgz#9f47c03e17933ce756e189f3669d49c441c1ba6e"
-  integrity sha512-vChdOL+yzecfnGA+B5EhEZkJ3kY3KlMzxEhShKh6Vdtooyl0yZfYNFQfYzgMf2v4pyQa+OTZ5esTxxgOOZDHqw==
 
 raw-body@2.3.3:
   version "2.3.3"
