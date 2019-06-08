@@ -2,7 +2,7 @@ import React, { createContext, Fragment, useEffect, useState } from 'react';
 import { Provider } from 'react-redux';
 import { ApolloProvider } from 'react-apollo';
 import { I18nProvider } from '@lingui/react';
-import { ThemeProvider } from '@tecsinapse/ui-kit';
+import ThemeProvider from '@tecsinapse/ui-kit/build/ThemeProvider';
 import { Router } from 'react-router';
 import { provideKeycloakContext } from './keycloak/provideKeycloakContext';
 import { provideI18nLanguageContext } from './i18n/provideI18nLanguageContext';
