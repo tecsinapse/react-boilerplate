@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SentimentVeryDissatisfied } from '@material-ui/icons';
+import SentimentVeryDissatisfied  from '@material-ui/icons/SentimentVeryDissatisfied';
 import { Trans } from '@lingui/macro';
 import { EmptyState } from '@tecsinapse/ui-kit/build/Layout/EmptyState';
 import { Button } from '@tecsinapse/ui-kit/build/Buttons/Button';

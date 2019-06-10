@@ -1259,10 +1259,10 @@
     eslint-plugin-react ">=7.8.2"
     prettier "^1.15.2"
 
-"@tecsinapse/ui-kit@^0.0.161":
-  version "0.0.161"
-  resolved "https://registry.yarnpkg.com/@tecsinapse/ui-kit/-/ui-kit-0.0.161.tgz#f1b3f4da7f9af947914dddaf064b1e0d87736398"
-  integrity sha512-0rvnOzKblbJxCjIjuPQGzaxxyOF+fgJlUdtoPfLtQ8yUI44CmFHJJ7SZp8//LWonihlxtdXKhHK4IM7rkYBJmQ==
+"@tecsinapse/ui-kit@^0.0.163":
+  version "0.0.163"
+  resolved "https://registry.yarnpkg.com/@tecsinapse/ui-kit/-/ui-kit-0.0.163.tgz#f5cab9883e65d2bf2c8eea317e7734c318d43d48"
+  integrity sha512-ccWOkxPzTCq+s9GY3cP2QmcAP5wz5WHiy+LG7Uhqb8HbHXYOlVV58/1TlX16jmqo2S3VB78dguYPPl4suqzqCQ==
 
 "@types/estree@0.0.39":
   version "0.0.39"
