@@ -1,8 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { I18nProvider } from '@lingui/react';
 import { Router } from 'react-router';
-import { ThemeProvider } from '@tecsinapse/ui-kit';
-import { ApolloProvider } from 'react-apollo';
+import ThemeProvider from '@tecsinapse/ui-kit/build/ThemeProvider';
 import { provideI18nLanguageContext } from './i18n/provideI18nLanguageContext';
 import { i18n } from './i18n/i18n';
 import { appHistory } from './router/history';
