@@ -7,6 +7,7 @@ import ApolloClient from 'apollo-client';
 import axios from 'axios';
 import Keycloak from 'keycloak-js';
 import * as Sentry from '@sentry/browser';
+import ReactGA from 'react-ga';
 
 import { isRunningStandalone } from './offline/offlineUtils';
 import { GlobalAfterInitObjects } from './GlobalAfterInitUtils';
@@ -26,7 +27,6 @@ export const init = async ({
   const keycloak = Keycloak(keycloakConfig);
   bootstrapKC(keycloak);
   if (analyticsCode) {
-    const ReactGA = await import('react-ga');
     ReactGA.initialize(analyticsCode);
   }
   if (hotjarId) {
