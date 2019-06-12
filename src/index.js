@@ -11,8 +11,10 @@ import * as Sentry from '@sentry/browser';
 import { isRunningStandalone } from './offline/offlineUtils';
 import { GlobalAfterInitObjects } from './GlobalAfterInitUtils';
 import { bootstrapKC } from './keycloak/Keycloak';
+import { initHotjar } from './initHotjar';
 
 export const init = async ({
+  hotjarId,
   analyticsCode = null,
   reduxOptions: { appState = null } = {},
   apolloOptions: { offlineApolloCacheOptions = null, uri } = {},
@@ -26,6 +28,9 @@ export const init = async ({
   if (analyticsCode) {
     const ReactGA = await import('react-ga');
     ReactGA.initialize(analyticsCode);
+  }
+  if (hotjarId) {
+    initHotjar(hotjarId);
   }
   if (sentryOptions) {
     Sentry.init(sentryOptions);
