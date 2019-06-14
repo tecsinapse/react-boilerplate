@@ -18,7 +18,7 @@ export const init = async ({
   hotjarId,
   analyticsCode = null,
   reduxOptions: { appState = null } = {},
-  apolloOptions: { offlineApolloCacheOptions = null, uri } = {},
+  apolloOptions: { offlineApolloCacheOptions = null, uri, connectToDevTools } = {},
   axiosOptions: { axiosBaseUri } = {},
   keycloakOptions: { keycloakConfig, logoutFunction, publicUrls = [] } = {},
   sentryOptions,
@@ -120,7 +120,7 @@ export const init = async ({
   const client = new ApolloClient({
     link: ApolloLink.from([authMiddleware, httpLink]),
     cache,
-    connectToDevTools: true,
+    connectToDevTools,
     defaultOptions,
   });
 
