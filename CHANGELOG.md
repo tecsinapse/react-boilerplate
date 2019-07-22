@@ -1,3 +1,28 @@
+<a name="0.2.1"></a>
+## <small>0.2.1 (2019-07-22)</small>
+
+* adding analytics logic ([de23d4a](https://github.com/tecsinapse/react-boilerplate/commit/de23d4a))
+* adding dev tools option and bump ui-kit ([a24554d](https://github.com/tecsinapse/react-boilerplate/commit/a24554d))
+* adding hotjar ([38603b2](https://github.com/tecsinapse/react-boilerplate/commit/38603b2))
+* bump ui-kit ([476b147](https://github.com/tecsinapse/react-boilerplate/commit/476b147))
+* bumped publish non interactive ([cf6e5b6](https://github.com/tecsinapse/react-boilerplate/commit/cf6e5b6))
+* bumped publish non interactive ([84af189](https://github.com/tecsinapse/react-boilerplate/commit/84af189))
+* Making import icon right ([39d103d](https://github.com/tecsinapse/react-boilerplate/commit/39d103d))
+* no ui-kit index ([660a6bc](https://github.com/tecsinapse/react-boilerplate/commit/660a6bc))
+* providers ([8eeaa10](https://github.com/tecsinapse/react-boilerplate/commit/8eeaa10))
+* Upgrade version package ([43c5403](https://github.com/tecsinapse/react-boilerplate/commit/43c5403))
+* Use latest on material packages ([274c6e8](https://github.com/tecsinapse/react-boilerplate/commit/274c6e8))
+* v0.0.73 ([847f997](https://github.com/tecsinapse/react-boilerplate/commit/847f997))
+* v0.0.75 ([e01b7df](https://github.com/tecsinapse/react-boilerplate/commit/e01b7df))
+* v0.0.76 ([6c52d49](https://github.com/tecsinapse/react-boilerplate/commit/6c52d49))
+* v0.1.0 ([46e9e50](https://github.com/tecsinapse/react-boilerplate/commit/46e9e50))
+* v0.1.1 ([b4068a8](https://github.com/tecsinapse/react-boilerplate/commit/b4068a8))
+* v0.1.2 ([0087686](https://github.com/tecsinapse/react-boilerplate/commit/0087686))
+* v0.1.3 ([a10a021](https://github.com/tecsinapse/react-boilerplate/commit/a10a021))
+* v0.2.0 ([02e2883](https://github.com/tecsinapse/react-boilerplate/commit/02e2883))
+
+
+
 <a name="0.0.72"></a>
 ## <small>0.0.72 (2019-05-21)</small>
 
