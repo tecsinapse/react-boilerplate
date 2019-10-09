@@ -1,6 +1,6 @@
 # Iniciando
 
-https://travis-ci.org/tecsinapse/react-boilerplate.svg?branch=master
+[![Build Status](https://travis-ci.org/tecsinapse/react-boilerplate.svg?branch=master)](https://travis-ci.org/tecsinapse/react-boilerplate)
 
 Rodar
 ```
