@@ -1,3 +1,10 @@
+<a name="2.0.1"></a>
+## <small>2.0.1 (2019-10-09)</small>
+
+*   - Removing deploy ([4b274c4](https://github.com/tecsinapse/react-boilerplate/commit/4b274c4))
+
+
+
 <a name="2.0.0"></a>
 ## 2.0.0 (2019-10-09)
 
