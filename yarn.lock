@@ -1223,10 +1223,10 @@
     "@svgr/plugin-svgo" "^4.0.3"
     loader-utils "^1.1.0"
 
-"@tecsinapse/es-utils@^5.0.0":
-  version "5.1.5"
-  resolved "https://registry.yarnpkg.com/@tecsinapse/es-utils/-/es-utils-5.1.5.tgz#25123582d39a5f7711ab413c325c03e06f1fde19"
-  integrity sha512-1dZN7JLfZupvv28zsAf/BeA3bTgrIllJGxpq6OVNDIlJFE9NnRkc0Ha10RYcHD4tpzLeXu7XO2F+6SxtiYDTVQ==
+"@tecsinapse/es-utils@^6.0.0":
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/@tecsinapse/es-utils/-/es-utils-6.0.2.tgz#ebbd3081cb33f4663990dd39385b3cd82a6c28c5"
+  integrity sha512-kk0fxeeIuO4752GJwWWryzMS79pBEVb0DP030oDwi+U/fLvU4wScysFw4bIzbOXhoAQj1xOyKlPzxcjbiS/dKA==
   dependencies:
     accounting "^0.4.1"
     big.js latest
@@ -1251,10 +1251,10 @@
     eslint-plugin-react ">=7.8.2"
     prettier "^1.15.2"
 
-"@tecsinapse/ui-kit@^1.0.0":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@tecsinapse/ui-kit/-/ui-kit-1.0.1.tgz#e813f453ac1762251f703042c5ad673af39b81ca"
-  integrity sha512-Ms7hVmZjtGTfEzaeVnTC2sUwQnmADaNrSEbbT8BWASUVOfbb+SCxFgBSHilH1ZFQbvvtMor5b0sqZn1iUZNF+Q==
+"@tecsinapse/ui-kit@^2.0.8":
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/@tecsinapse/ui-kit/-/ui-kit-2.0.8.tgz#e220600595ecc33f5357a4b094820106a0233953"
+  integrity sha512-8zcLD+hHsPj9bOPN1XEiFyccHf1vlv8T3NB3PcT1fdHRhS2kpaAsbjzmsu76fcHJCm9KI8JX2EaiSRdOj8+rzg==
 
 "@types/estree@0.0.39":
   version "0.0.39"
