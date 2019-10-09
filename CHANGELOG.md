@@ -1,3 +1,14 @@
+<a name="1.0.0"></a>
+## 1.0.0 (2019-10-09)
+
+*  - Added real travis.yml ([570f382](https://github.com/tecsinapse/react-boilerplate/commit/570f382))
+*  - Updating lock ([541a03d](https://github.com/tecsinapse/react-boilerplate/commit/541a03d))
+*  - Updating ui-kit and es-utils ([28a880b](https://github.com/tecsinapse/react-boilerplate/commit/28a880b))
+* Create LICENSE ([f66d8f5](https://github.com/tecsinapse/react-boilerplate/commit/f66d8f5))
+* Update package.json ([718fe70](https://github.com/tecsinapse/react-boilerplate/commit/718fe70))
+
+
+
 <a name="0.2.1"></a>
 ## <small>0.2.1 (2019-07-22)</small>
 
