@@ -17,7 +17,7 @@ Testar
 
 Para buildar e publicar a lib:
 ```
-    yarn build && yarn publish
+    bumped release $VERSION
 ```
 
 
