@@ -1,5 +1,7 @@
 # Iniciando
 
+https://travis-ci.org/tecsinapse/react-boilerplate.svg?branch=master
+
 Rodar
 ```
     yarn install
