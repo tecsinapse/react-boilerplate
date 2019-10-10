@@ -1,3 +1,14 @@
+<a name="2.1.0"></a>
+## 2.1.0 (2019-10-10)
+
+* Fix snackbar path ([0d651a8](https://github.com/tecsinapse/react-boilerplate/commit/0d651a8))
+* Update README.md ([c443f95](https://github.com/tecsinapse/react-boilerplate/commit/c443f95))
+* Update README.md ([f65a2c7](https://github.com/tecsinapse/react-boilerplate/commit/f65a2c7))
+* Update README.md ([9459e1f](https://github.com/tecsinapse/react-boilerplate/commit/9459e1f))
+* Update README.md ([4918f34](https://github.com/tecsinapse/react-boilerplate/commit/4918f34))
+
+
+
 <a name="2.0.1"></a>
 ## <small>2.0.1 (2019-10-09)</small>
 
