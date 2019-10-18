@@ -1,3 +1,10 @@
+<a name="2.1.2"></a>
+## <small>2.1.2 (2019-10-18)</small>
+
+* Updated ui-kit version to 2.0.10 ([7d9995d](https://github.com/tecsinapse/react-boilerplate/commit/7d9995d))
+
+
+
 <a name="2.1.1"></a>
 ## <small>2.1.1 (2019-10-17)</small>
 
