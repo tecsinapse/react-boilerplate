@@ -1,14 +1,14 @@
-import React, { createContext, Fragment, useEffect, useState } from 'react';
-import { Provider } from 'react-redux';
-import { ApolloProvider } from 'react-apollo';
-import { I18nProvider } from '@lingui/react';
+import React, {createContext, Fragment, useEffect, useState} from 'react';
+import {Provider} from 'react-redux';
+import {ApolloProvider} from 'react-apollo';
+import {I18nProvider} from '@lingui/react';
 import ThemeProvider from '@tecsinapse/ui-kit/build/ThemeProvider';
-import { Router } from 'react-router';
-import { provideKeycloakContext } from './keycloak/provideKeycloakContext';
-import { provideI18nLanguageContext } from './i18n/provideI18nLanguageContext';
-import { i18n } from './i18n/i18n';
-import { appHistory } from './router/history';
-import { SnackbarProvider } from './ui/SnackbarProvider';
+import {Router} from 'react-router';
+import {provideKeycloakContext} from './keycloak/provideKeycloakContext';
+import {provideI18nLanguageContext} from './i18n/provideI18nLanguageContext';
+import {i18n} from './i18n/i18n';
+import {appHistory} from './router/history';
+import {SnackbarProvider} from './ui/SnackbarProvider';
 
 export const SnackbarProviderContext = createContext(null);
 
@@ -20,6 +20,7 @@ export const Providers = ({
   catalogs = {},
   themeVariant = 'orange',
   language = null,
+  themeOverrides = {},
 }) => {
   const ReduxProvider = store == null ? Fragment : Provider;
   const KeycloakProvider = provideKeycloakContext(keycloak)(Fragment);
@@ -54,7 +55,7 @@ export const Providers = ({
         <KeycloakProvider>
           <I18nBoilerplateProvider>
             <I18nProvider language={locale} i18n={i18n}>
-              <ThemeProvider variant={themeVariant}>
+              <ThemeProvider variant={themeVariant} overrides={themeOverrides}>
                 <SnackbarProvider>
                   <Fragment>
                     <Router history={appHistory}>{children}</Router>
