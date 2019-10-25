@@ -1,3 +1,11 @@
+<a name="2.1.3"></a>
+## <small>2.1.3 (2019-10-25)</small>
+
+* Added override option for ThemeProvider ([62a9b89](https://github.com/tecsinapse/react-boilerplate/commit/62a9b89))
+* Updated ui-kit ([a52d518](https://github.com/tecsinapse/react-boilerplate/commit/a52d518))
+
+
+
 <a name="2.1.2"></a>
 ## <small>2.1.2 (2019-10-18)</small>
 
