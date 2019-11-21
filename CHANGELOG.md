@@ -1,3 +1,11 @@
+<a name="2.1.4"></a>
+## <small>2.1.4 (2019-11-21)</small>
+
+* Updating ui-kit ([805fce2](https://github.com/tecsinapse/react-boilerplate/commit/805fce2))
+* Updating ui-kit ([7862ae5](https://github.com/tecsinapse/react-boilerplate/commit/7862ae5))
+
+
+
 <a name="2.1.3"></a>
 ## <small>2.1.3 (2019-10-25)</small>
 
