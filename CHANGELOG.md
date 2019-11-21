@@ -1,3 +1,11 @@
+<a name="2.1.5"></a>
+## <small>2.1.5 (2019-11-21)</small>
+
+* Ajustando lock ([1bfda47](https://github.com/tecsinapse/react-boilerplate/commit/1bfda47))
+* Ajustando release ([4602b8e](https://github.com/tecsinapse/react-boilerplate/commit/4602b8e))
+
+
+
 <a name="2.1.4"></a>
 ## <small>2.1.4 (2019-11-21)</small>
 
