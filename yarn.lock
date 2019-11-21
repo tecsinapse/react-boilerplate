@@ -1996,10 +1996,10 @@
     eslint-plugin-react ">=7.8.2"
     prettier "^1.15.2"
 
-"@tecsinapse/ui-kit@2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@tecsinapse/ui-kit/-/ui-kit-2.2.0.tgz#b753c5e1ce9e8421a74201260374e7a88570de66"
-  integrity sha512-XcVajanEY3HcnBtMR0fVFKKnlUkZUxpLizWTqgs8tYppzeOokAg7mjGYvP2IwRAuBbolgJRapgVp+fgDYMdr1w==
+"@tecsinapse/ui-kit@2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@tecsinapse/ui-kit/-/ui-kit-2.2.1.tgz#fcbb14f1918ae73016c25b3862c0ae42b558a75c"
+  integrity sha512-bzB7vdw9X4GF0c3mlv1Ek2VlLcDCtJdq8gC11/C0DA6wYXukaPpnP7/R0SdU2iafLSZNTI2jiC6tpyJ7bLvfHA==
 
 "@tinymce/tinymce-react@^3.0.1":
   version "3.3.2"
