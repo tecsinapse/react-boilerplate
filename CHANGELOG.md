@@ -1,3 +1,11 @@
+## <small>2.1.6 (2019-12-03)</small>
+
+* Removing unused packages ([ec7b5bb](https://github.com/tecsinapse/react-boilerplate/commit/ec7b5bb))
+* Updated ui-kit ([6d20e3c](https://github.com/tecsinapse/react-boilerplate/commit/6d20e3c))
+* Updated ui-kit ([937851f](https://github.com/tecsinapse/react-boilerplate/commit/937851f))
+
+
+
 <a name="2.1.5"></a>
 ## <small>2.1.5 (2019-11-21)</small>
 
