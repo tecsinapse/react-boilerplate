@@ -1,3 +1,14 @@
+## 3.0.0 (2020-01-07)
+
+* Fixed theme variant problem when showing confirmation alert ([0362feb](https://github.com/tecsinapse/react-boilerplate/commit/0362feb))
+* Updating deps ([4861dc5](https://github.com/tecsinapse/react-boilerplate/commit/4861dc5))
+* Updating ui-kit beta and release beta ([63ddde1](https://github.com/tecsinapse/react-boilerplate/commit/63ddde1))
+* Updating version ([c048414](https://github.com/tecsinapse/react-boilerplate/commit/c048414))
+* Updating version ([eacb94f](https://github.com/tecsinapse/react-boilerplate/commit/eacb94f))
+* Updating version ([aeab261](https://github.com/tecsinapse/react-boilerplate/commit/aeab261))
+
+
+
 ## <small>2.1.6 (2019-12-03)</small>
 
 * Removing unused packages ([ec7b5bb](https://github.com/tecsinapse/react-boilerplate/commit/ec7b5bb))
