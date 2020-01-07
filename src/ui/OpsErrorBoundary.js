@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import SentimentVeryDissatisfied  from '@material-ui/icons/SentimentVeryDissatisfied';
-import { Trans } from '@lingui/macro';
-import { EmptyState } from '@tecsinapse/ui-kit/build/EmptyState/EmptyState';
-import { Button } from '@tecsinapse/ui-kit/build/Buttons/Button';
+import React, {Component} from 'react';
+import SentimentVeryDissatisfied from '@material-ui/icons/SentimentVeryDissatisfied';
+import {Trans} from '@lingui/macro';
+import {EmptyState} from '@tecsinapse/ui-kit/build/EmptyState/EmptyState';
+import {Button} from '@tecsinapse/ui-kit/build/Buttons/Button';
 import * as Sentry from '@sentry/browser';
 
 export class OpsErrorBoundary extends Component {
@@ -34,7 +34,7 @@ export class OpsErrorBoundary extends Component {
             <Trans>Desculpe, há algo de errado com nosso servidor.</Trans>
           }
         >
-          <Button component="a" variant="primary" href={window.location.origin}>
+          <Button component="a" href={window.location.origin}>
             <Trans>Voltar</Trans>
           </Button>
         </EmptyState>
