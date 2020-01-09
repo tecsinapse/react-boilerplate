@@ -1,5 +1,6 @@
 {
   "extends": [
-    "@tecsinapse/tecsinapse-js"
+    "@tecsinapse/tecsinapse-js",
+    "plugin:jsdoc/recommended"
   ]
 }
