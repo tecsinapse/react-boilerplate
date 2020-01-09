@@ -1,7 +1,7 @@
 {
   "name": "@tecsinapse/react-boilerplate",
   "description": "TecSinapse boilerplate for react projects",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "browser": "dist/index.js",
   "main": "dist/index.cjs.js",
   "module": "build/index.js",
@@ -44,9 +44,9 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "documentation": "^12.1.2",
-    "eslint-plugin-jsdoc": "^15.12.1",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
+    "eslint-plugin-jsdoc": "^15.12.1",
     "jest": "^23.6.0",
     "prop-types": "^15.6.2",
     "react-test-renderer": "16.7.0-alpha.2",
@@ -68,9 +68,9 @@
   ],
   "scripts": {
     "build": "rimraf -rf build/ && babel src/ -d build/ && rollup -c",
-    "dev": "rollup -c -w",
     "build:docs:html": "documentation --github --config documentation.yml --babel=./babel.config.js build src/* -f html -o docs",
     "build:docs:md": "documentation --github --config documentation.yml --babel=./babel.config.js build src/* -f md > md-docs/README.md",
+    "dev": "rollup -c -w",
     "start:docs:html": "documentation --github --config documentation.yml --babel=./babel.config.js serve --watch src/*",
     "test": "NODE_ENV=test jest test/"
   },

@@ -1,3 +1,14 @@
+## <small>3.0.1 (2020-01-09)</small>
+
+* Added docs ([b629e34](https://github.com/tecsinapse/react-boilerplate/commit/b629e34))
+* Bump axios from 0.18.0 to 0.18.1 ([0bc5834](https://github.com/tecsinapse/react-boilerplate/commit/0bc5834))
+* Bump eslint-utils from 1.3.1 to 1.4.3 ([0d5acab](https://github.com/tecsinapse/react-boilerplate/commit/0d5acab))
+* Bump js-yaml from 3.12.0 to 3.13.1 ([c045da6](https://github.com/tecsinapse/react-boilerplate/commit/c045da6))
+* Bump mixin-deep from 1.3.1 to 1.3.2 ([a5bff64](https://github.com/tecsinapse/react-boilerplate/commit/a5bff64))
+* Updating version ([06094f1](https://github.com/tecsinapse/react-boilerplate/commit/06094f1))
+
+
+
 ## 3.0.0 (2020-01-07)
 
 * Fixed theme variant problem when showing confirmation alert ([0362feb](https://github.com/tecsinapse/react-boilerplate/commit/0362feb))
