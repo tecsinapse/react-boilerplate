@@ -1,6 +1,16 @@
 import React from 'react';
-import { SnackbarProviderContext } from '../Providers';
+import {SnackbarProviderContext} from '../Providers';
 
+/**
+ * @function withSnackbarContext
+ *
+ * @description Composes wrapper to use snackbar alerts
+ *
+ * @param {Element} Component - Receives a react component
+ *
+ * @returns {Function} Returns a context
+ *
+ */
 export function withSnackbarContext(Component) {
   return function WrapperComponent(props) {
     return (

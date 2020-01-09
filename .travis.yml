@@ -3,6 +3,16 @@ node_js:
   - 12
 script:
   - yarn build
+  - yarn build:docs:html
+  - yarn build:docs:md
 
 cache:
   yarn: true
+deploy:
+  - provider: pages
+    skip-cleanup: true
+    local-dir: docs
+    github-token: $GITHUB_TOKEN
+    keep-history: false
+    on:
+      tags: true

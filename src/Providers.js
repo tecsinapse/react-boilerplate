@@ -12,6 +12,42 @@ import {SnackbarProvider} from './ui/SnackbarProvider';
 
 export const SnackbarProviderContext = createContext(null);
 
+/**
+ * Providers
+ *
+ * @description This element provides all resources to children components
+ *
+ * @param {object} props - Object containing all parameters to JSX component
+ * @param {object} props.keycloak - Keycloack config
+ * @param {object} props.client - Apollo client config
+ * @param {object} props.store - Redux store provider
+ * @param {object} props.children - Children element to render
+ * @param {object} props.catalogs - Object containing list of i18n languages available
+ * @param {string} props.themeVariant - UI-KIT theme variant
+ * @param {string} props.language - Language being loaded on runtime
+ * @param {object} props.themeOverrides - Object containing material-ui theme overrides
+ *
+ * @returns {Element} React element
+ *
+ * @example
+ * <Providers
+ *  themeVariant="orange"
+ *  catalogs={{
+ *    'pt-br': () => import(`./locales/pt-br/messages`),
+ *    en: () => import(`./locales/en/messages`)
+ *  }}
+ *  themeOverrides={{
+ *    MuiBadge: {
+ *      badge: {
+ *        backgroundColor: #FFF,
+ *      }
+ *    }
+ *  }}
+ *  {...props}
+ * >
+ *  <App />
+ * </Providers>
+ */
 export const Providers = ({
   keycloak,
   client,
