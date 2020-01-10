@@ -12,11 +12,11 @@ function bootstrapKC(kc) {
     } else {
       kc.profile = profile;
     }
-    Sentry.configureScope(scope => {
-      scope.setUser({ email: kc.profile.email });
-    });
     return kc.profile;
   };
+  Sentry.configureScope(scope => {
+    scope.setUser({ email: kc.profile.email });
+  });
   return kc;
 }
 export { bootstrapKC };
