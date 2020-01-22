@@ -1,3 +1,10 @@
+## 3.1.0 (2020-01-22)
+
+* @tecsinapse/ui-kit@4.0.0 ([09c8a1e](https://github.com/tecsinapse/react-boilerplate/commit/09c8a1e))
+* Test to fix user session invalidate ([12a8e07](https://github.com/tecsinapse/react-boilerplate/commit/12a8e07))
+
+
+
 ## <small>3.0.1 (2020-01-09)</small>
 
 * Added docs ([b629e34](https://github.com/tecsinapse/react-boilerplate/commit/b629e34))
