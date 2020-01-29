@@ -7,8 +7,10 @@ function bootstrapKC(kc) {
   kc.loadUserProfile = async function getUserProfile() {
     const profile = await localforage.getItem('userProfile');
     if (navigator.onLine) {
-      await oldLoadUserProfile();
-      await localforage.setItem('userProfile', kc.profile);
+      const response = await oldLoadUserProfile();
+      await response.success(profile =>
+        localforage.setItem('userProfile', profile)
+      );
     } else {
       kc.profile = profile;
     }
