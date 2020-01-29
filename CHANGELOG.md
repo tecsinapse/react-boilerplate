@@ -1,3 +1,9 @@
+## <small>3.1.1 (2020-01-29)</small>
+
+* Fix localforage with no profile bug ([568a945](https://github.com/tecsinapse/react-boilerplate/commit/568a945))
+
+
+
 ## 3.1.0 (2020-01-22)
 
 * @tecsinapse/ui-kit@4.0.0 ([09c8a1e](https://github.com/tecsinapse/react-boilerplate/commit/09c8a1e))
