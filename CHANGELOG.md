@@ -1,3 +1,9 @@
+## 3.2.0 (2020-04-07)
+
+* updating deps ([392fa46](https://github.com/tecsinapse/react-boilerplate/commit/392fa46))
+
+
+
 ## <small>3.1.1 (2020-01-29)</small>
 
 * Fix localforage with no profile bug ([568a945](https://github.com/tecsinapse/react-boilerplate/commit/568a945))
