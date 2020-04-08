@@ -1,3 +1,10 @@
+## <small>3.2.1 (2020-04-08)</small>
+
+* Bump acorn from 5.7.3 to 5.7.4 ([33f2ba1](https://github.com/tecsinapse/react-boilerplate/commit/33f2ba1))
+* Fixing SnackbarProvider to support autoHide ([196b947](https://github.com/tecsinapse/react-boilerplate/commit/196b947))
+
+
+
 ## 3.2.0 (2020-04-07)
 
 * updating deps ([392fa46](https://github.com/tecsinapse/react-boilerplate/commit/392fa46))
