@@ -233,8 +233,8 @@ export const init = async ({
 
       keycloak
         .init(initOptions)
-        .success(afterKcInit)
-        .error(() => {
+        .then(afterKcInit)
+        .catch(() => {
           if (!navigator.onLine) {
             afterKcInit(false);
           } else {

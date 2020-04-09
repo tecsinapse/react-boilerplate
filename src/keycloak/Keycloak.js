@@ -5,14 +5,13 @@ import * as Sentry from '@sentry/browser';
 function bootstrapKC(kc) {
   const oldLoadUserProfile = kc.loadUserProfile;
   kc.loadUserProfile = async function getUserProfile() {
-    const profile = await localforage.getItem('userProfile');
+    const oldProfile = await localforage.getItem('userProfile');
     if (navigator.onLine) {
-      const response = await oldLoadUserProfile();
-      await response.success(profile =>
-        localforage.setItem('userProfile', profile)
-      );
-    } else {
+      const profile = await oldLoadUserProfile();
+      await localforage.setItem('userProfile', profile);
       kc.profile = profile;
+    } else {
+      kc.profile = oldProfile;
     }
     return kc.profile;
   };
