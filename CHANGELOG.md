@@ -1,3 +1,9 @@
+## 3.3.0 (2020-04-09)
+
+* Updating Keycloak to 9.0.2 and fixing promises ([30d9828](https://github.com/tecsinapse/react-boilerplate/commit/30d9828))
+
+
+
 ## <small>3.2.1 (2020-04-08)</small>
 
 * Bump acorn from 5.7.3 to 5.7.4 ([33f2ba1](https://github.com/tecsinapse/react-boilerplate/commit/33f2ba1))
