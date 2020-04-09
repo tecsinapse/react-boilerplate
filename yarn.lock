@@ -5938,10 +5938,10 @@ jsx-ast-utils@^2.2.3:
     array-includes "^3.0.3"
     object.assign "^4.1.0"
 
-keycloak-js@^8.0.1:
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/keycloak-js/-/keycloak-js-8.0.1.tgz#bf9884f0d5dc2365d7b99f330deea0949166dda2"
-  integrity sha512-1ABx6ZCk1jrmn9wAX8oMw175M75JHhpKq2bKSmplkhQXErkp0r8Lf+e+91Gr8DixVtT4/IyH9mc/JQuwbkvRbA==
+keycloak-js@^9.0.2:
+  version "9.0.2"
+  resolved "https://registry.yarnpkg.com/keycloak-js/-/keycloak-js-9.0.2.tgz#c8c9721b43b7401b9ac2384afc84a07e8e29095c"
+  integrity sha512-1QKNYw1+wHGrbjiK2zxJzG5krq4VBhsQazCQOe1958ODWIwoUo4wLu9wgkBPwMtkl3y3osQnVSeCpYdpBLtq+A==
   dependencies:
     base64-js "1.3.1"
     js-sha256 "0.9.0"
