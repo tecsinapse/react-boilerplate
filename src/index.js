@@ -1,18 +1,18 @@
 import localforage from 'localforage';
-import {InMemoryCache} from 'apollo-cache-inmemory';
-import {ApolloLink} from 'apollo-link';
-import {setContext} from 'apollo-link-context';
-import {HttpLink} from 'apollo-link-http';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import { ApolloLink } from 'apollo-link';
+import { setContext } from 'apollo-link-context';
+import { HttpLink } from 'apollo-link-http';
 import ApolloClient from 'apollo-client';
 import axios from 'axios';
 import Keycloak from 'keycloak-js';
 import * as Sentry from '@sentry/browser';
 import ReactGA from 'react-ga';
 
-import {isRunningStandalone} from './offline/offlineUtils';
-import {GlobalAfterInitObjects} from './GlobalAfterInitUtils';
-import {bootstrapKC} from './keycloak/Keycloak';
-import {initHotjar} from './initHotjar';
+import { isRunningStandalone } from './offline/offlineUtils';
+import { GlobalAfterInitObjects } from './GlobalAfterInitUtils';
+import { bootstrapKC } from './keycloak/Keycloak';
+import { initHotjar } from './initHotjar';
 
 /**
  * @function init
@@ -40,9 +40,16 @@ import {initHotjar} from './initHotjar';
  *    release: process.env.REACT_APP_VERSION,
  *    environment: process.env.REACT_APP_HOST,
  *  },
- *  appState: null,
+ *  reduxOptions: {
+ *    appState: store,
+ *    middlewares: [middlewares],
+ *  }
  *  axiosOptions: {
  *    axiosBaseUri: `http://localhost`,
+ *    interceptors:{
+ *       request: [ [successInterceptor1, errorInterceptor1], [successInterceptor2, errorInterceptor2] ],
+ *       response: [ [successInterceptor3, errorInterceptor3], [successInterceptor4, errorInterceptor4] ],
+ *    }
  *  },
  *  apolloOptions: {
  *    offlineApolloCacheOptions: null,
@@ -64,19 +71,19 @@ import {initHotjar} from './initHotjar';
  */
 
 export const init = async ({
-  hotjarId,
-  analyticsCode = null,
-  reduxOptions: { appState = null } = {},
-  apolloOptions: {
-    offlineApolloCacheOptions = null,
-    uri,
-    connectToDevTools,
-  } = {},
-  axiosOptions: { axiosBaseUri } = {},
-  keycloakOptions: { keycloakConfig, logoutFunction, publicUrls = [] } = {},
-  sentryOptions,
-  renderFunction,
-}) => {
+                             hotjarId,
+                             analyticsCode = null,
+                             reduxOptions: { appState = null, middlewares = [] } = {},
+                             apolloOptions: {
+                               offlineApolloCacheOptions = null,
+                               uri,
+                               connectToDevTools,
+                             } = {},
+                             axiosOptions: { axiosBaseUri, interceptors } = {},
+                             keycloakOptions: { keycloakConfig, logoutFunction, publicUrls = [] } = {},
+                             sentryOptions,
+                             renderFunction,
+                           }) => {
   const keycloak = Keycloak(keycloakConfig);
   bootstrapKC(keycloak);
   if (analyticsCode) {
@@ -90,12 +97,16 @@ export const init = async ({
   }
 
   let store = null;
+
   if (appState) {
-    const { createStore } = await import('redux');
+    const { createStore, applyMiddleware, compose } = await import('redux');
+    const composeEnhancer =
+      (typeof window !== 'undefined' &&
+        window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
+      compose;
     store = createStore(
       appState,
-      window.__REDUX_DEVTOOLS_EXTENSION__ &&
-        window.__REDUX_DEVTOOLS_EXTENSION__()
+      composeEnhancer(applyMiddleware(...middlewares))
     );
   }
 
@@ -150,9 +161,11 @@ export const init = async ({
         keycloak.login({ prompt: 'none' });
       })
   );
+
   if (axiosBaseUri) {
     axios.defaults.baseURL = axiosBaseUri;
   }
+
   axios.interceptors.request.use(config =>
     refreshKeycloakToken()
       .then(() => {
@@ -164,6 +177,26 @@ export const init = async ({
         keycloak.login({ prompt: 'none' });
       })
   );
+
+  if (interceptors) {
+    const { request, response } = interceptors;
+    if (request) {
+      request.forEach(([success, error]) =>
+        axios.interceptors.request.use(
+          success || (() => {}),
+          error || (() => {})
+        )
+      );
+    }
+    if (response) {
+      response.forEach(([success, error]) =>
+        axios.interceptors.response.use(
+          success || (() => {}),
+          error || (() => {})
+        )
+      );
+    }
+  }
 
   const httpLink = new HttpLink({ uri });
 
@@ -201,8 +234,8 @@ export const init = async ({
         if (!authenticated && navigator.onLine) {
           const options = isRunningStandalone()
             ? {
-                scope: 'offline_access',
-              }
+              scope: 'offline_access',
+            }
             : undefined;
           if (
             !publicUrls.some(publicUrl =>
