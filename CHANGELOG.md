@@ -1,3 +1,10 @@
+## <small>4.0.2 (2020-06-23)</small>
+
+* Eslint version ([dc7b288](https://github.com/tecsinapse/react-boilerplate/commit/dc7b288))
+* idpHint ([eedf0b7](https://github.com/tecsinapse/react-boilerplate/commit/eedf0b7))
+
+
+
 ## <small>4.0.1 (2020-06-23)</small>
 
 * 3.3.0-beta.0 ([a5178d5](https://github.com/tecsinapse/react-boilerplate/commit/a5178d5))
