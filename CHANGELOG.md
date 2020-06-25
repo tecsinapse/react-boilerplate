@@ -1,3 +1,9 @@
+## <small>4.1.1 (2020-06-25)</small>
+
+* fixing exports ([10d418f](https://github.com/tecsinapse/react-boilerplate/commit/10d418f))
+
+
+
 ## 4.1.0 (2020-06-25)
 
 * - Adicionando suporte para redux middlewares ([7ab3b74](https://github.com/tecsinapse/react-boilerplate/commit/7ab3b74))
