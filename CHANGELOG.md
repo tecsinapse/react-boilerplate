@@ -1,3 +1,12 @@
+## 4.1.0 (2020-06-25)
+
+* - Adicionando suporte para redux middlewares ([7ab3b74](https://github.com/tecsinapse/react-boilerplate/commit/7ab3b74))
+* Exporting components from index.js ([1ac1369](https://github.com/tecsinapse/react-boilerplate/commit/1ac1369))
+* Formatting file ([fd5c80e](https://github.com/tecsinapse/react-boilerplate/commit/fd5c80e))
+* Updating ui-kit ([11b43b4](https://github.com/tecsinapse/react-boilerplate/commit/11b43b4))
+
+
+
 ## <small>4.0.2 (2020-06-23)</small>
 
 * Eslint version ([dc7b288](https://github.com/tecsinapse/react-boilerplate/commit/dc7b288))
