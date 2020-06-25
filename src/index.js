@@ -73,16 +73,16 @@ import { initHotjar } from './initHotjar';
 
 export const init = async ({
   hotjarId,
-   analyticsCode = null,
-   reduxOptions: { appState = null, middlewares = [] } = {},
-   apolloOptions: {
-     offlineApolloCacheOptions = null,
-     uri,
-     connectToDevTools,
-   } = {},
-   axiosOptions: { axiosBaseUri, interceptors } = {},
-   keycloakOptions: { keycloakConfig, logoutFunction, publicUrls = [] } = {},
-   sentryOptions,
+  analyticsCode = null,
+  reduxOptions: { appState = null, middlewares = [] } = {},
+  apolloOptions: {
+    offlineApolloCacheOptions = null,
+    uri,
+    connectToDevTools,
+  } = {},
+  axiosOptions: { axiosBaseUri, interceptors } = {},
+  keycloakOptions: { keycloakConfig, logoutFunction, publicUrls = [] } = {},
+  sentryOptions,
   idpHint,
   renderFunction,
 }) => {
@@ -146,12 +146,12 @@ export const init = async ({
       if (navigator.onLine || !isRunningStandalone()) {
         keycloak
           .updateToken(minValidity)
-          .success(() => {
+          .then(() => {
             localforage.setItem('token', keycloak.token);
             localforage.setItem('refreshToken', keycloak.refreshToken);
             resolve();
           })
-          .error(error => reject(error));
+          .catch(error => reject(error));
       } else {
         resolve();
       }
