@@ -1,6 +1,6 @@
 import React, {createContext, Fragment, useEffect, useState} from 'react';
 import {Provider} from 'react-redux';
-import {ApolloProvider} from 'react-apollo';
+import { ApolloProvider } from '@apollo/react-hooks';
 import {I18nProvider} from '@lingui/react';
 import ThemeProvider from '@tecsinapse/ui-kit/build/ThemeProvider';
 import {Router} from 'react-router';

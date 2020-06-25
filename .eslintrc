@@ -1,6 +1,14 @@
 {
+  "plugins": ["eslint-plugin-no-inline-styles", "prettier"],
   "extends": [
     "@tecsinapse/tecsinapse-js",
-    "plugin:jsdoc/recommended"
-  ]
+    "plugin:prettier/recommended"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": ["node_modules", "src/"]
+      }
+    }
+  }
 }

@@ -29,6 +29,7 @@ import { initHotjar } from './initHotjar';
  * @param {object} props.keycloakOptions - Initial KC config (default = {})
  * @param {object} props.keycloakOptions.publicUrls - Initial public URL's (default = [])
  * @param {object} props.sentryOptions - Initial sentry tracker config
+ * @param {string} props.idpHint - idpHint for kc login
  * @param {Function} props.renderFunction - Render function
  *
  * @example
@@ -71,27 +72,32 @@ import { initHotjar } from './initHotjar';
  */
 
 export const init = async ({
-                             hotjarId,
-                             analyticsCode = null,
-                             reduxOptions: { appState = null, middlewares = [] } = {},
-                             apolloOptions: {
-                               offlineApolloCacheOptions = null,
-                               uri,
-                               connectToDevTools,
-                             } = {},
-                             axiosOptions: { axiosBaseUri, interceptors } = {},
-                             keycloakOptions: { keycloakConfig, logoutFunction, publicUrls = [] } = {},
-                             sentryOptions,
-                             renderFunction,
-                           }) => {
+  hotjarId,
+   analyticsCode = null,
+   reduxOptions: { appState = null, middlewares = [] } = {},
+   apolloOptions: {
+     offlineApolloCacheOptions = null,
+     uri,
+     connectToDevTools,
+   } = {},
+   axiosOptions: { axiosBaseUri, interceptors } = {},
+   keycloakOptions: { keycloakConfig, logoutFunction, publicUrls = [] } = {},
+   sentryOptions,
+  idpHint,
+  renderFunction,
+}) => {
   const keycloak = Keycloak(keycloakConfig);
+
   bootstrapKC(keycloak);
+
   if (analyticsCode) {
     ReactGA.initialize(analyticsCode);
   }
+
   if (hotjarId) {
     initHotjar(hotjarId);
   }
+
   if (sentryOptions) {
     Sentry.init(sentryOptions);
   }
@@ -104,6 +110,7 @@ export const init = async ({
       (typeof window !== 'undefined' &&
         window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
       compose;
+
     store = createStore(
       appState,
       composeEnhancer(applyMiddleware(...middlewares))
@@ -118,6 +125,7 @@ export const init = async ({
   if (offlineApolloCacheOptions) {
     const { maxSize = 1048576 * 20 } = offlineApolloCacheOptions;
     const { persistCache } = await import('apollo-cache-persist');
+
     persistCache({
       cache,
       storage: localforage,
@@ -170,7 +178,9 @@ export const init = async ({
     refreshKeycloakToken()
       .then(() => {
         const newConfig = config;
+
         newConfig.headers.Authorization = `Bearer ${keycloak.token}`;
+
         return Promise.resolve(newConfig);
       })
       .catch(() => {
@@ -226,17 +236,21 @@ export const init = async ({
         if (token !== null) {
           initOptions.token = token;
         }
+
         if (refreshToken !== null) {
           initOptions.refreshToken = refreshToken;
         }
       }
+
       const afterKcInit = authenticated => {
         if (!authenticated && navigator.onLine) {
           const options = isRunningStandalone()
             ? {
-              scope: 'offline_access',
-            }
+                scope: 'offline_access',
+                idpHint,
+              }
             : undefined;
+
           if (
             !publicUrls.some(publicUrl =>
               window.location.pathname.startsWith(publicUrl)
@@ -279,6 +293,7 @@ export const init = async ({
   GlobalAfterInitObjects.apolloClient = client;
   GlobalAfterInitObjects.keycloak = keycloak;
   GlobalAfterInitObjects.reduxStore = store;
+
   return {
     keycloak,
     client,

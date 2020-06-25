@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { Provider } from 'react-redux';
-import { ApolloProvider } from 'react-apollo';
+import { ApolloProvider } from '@apollo/react-hooks';
 import { provideKeycloakContext } from './keycloak/provideKeycloakContext';
 
 export const CoreProviders = ({ keycloak, client, store, children }) => {

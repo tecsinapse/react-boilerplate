@@ -1,3 +1,25 @@
+## <small>4.0.2 (2020-06-23)</small>
+
+* Eslint version ([dc7b288](https://github.com/tecsinapse/react-boilerplate/commit/dc7b288))
+* idpHint ([eedf0b7](https://github.com/tecsinapse/react-boilerplate/commit/eedf0b7))
+
+
+
+## <small>4.0.1 (2020-06-23)</small>
+
+* 3.3.0-beta.0 ([a5178d5](https://github.com/tecsinapse/react-boilerplate/commit/a5178d5))
+* Bump websocket-extensions from 0.1.3 to 0.1.4 ([714edda](https://github.com/tecsinapse/react-boilerplate/commit/714edda))
+* Fix version ([0c15983](https://github.com/tecsinapse/react-boilerplate/commit/0c15983))
+* Release 3.3.0 ([6cfbce0](https://github.com/tecsinapse/react-boilerplate/commit/6cfbce0))
+* Update .travis.yml ([b19f352](https://github.com/tecsinapse/react-boilerplate/commit/b19f352))
+* Update .travis.yml ([a3fb5a4](https://github.com/tecsinapse/react-boilerplate/commit/a3fb5a4))
+* Updating apollo version ([5309602](https://github.com/tecsinapse/react-boilerplate/commit/5309602))
+* Updating apollo versions ([3ef296a](https://github.com/tecsinapse/react-boilerplate/commit/3ef296a))
+* v4.0.0-beta.1 ([3255e06](https://github.com/tecsinapse/react-boilerplate/commit/3255e06))
+* v4.0.0-beta.2 ([cd611cd](https://github.com/tecsinapse/react-boilerplate/commit/cd611cd))
+
+
+
 ## 3.3.0 (2020-04-09)
 
 * Updating Keycloak to 9.0.2 and fixing promises ([30d9828](https://github.com/tecsinapse/react-boilerplate/commit/30d9828))
