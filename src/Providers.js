@@ -1,14 +1,14 @@
-import React, {createContext, Fragment, useEffect, useState} from 'react';
-import {Provider} from 'react-redux';
+import React, { createContext, Fragment, useEffect, useState } from 'react';
+import { Provider } from 'react-redux';
 import { ApolloProvider } from '@apollo/react-hooks';
-import {I18nProvider} from '@lingui/react';
-import ThemeProvider from '@tecsinapse/ui-kit/build/ThemeProvider';
-import {Router} from 'react-router';
-import {provideKeycloakContext} from './keycloak/provideKeycloakContext';
-import {provideI18nLanguageContext} from './i18n/provideI18nLanguageContext';
-import {i18n} from './i18n/i18n';
-import {appHistory} from './router/history';
-import {SnackbarProvider} from './ui/SnackbarProvider';
+import { I18nProvider } from '@lingui/react';
+import { ThemeProvider } from '@tecsinapse/ui-kit';
+import { Router } from 'react-router';
+import { provideKeycloakContext } from './keycloak/provideKeycloakContext';
+import { provideI18nLanguageContext } from './i18n/provideI18nLanguageContext';
+import { i18n } from './i18n/i18n';
+import { appHistory } from './router/history';
+import { SnackbarProvider } from './ui/SnackbarProvider';
 
 export const SnackbarProviderContext = createContext(null);
 
@@ -62,14 +62,11 @@ export const Providers = ({
   const KeycloakProvider = provideKeycloakContext(keycloak)(Fragment);
   const [locale, setLocale] = useState('pt-br');
 
-  useEffect(
-    () => {
-      if (language !== null) {
-        loadCatalog(language);
-      }
-    },
-    [language]
-  );
+  useEffect(() => {
+    if (language !== null) {
+      loadCatalog(language);
+    }
+  }, [language]);
   const I18nBoilerplateProvider = provideI18nLanguageContext({
     locale,
     setLocale: a => loadCatalog(a),

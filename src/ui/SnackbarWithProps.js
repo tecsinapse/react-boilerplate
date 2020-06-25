@@ -1,5 +1,5 @@
 import React from 'react';
-import {Snackbar} from '@tecsinapse/ui-kit/build/Snackbar/Snackbar';
+import { Snackbar } from '@tecsinapse/ui-kit';
 
 export const SnackbarWithProps = ({
   show,

@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { I18nProvider } from '@lingui/react';
 import { Router } from 'react-router';
-import ThemeProvider from '@tecsinapse/ui-kit/build/ThemeProvider';
+import { ThemeProvider } from '@tecsinapse/ui-kit';
 import { provideI18nLanguageContext } from './i18n/provideI18nLanguageContext';
 import { i18n } from './i18n/i18n';
 import { appHistory } from './router/history';
@@ -13,14 +13,12 @@ export const ChildProviders = ({
   language = null,
 }) => {
   const [locale, setLocale] = useState('pt-br');
-  useEffect(
-    () => {
-      if (language !== null) {
-        loadCatalog(language);
-      }
-    },
-    [language]
-  );
+
+  useEffect(() => {
+    if (language !== null) {
+      loadCatalog(language);
+    }
+  }, [language]);
 
   const I18nBoilerplateProvider = provideI18nLanguageContext({
     locale,

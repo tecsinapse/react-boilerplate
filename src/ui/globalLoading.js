@@ -1,6 +1,6 @@
-import FullscreenLoading from '@tecsinapse/ui-kit/build/Loading/FullscreenLoading';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { FullScreenLoading } from '@tecsinapse/ui-kit';
 
 /**
  * @function showGlobalLoading
@@ -9,7 +9,7 @@ import ReactDOM from 'react-dom';
 export const showGlobalLoading = () => {
   ReactDOM.unmountComponentAtNode(document.getElementById('fullscreenloading'));
   ReactDOM.render(
-    <FullscreenLoading show />,
+    <FullScreenLoading show />,
     document.getElementById('fullscreenloading')
   );
 };
