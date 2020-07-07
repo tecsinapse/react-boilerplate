@@ -1,3 +1,9 @@
+## <small>4.1.2 (2020-07-07)</small>
+
+* Fix scope on kcOptions ([49134ff](https://github.com/tecsinapse/react-boilerplate/commit/49134ff))
+
+
+
 ## <small>4.1.1 (2020-06-25)</small>
 
 * fixing exports ([10d418f](https://github.com/tecsinapse/react-boilerplate/commit/10d418f))
