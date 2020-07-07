@@ -31,8 +31,7 @@ import { initHotjar } from './initHotjar';
  * @param {object} props.sentryOptions - Initial sentry tracker config
  * @param {string} props.idpHint - idpHint for kc login
  * @param {Function} props.renderFunction - Render function
- * @param  {string} idpHint
- * @param  {string} scope default offline_access
+ * @param  {string} props.ignoreScope default offline_access
  *
  * @example
  * init({
@@ -86,7 +85,7 @@ export const init = async ({
   keycloakOptions: { keycloakConfig, logoutFunction, publicUrls = [] } = {},
   sentryOptions,
   idpHint,
-  scope = 'offline_access',
+  ignoreScope = false,
   renderFunction,
 }) => {
   const keycloak = Keycloak(keycloakConfig);
@@ -193,6 +192,7 @@ export const init = async ({
 
   if (interceptors) {
     const { request, response } = interceptors;
+
     if (request) {
       request.forEach(([success, error]) =>
         axios.interceptors.request.use(
@@ -201,6 +201,7 @@ export const init = async ({
         )
       );
     }
+
     if (response) {
       response.forEach(([success, error]) =>
         axios.interceptors.response.use(
@@ -247,12 +248,13 @@ export const init = async ({
 
       const afterKcInit = authenticated => {
         if (!authenticated && navigator.onLine) {
-          const options = isRunningStandalone()
-            ? {
-                scope,
-                idpHint,
-              }
-            : undefined;
+          const options =
+            isRunningStandalone() && !ignoreScope
+              ? {
+                  scope: 'offline_access',
+                  idpHint,
+                }
+              : undefined;
 
           if (
             !publicUrls.some(publicUrl =>
