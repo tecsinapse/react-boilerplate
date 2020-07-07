@@ -31,6 +31,8 @@ import { initHotjar } from './initHotjar';
  * @param {object} props.sentryOptions - Initial sentry tracker config
  * @param {string} props.idpHint - idpHint for kc login
  * @param {Function} props.renderFunction - Render function
+ * @param  {string} idpHint
+ * @param  {string} scope default offline_access
  *
  * @example
  * init({
@@ -84,6 +86,7 @@ export const init = async ({
   keycloakOptions: { keycloakConfig, logoutFunction, publicUrls = [] } = {},
   sentryOptions,
   idpHint,
+  scope = 'offline_access',
   renderFunction,
 }) => {
   const keycloak = Keycloak(keycloakConfig);
@@ -246,7 +249,7 @@ export const init = async ({
         if (!authenticated && navigator.onLine) {
           const options = isRunningStandalone()
             ? {
-                scope: 'offline_access',
+                scope,
                 idpHint,
               }
             : undefined;
