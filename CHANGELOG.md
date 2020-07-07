@@ -1,3 +1,9 @@
+## <small>4.1.3 (2020-07-07)</small>
+
+* ignoreScope ([2639e83](https://github.com/tecsinapse/react-boilerplate/commit/2639e83))
+
+
+
 ## <small>4.1.2 (2020-07-07)</small>
 
 * Fix scope on kcOptions ([49134ff](https://github.com/tecsinapse/react-boilerplate/commit/49134ff))
