@@ -1,18 +1,18 @@
-import localforage from 'localforage';
+import * as Sentry from '@sentry/browser';
 import { InMemoryCache } from 'apollo-cache-inmemory';
+import ApolloClient from 'apollo-client';
 import { ApolloLink } from 'apollo-link';
 import { setContext } from 'apollo-link-context';
 import { HttpLink } from 'apollo-link-http';
-import ApolloClient from 'apollo-client';
 import axios from 'axios';
 import Keycloak from 'keycloak-js';
-import * as Sentry from '@sentry/browser';
+import localforage from 'localforage';
 import ReactGA from 'react-ga';
-
-import { isRunningStandalone } from './offline/offlineUtils';
 import { GlobalAfterInitObjects } from './GlobalAfterInitUtils';
-import { bootstrapKC } from './keycloak/Keycloak';
 import { initHotjar } from './initHotjar';
+import { bootstrapKC } from './keycloak/Keycloak';
+import { isRunningStandalone } from './offline/offlineUtils';
+
 
 /**
  * @function init
@@ -31,7 +31,6 @@ import { initHotjar } from './initHotjar';
  * @param {object} props.sentryOptions - Initial sentry tracker config
  * @param {string} props.idpHint - idpHint for kc login
  * @param {Function} props.renderFunction - Render function
- * @param  {string} props.ignoreScope default offline_access
  *
  * @example
  * init({
@@ -82,10 +81,14 @@ export const init = async ({
     connectToDevTools,
   } = {},
   axiosOptions: { axiosBaseUri, interceptors } = {},
-  keycloakOptions: { keycloakConfig, logoutFunction, publicUrls = [] } = {},
+  keycloakOptions: {
+    keycloakConfig,
+    logoutFunction,
+    publicUrls = [],
+    ignoreStandaloneLoginFlow = false,
+  } = {},
   sentryOptions,
   idpHint,
-  ignoreScope = false,
   renderFunction,
 }) => {
   const keycloak = Keycloak(keycloakConfig);
@@ -145,7 +148,7 @@ export const init = async ({
   }
   const refreshKeycloakToken = (minValidity = 5) =>
     new Promise((resolve, reject) => {
-      if (navigator.onLine || !isRunningStandalone()) {
+      if (navigator.onLine || !isRunningStandalone(ignoreStandaloneLoginFlow)) {
         keycloak
           .updateToken(minValidity)
           .then(() => {
@@ -236,7 +239,7 @@ export const init = async ({
       };
 
       // only set token for standalone pwa
-      if (isRunningStandalone()) {
+      if (isRunningStandalone(ignoreStandaloneLoginFlow)) {
         if (token !== null) {
           initOptions.token = token;
         }
@@ -248,13 +251,9 @@ export const init = async ({
 
       const afterKcInit = authenticated => {
         if (!authenticated && navigator.onLine) {
-          const options =
-            isRunningStandalone() && !ignoreScope
-              ? {
-                  scope: 'offline_access',
-                  idpHint,
-                }
-              : undefined;
+          const options = isRunningStandalone(ignoreStandaloneLoginFlow)
+            ? { scope: 'offline_access', idpHint }
+            : undefined;
 
           if (
             !publicUrls.some(publicUrl =>
@@ -306,10 +305,11 @@ export const init = async ({
   };
 };
 
+export { ChildProviders } from './ChildProviders';
 export { i18n } from './i18n/i18n';
 export { withI18nLanguage } from './i18n/withI18nLanguage';
-export { showGlobalLoading, hideGlobalLoading } from './ui/globalLoading';
-export { ChildProviders } from './ChildProviders';
-export { Providers } from './Providers';
 export { withKeycloak } from './keycloak/withKeycloak';
+export { Providers } from './Providers';
+export { hideGlobalLoading, showGlobalLoading } from './ui/globalLoading';
 export { withSnackbarContext } from './ui/withSnackbarContext';
+

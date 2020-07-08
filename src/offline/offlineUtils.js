@@ -1,3 +1,3 @@
-export function isRunningStandalone() {
-  return (window.matchMedia('(display-mode: standalone)').matches);
+export function isRunningStandalone(ignoreStandaloneLoginFlow = false) {
+  return !ignoreStandaloneLoginFlow && (window.matchMedia('(display-mode: standalone)').matches);
 }
