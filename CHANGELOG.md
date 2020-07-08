@@ -1,3 +1,9 @@
+## <small>4.1.4 (2020-07-08)</small>
+
+* Adicionado parametro para ignorar fluxo de login para apps standalone ([6c37a7b](https://github.com/tecsinapse/react-boilerplate/commit/6c37a7b))
+
+
+
 ## <small>4.1.3 (2020-07-07)</small>
 
 * ignoreScope ([2639e83](https://github.com/tecsinapse/react-boilerplate/commit/2639e83))
