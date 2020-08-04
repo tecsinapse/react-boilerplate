@@ -1,3 +1,11 @@
+## 4.2.0 (2020-08-04)
+
+* Bump elliptic from 6.4.1 to 6.5.3 ([1a15249](https://github.com/tecsinapse/react-boilerplate/commit/1a15249))
+* Bump lodash from 4.17.11 to 4.17.19 ([3729ace](https://github.com/tecsinapse/react-boilerplate/commit/3729ace))
+* Updating dependencies ([89a9187](https://github.com/tecsinapse/react-boilerplate/commit/89a9187))
+
+
+
 ## <small>4.1.4 (2020-07-08)</small>
 
 * Adicionado parametro para ignorar fluxo de login para apps standalone ([6c37a7b](https://github.com/tecsinapse/react-boilerplate/commit/6c37a7b))
