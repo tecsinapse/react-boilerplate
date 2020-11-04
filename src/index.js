@@ -13,7 +13,6 @@ import { initHotjar } from './initHotjar';
 import { bootstrapKC } from './keycloak/Keycloak';
 import { isRunningStandalone } from './offline/offlineUtils';
 
-
 /**
  * @function init
  * @description This method initializes your react app, useful to replace defaults on index
@@ -163,16 +162,20 @@ export const init = async ({
     });
 
   const authMiddleware = setContext((operation, { headers }) =>
-    refreshKeycloakToken()
-      .then(() => ({
-        headers: {
-          ...headers,
-          authorization: `Bearer ${keycloak.token}`,
-        },
-      }))
-      .catch(() => {
-        keycloak.login({ prompt: 'none' });
-      })
+    !publicUrls.some(publicUrl =>
+      window.location.pathname.startsWith(publicUrl)
+    )
+      ? refreshKeycloakToken()
+          .then(() => ({
+            headers: {
+              ...headers,
+              authorization: `Bearer ${keycloak.token}`,
+            },
+          }))
+          .catch(() => {
+            keycloak.login({ prompt: 'none' });
+          })
+      : () => {}
   );
 
   if (axiosBaseUri) {
@@ -312,4 +315,3 @@ export { withKeycloak } from './keycloak/withKeycloak';
 export { Providers } from './Providers';
 export { hideGlobalLoading, showGlobalLoading } from './ui/globalLoading';
 export { withSnackbarContext } from './ui/withSnackbarContext';
-
