@@ -1,3 +1,8 @@
+## <small>4.2.2 (2020-11-05)</small>
+
+
+
+
 ## <small>4.2.1 (2020-11-05)</small>
 
 * fix: adjusting graphql public routes ([d606003](https://github.com/tecsinapse/react-boilerplate/commit/d606003))
