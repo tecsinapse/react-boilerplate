@@ -1,3 +1,9 @@
+## <small>4.2.1 (2020-11-05)</small>
+
+* fix: adjusting graphql public routes ([d606003](https://github.com/tecsinapse/react-boilerplate/commit/d606003))
+
+
+
 ## 4.2.0 (2020-08-04)
 
 * Bump elliptic from 6.4.1 to 6.5.3 ([1a15249](https://github.com/tecsinapse/react-boilerplate/commit/1a15249))
