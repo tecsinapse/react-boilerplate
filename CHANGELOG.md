@@ -1,3 +1,11 @@
+## <small>4.2.2 (2020-11-05)</small>
+
+* Release 4.2.2 ([42a225b](https://github.com/tecsinapse/react-boilerplate/commit/42a225b))
+* Release 4.2.3 ([e953fec](https://github.com/tecsinapse/react-boilerplate/commit/e953fec))
+* reverting changes ([6557d93](https://github.com/tecsinapse/react-boilerplate/commit/6557d93))
+
+
+
 ## <small>4.2.1 (2020-11-05)</small>
 
 * fix: adjusting graphql public routes ([d606003](https://github.com/tecsinapse/react-boilerplate/commit/d606003))
