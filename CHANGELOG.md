@@ -1,3 +1,10 @@
+## <small>4.2.3 (2020-11-30)</small>
+
+* chore(update): update ui-kit version ([2f66490](https://github.com/tecsinapse/react-boilerplate/commit/2f66490))
+* chore(update): update ui-kit version ([f52401a](https://github.com/tecsinapse/react-boilerplate/commit/f52401a))
+
+
+
 ## <small>4.2.2 (2020-11-05)</small>
 
 * Release 4.2.2 ([42a225b](https://github.com/tecsinapse/react-boilerplate/commit/42a225b))
