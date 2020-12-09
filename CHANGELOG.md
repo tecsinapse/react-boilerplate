@@ -1,3 +1,11 @@
+## 4.3.0 (2020-12-09)
+
+* refactor: moving context from providers ([49db218](https://github.com/tecsinapse/react-boilerplate/commit/49db218))
+* refactor: moving context from providers ([5ad1872](https://github.com/tecsinapse/react-boilerplate/commit/5ad1872))
+* chore(update): update ui-kit version ([f863775](https://github.com/tecsinapse/react-boilerplate/commit/f863775))
+
+
+
 ## <small>4.2.3 (2020-11-30)</small>
 
 * chore(update): update ui-kit version ([2f66490](https://github.com/tecsinapse/react-boilerplate/commit/2f66490))
