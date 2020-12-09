@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
-import {SnackbarWithProps} from './SnackbarWithProps';
+import React, { useState } from 'react';
+import { SnackbarWithProps } from './SnackbarWithProps';
 
-import {SnackbarProviderContext} from '../Providers';
+import { SnackbarProviderContext } from '../context/SnackbarProviderContext';
 
 export const SnackbarProvider = ({ children }) => {
   const [snack, setShowSnackbar] = useState({
