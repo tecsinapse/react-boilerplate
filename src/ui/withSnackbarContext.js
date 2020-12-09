@@ -1,5 +1,5 @@
 import React from 'react';
-import {SnackbarProviderContext} from '../Providers';
+import { SnackbarProviderContext } from '../context/SnackbarProviderContext';
 
 /**
  * @function withSnackbarContext
