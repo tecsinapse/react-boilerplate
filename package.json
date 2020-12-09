@@ -14,7 +14,7 @@
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
     "@sentry/browser": "^5.2.1",
-    "@tecsinapse/ui-kit": "~5.3.5",
+    "@tecsinapse/ui-kit": "~5.4.0",
     "apollo-cache-inmemory": "1.4.2",
     "apollo-cache-persist": "^0.1.1",
     "apollo-client": "^2.6.3",

@@ -24,10 +24,10 @@ export const SnackbarProviderContext = createContext(null);
  * @param {object} props.children - Children element to render
  * @param {object} props.catalogs - Object containing list of i18n languages available
  * @param {string} props.themeVariant - UI-KIT theme variant
- * @param {string} props.language - Language being loaded on runtime
+ * @param {string | null} props.language - Language being loaded on runtime
  * @param {object} props.themeOverrides - Object containing material-ui theme overrides
  *
- * @returns {Element} React element
+ * @returns {JSX.Element} React element
  *
  * @example
  * <Providers
@@ -48,6 +48,7 @@ export const SnackbarProviderContext = createContext(null);
  *  <App />
  * </Providers>
  */
+
 export const Providers = ({
   keycloak,
   client,
@@ -64,17 +65,20 @@ export const Providers = ({
 
   useEffect(() => {
     if (language !== null) {
-      loadCatalog(language);
+      loadCatalog(language).then();
     }
   }, [language]);
+
   const I18nBoilerplateProvider = provideI18nLanguageContext({
     locale,
     setLocale: a => loadCatalog(a),
   })(Fragment);
+
   const loadCatalog = async newLanguage => {
     const catalog = await (typeof catalogs[newLanguage] === 'function'
       ? catalogs[newLanguage]()
       : catalogs[newLanguage]);
+
     i18n.load({
       [newLanguage]: catalog,
     });
@@ -90,9 +94,7 @@ export const Providers = ({
             <I18nProvider language={locale} i18n={i18n}>
               <ThemeProvider variant={themeVariant} overrides={themeOverrides}>
                 <SnackbarProvider>
-                  <Fragment>
-                    <Router history={appHistory}>{children}</Router>
-                  </Fragment>
+                  <Router history={appHistory}>{children}</Router>
                 </SnackbarProvider>
               </ThemeProvider>
             </I18nProvider>

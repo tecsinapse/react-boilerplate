@@ -2372,10 +2372,10 @@
     eslint-plugin-react-hooks "^4.0.4"
     prettier "2.0.5"
 
-"@tecsinapse/ui-kit@~5.3.5":
-  version "5.3.5"
-  resolved "https://registry.yarnpkg.com/@tecsinapse/ui-kit/-/ui-kit-5.3.5.tgz#fd8aba7b7360f97f5646434e8150a2bffa16ce05"
-  integrity sha512-NBJiapEW4gypzEp4VGOFBKet6GsNd7UVxu5Rb1ImBn98R5O0PqlOTWUkAlMYthxzdroESaZ5OfTgNS6r7Ya/lg==
+"@tecsinapse/ui-kit@~5.4.0":
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/@tecsinapse/ui-kit/-/ui-kit-5.4.0.tgz#bc2624eab7eb3a9d5ab399a191949edebf0753fc"
+  integrity sha512-ln7gHweDEb8uFOWOUn5XEd8CkVBlyaJ6ib2xBAweNeWbV7dQcJ/hKfRiX0LpKccyMMy3ozWZ7HDmM//TvDFUJw==
   dependencies:
     "@material-ui/core" "^4.11.0"
     "@material-ui/icons" "^4.9.1"
@@ -2383,7 +2383,7 @@
     "@mdi/js" "^5.3.45"
     "@mdi/react" "^1.4.0"
     "@tecsinapse/es-utils" "^6.0.10"
-    material-ui-search-bar "1.0.0-beta.13"
+    material-ui-search-bar "1.0.0"
     react-select "^3.1.0"
     react-sizeme "^2.6.12"
     react-text-mask "^5.4.3"
@@ -7448,10 +7448,10 @@ markdown-table@^1.1.0:
   resolved "https://registry.yarnpkg.com/markdown-table/-/markdown-table-1.1.3.tgz#9fcb69bcfdb8717bfd0398c6ec2d93036ef8de60"
   integrity sha512-1RUZVgQlpJSPWYbFSpmudq5nHY1doEIv89gBtF0s4gW1GF2XorxcA/70M5vq7rLv0a6mhOUccRsqkwhwLCIQ2Q==
 
-material-ui-search-bar@1.0.0-beta.13:
-  version "1.0.0-beta.13"
-  resolved "https://registry.yarnpkg.com/material-ui-search-bar/-/material-ui-search-bar-1.0.0-beta.13.tgz#08c246431666f91c3ca52df78987b86352783ee1"
-  integrity sha512-ETZiBvza26+0dyHamUO1Nmh5oRymdzmMM1Z6QH+wraQ6e+0GQdwuJjX4T0eL+nKYDBQB4UpSbFhkBs5ECN2QwA==
+material-ui-search-bar@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/material-ui-search-bar/-/material-ui-search-bar-1.0.0.tgz#2652dd5bdc4cb043cffb7144d9c296c120702e62"
+  integrity sha512-lCNuzMLPBVukVAkcnYKLXHneozsuKZREZNOcc8z9S9scXHqxJzhC9hOS3OC3/YJ+NJEB5lZB9zg1gryBaXEu8w==
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.5.8"
