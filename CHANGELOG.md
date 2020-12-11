@@ -1,3 +1,9 @@
+## <small>4.3.2 (2020-12-11)</small>
+
+* chore: update ui-kit ([e571e09](https://github.com/tecsinapse/react-boilerplate/commit/e571e09))
+
+
+
 ## <small>4.3.1 (2020-12-09)</small>
 
 * chore: update ui-kit ([789c9f4](https://github.com/tecsinapse/react-boilerplate/commit/789c9f4))
