@@ -1,3 +1,9 @@
+## <small>4.4.1 (2020-12-15)</small>
+
+* fix: warning message ([89a5b17](https://github.com/tecsinapse/react-boilerplate/commit/89a5b17))
+
+
+
 ## 4.4.0 (2020-12-15)
 
 * fix: rollup build ([3b1f09c](https://github.com/tecsinapse/react-boilerplate/commit/3b1f09c))
