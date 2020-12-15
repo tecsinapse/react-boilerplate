@@ -70,7 +70,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "rimraf -rf build/ && babel src/ -d build/ && rollup -c",
+    "build": "rimraf -rf build/ && babel src/ -d build/ --copy-files && rollup -c",
     "build:docs:html": "documentation --github --config documentation.yml --babel=./babel.config.js build src/* -f html -o docs",
     "build:docs:md": "documentation --github --config documentation.yml --babel=./babel.config.js build src/* -f md > md-docs/README.md",
     "dev": "rollup -c -w",

@@ -47,6 +47,10 @@ export default [
       commonjs({
         namedExports: {
           'node_modules/@material-ui/core/colors/index.js': ['grey'],
+          'node_modules/@material-ui/utils/node_modules/prop-types/index.js': [
+            'elementType',
+          ],
+          'node_modules/react-is/index.js': ['ForwardRef', 'Memo'],
         },
       }),
 
