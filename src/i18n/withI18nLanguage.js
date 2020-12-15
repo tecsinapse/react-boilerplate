@@ -1,4 +1,4 @@
-import {getContext} from 'recompose';
+import { getContext } from 'recompose';
 import PropTypes from 'prop-types';
 
 /**
@@ -18,3 +18,5 @@ export const withI18nLanguage = Component =>
     changeLanguage: PropTypes.func,
     currentLocale: PropTypes.string,
   })(Component);
+
+export default withI18nLanguage;

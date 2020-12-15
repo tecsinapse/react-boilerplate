@@ -1,4 +1,4 @@
-import {setupI18n} from '@lingui/core';
+import { setupI18n } from '@lingui/core';
 
 /**
  * @function i18n

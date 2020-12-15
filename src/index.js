@@ -8,8 +8,8 @@ import axios from 'axios';
 import Keycloak from 'keycloak-js';
 import localforage from 'localforage';
 import ReactGA from 'react-ga';
-import { GlobalAfterInitObjects } from './GlobalAfterInitUtils';
-import { initHotjar } from './initHotjar';
+import { GlobalAfterInitObjects } from './utils/GlobalAfterInitUtils';
+import { initHotjar } from './utils/initHotjar';
 import { bootstrapKC } from './keycloak/Keycloak';
 import { isRunningStandalone } from './offline/offlineUtils';
 
@@ -308,10 +308,16 @@ export const init = async ({
   };
 };
 
-export { ChildProviders } from './ChildProviders';
-export { i18n } from './i18n/i18n';
-export { withI18nLanguage } from './i18n/withI18nLanguage';
-export { withKeycloak } from './keycloak/withKeycloak';
-export { Providers } from './Providers';
-export { hideGlobalLoading, showGlobalLoading } from './ui/globalLoading';
-export { withSnackbarContext } from './ui/withSnackbarContext';
+export { Providers, ChildProviders } from './providers';
+
+export { i18n, withI18nLanguage } from './i18n';
+
+export { withKeycloak } from './keycloak';
+
+export {
+  hideGlobalLoading,
+  showGlobalLoading,
+  withSnackbarContext,
+} from './ui';
+
+export default init;

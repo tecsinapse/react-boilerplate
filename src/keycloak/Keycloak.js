@@ -21,3 +21,4 @@ function bootstrapKC(kc) {
   return kc;
 }
 export { bootstrapKC };
+export default bootstrapKC;

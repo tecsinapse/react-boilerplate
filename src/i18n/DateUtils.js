@@ -23,3 +23,5 @@ export const DateFormats = {
     second: 'numeric',
   },
 };
+
+export default DateFormats;

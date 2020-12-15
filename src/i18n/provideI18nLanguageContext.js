@@ -1,7 +1,10 @@
 import { withContext } from 'recompose';
 import PropTypes from 'prop-types';
 
-export const provideI18nLanguageContext = ({ locale, setLocale }) => Component =>
+export const provideI18nLanguageContext = ({
+  locale,
+  setLocale,
+}) => Component =>
   withContext(
     {
       changeLanguage: PropTypes.func,
@@ -12,3 +15,5 @@ export const provideI18nLanguageContext = ({ locale, setLocale }) => Component =
       changeLanguage: setLocale,
     })
   )(Component);
+
+export default provideI18nLanguageContext;

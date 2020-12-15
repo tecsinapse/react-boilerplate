@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Provider } from 'react-redux';
 import { ApolloProvider } from '@apollo/react-hooks';
-import { provideKeycloakContext } from './keycloak/provideKeycloakContext';
+import { provideKeycloakContext } from '../keycloak/provideKeycloakContext';
 
 export const CoreProviders = ({ keycloak, client, store, children }) => {
   const ReduxProvider = store == null ? Fragment : Provider;
@@ -15,3 +15,5 @@ export const CoreProviders = ({ keycloak, client, store, children }) => {
     </ReduxProvider>
   );
 };
+
+export default CoreProviders;

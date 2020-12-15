@@ -1,14 +1,14 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment } from 'react';
 import { Provider } from 'react-redux';
 import { ApolloProvider } from '@apollo/react-hooks';
 import { I18nProvider } from '@lingui/react';
 import { ThemeProvider } from '@tecsinapse/ui-kit';
 import { Router } from 'react-router';
-import { provideKeycloakContext } from './keycloak/provideKeycloakContext';
-import { provideI18nLanguageContext } from './i18n/provideI18nLanguageContext';
-import { i18n } from './i18n/i18n';
-import { appHistory } from './router/history';
-import { SnackbarProvider } from './ui/SnackbarProvider';
+import { provideKeycloakContext } from '../keycloak/provideKeycloakContext';
+import { i18n } from '../i18n/i18n';
+import { appHistory } from '../router/history';
+import { SnackbarProvider } from '../ui/SnackbarProvider';
+import { useLocale } from '../hooks/useLocale';
 
 /**
  * Providers
@@ -59,30 +59,7 @@ export const Providers = ({
 }) => {
   const ReduxProvider = store == null ? Fragment : Provider;
   const KeycloakProvider = provideKeycloakContext(keycloak)(Fragment);
-  const [locale, setLocale] = useState('pt-br');
-
-  useEffect(() => {
-    if (language !== null) {
-      loadCatalog(language).then();
-    }
-  }, [language]);
-
-  const I18nBoilerplateProvider = provideI18nLanguageContext({
-    locale,
-    setLocale: a => loadCatalog(a),
-  })(Fragment);
-
-  const loadCatalog = async newLanguage => {
-    const catalog = await (typeof catalogs[newLanguage] === 'function'
-      ? catalogs[newLanguage]()
-      : catalogs[newLanguage]);
-
-    i18n.load({
-      [newLanguage]: catalog,
-    });
-    i18n.activate(newLanguage);
-    setLocale(newLanguage);
-  };
+  const { locale, I18nBoilerplateProvider } = useLocale({ language, catalogs });
 
   return (
     <ReduxProvider {...(store == null ? {} : { store })}>
@@ -102,3 +79,5 @@ export const Providers = ({
     </ReduxProvider>
   );
 };
+
+export default Providers;
