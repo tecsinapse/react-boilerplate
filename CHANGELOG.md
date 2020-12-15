@@ -1,3 +1,10 @@
+## 4.4.0 (2020-12-15)
+
+* fix: rollup build ([3b1f09c](https://github.com/tecsinapse/react-boilerplate/commit/3b1f09c))
+* chore: add typescript definitions ([53cbe0a](https://github.com/tecsinapse/react-boilerplate/commit/53cbe0a))
+
+
+
 ## <small>4.3.2 (2020-12-11)</small>
 
 * chore: update ui-kit ([e571e09](https://github.com/tecsinapse/react-boilerplate/commit/e571e09))
