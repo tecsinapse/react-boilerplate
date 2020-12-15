@@ -7,6 +7,7 @@ module.exports = function presets(api) {
     plugins.push('@babel/plugin-transform-modules-commonjs');
   }
   plugins.push('@babel/plugin-syntax-dynamic-import');
+  plugins.push('macros');
 
   return {
     presets: ['@babel/preset-react', ['@babel/preset-env', envConfig]],
