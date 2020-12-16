@@ -56,7 +56,7 @@ Returns **[Function][19]** Returns a context
 
 ## init
 
-[src/index.js:66-254][23]
+[src/index.js:73-309][23]
 
 This method initializes your react app, useful to replace defaults on index
 
@@ -73,6 +73,7 @@ This method initializes your react app, useful to replace defaults on index
     -   `props.keycloakOptions` **[object][24]** Initial KC config (default = {})
         -   `props.keycloakOptions.publicUrls` **[object][24]** Initial public URL's (default = \[])
     -   `props.sentryOptions` **[object][24]** Initial sentry tracker config
+    -   `props.idpHint` **[string][25]** idpHint for kc login
     -   `props.renderFunction` **[Function][19]** Render function
 
 ### Examples
@@ -86,9 +87,16 @@ init({
    release: process.env.REACT_APP_VERSION,
    environment: process.env.REACT_APP_HOST,
  },
- appState: null,
+ reduxOptions: {
+   appState: store,
+   middlewares: [middlewares],
+ }
  axiosOptions: {
    axiosBaseUri: `http://localhost`,
+   interceptors:{
+      request: [ [successInterceptor1, errorInterceptor1], [successInterceptor2, errorInterceptor2] ],
+      response: [ [successInterceptor3, errorInterceptor3], [successInterceptor4, errorInterceptor4] ],
+   }
  },
  apolloOptions: {
    offlineApolloCacheOptions: null,
@@ -123,7 +131,7 @@ Returns **[Function][19]** Returns a context
 
 ## Providers
 
-[src/Providers.js:51-107][27]
+[src/providers/Providers.js:50-81][27]
 
 This element provides all resources to children components
 
@@ -136,7 +144,7 @@ This element provides all resources to children components
     -   `props.children` **[object][24]** Children element to render
     -   `props.catalogs` **[object][24]** Object containing list of i18n languages available (optional, default `{}`)
     -   `props.themeVariant` **[string][25]** UI-KIT theme variant (optional, default `'orange'`)
-    -   `props.language` **[string][25]** Language being loaded on runtime (optional, default `null`)
+    -   `props.language` **([string][25] | null)** Language being loaded on runtime (optional, default `null`)
     -   `props.themeOverrides` **[object][24]** Object containing material-ui theme overrides (optional, default `{}`)
 
 ### Examples
@@ -161,7 +169,7 @@ This element provides all resources to children components
 </Providers>
 ```
 
-Returns **[Element][22]** React element
+Returns **JSX.Element** React element
 
 ## showGlobalLoading
 
@@ -221,28 +229,28 @@ Returns **[Function][19]** Returns a context
 
 [17]: #parameters-4
 
-[18]: https://github.com/tecsinapse/react-boilerplate/blob/06094f10b43073599bda032100f902523d5f62d4/src/i18n/i18n.js#L17-L17 "Source code on GitHub"
+[18]: https://github.com/tecsinapse/react-boilerplate/blob/d16ad14eef2a6ffa17a81001c50aad39189d0ac9/src/i18n/i18n.js#L17-L17 "Source code on GitHub"
 
 [19]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function
 
 [20]: https://www.npmjs.com/package/i18n
 
-[21]: https://github.com/tecsinapse/react-boilerplate/blob/06094f10b43073599bda032100f902523d5f62d4/src/i18n/withI18nLanguage.js#L16-L20 "Source code on GitHub"
+[21]: https://github.com/tecsinapse/react-boilerplate/blob/d16ad14eef2a6ffa17a81001c50aad39189d0ac9/src/i18n/withI18nLanguage.js#L16-L20 "Source code on GitHub"
 
 [22]: https://developer.mozilla.org/docs/Web/API/Element
 
-[23]: https://github.com/tecsinapse/react-boilerplate/blob/06094f10b43073599bda032100f902523d5f62d4/src/index.js#L66-L254 "Source code on GitHub"
+[23]: https://github.com/tecsinapse/react-boilerplate/blob/d16ad14eef2a6ffa17a81001c50aad39189d0ac9/src/index.js#L73-L309 "Source code on GitHub"
 
 [24]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
 
 [25]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
 
-[26]: https://github.com/tecsinapse/react-boilerplate/blob/06094f10b43073599bda032100f902523d5f62d4/src/keycloak/withKeycloak.js#L14-L18 "Source code on GitHub"
+[26]: https://github.com/tecsinapse/react-boilerplate/blob/d16ad14eef2a6ffa17a81001c50aad39189d0ac9/src/keycloak/withKeycloak.js#L14-L18 "Source code on GitHub"
 
-[27]: https://github.com/tecsinapse/react-boilerplate/blob/06094f10b43073599bda032100f902523d5f62d4/src/Providers.js#L51-L107 "Source code on GitHub"
+[27]: https://github.com/tecsinapse/react-boilerplate/blob/d16ad14eef2a6ffa17a81001c50aad39189d0ac9/src/providers/Providers.js#L50-L81 "Source code on GitHub"
 
-[28]: https://github.com/tecsinapse/react-boilerplate/blob/06094f10b43073599bda032100f902523d5f62d4/src/ui/globalLoading.js#L9-L15 "Source code on GitHub"
+[28]: https://github.com/tecsinapse/react-boilerplate/blob/d16ad14eef2a6ffa17a81001c50aad39189d0ac9/src/ui/globalLoading.js#L9-L15 "Source code on GitHub"
 
-[29]: https://github.com/tecsinapse/react-boilerplate/blob/06094f10b43073599bda032100f902523d5f62d4/src/ui/globalLoading.js#L20-L22 "Source code on GitHub"
+[29]: https://github.com/tecsinapse/react-boilerplate/blob/d16ad14eef2a6ffa17a81001c50aad39189d0ac9/src/ui/globalLoading.js#L20-L22 "Source code on GitHub"
 
-[30]: https://github.com/tecsinapse/react-boilerplate/blob/06094f10b43073599bda032100f902523d5f62d4/src/ui/withSnackbarContext.js#L14-L22 "Source code on GitHub"
+[30]: https://github.com/tecsinapse/react-boilerplate/blob/d16ad14eef2a6ffa17a81001c50aad39189d0ac9/src/ui/withSnackbarContext.js#L14-L22 "Source code on GitHub"
