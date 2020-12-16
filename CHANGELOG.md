@@ -1,3 +1,11 @@
+## <small>4.4.2 (2020-12-16)</small>
+
+* chore: remove rollup config ([fcbc995](https://github.com/tecsinapse/react-boilerplate/commit/fcbc995))
+* chore: removing rollup ([d16ad14](https://github.com/tecsinapse/react-boilerplate/commit/d16ad14))
+* docs: updating md files ([d2d8929](https://github.com/tecsinapse/react-boilerplate/commit/d2d8929))
+
+
+
 ## <small>4.4.1 (2020-12-15)</small>
 
 * fix: warning message ([89a5b17](https://github.com/tecsinapse/react-boilerplate/commit/89a5b17))
