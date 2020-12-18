@@ -1,3 +1,9 @@
+## <small>4.4.3 (2020-12-18)</small>
+
+* update: ui-kit version ([ea79ab1](https://github.com/tecsinapse/react-boilerplate/commit/ea79ab1))
+
+
+
 ## <small>4.4.2 (2020-12-16)</small>
 
 * chore: remove rollup config ([fcbc995](https://github.com/tecsinapse/react-boilerplate/commit/fcbc995))
