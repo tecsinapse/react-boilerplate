@@ -1,3 +1,9 @@
+## <small>4.5.1 (2021-03-23)</small>
+
+* update: ui-kit version ([597bede](https://github.com/tecsinapse/react-boilerplate/commit/597bede))
+
+
+
 ## 4.5.0 (2021-03-03)
 
 * update: ui-kit version ([c94277c](https://github.com/tecsinapse/react-boilerplate/commit/c94277c))
