@@ -3,8 +3,6 @@ import Adapter from 'enzyme-adapter-react-16';
 
 configure({ adapter: new Adapter() });
 
-
-
 // Pula as mensagens de aviso do 'createElement'
 // Mas retorna um erro para qualquer outra
 console.error = message => {

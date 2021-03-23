@@ -24,6 +24,7 @@ export class OpsErrorBoundary extends Component {
   render() {
     const { hasError } = this.state;
     const { children } = this.props;
+
     if (hasError) {
       return (
         <EmptyState

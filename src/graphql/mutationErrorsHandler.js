@@ -11,9 +11,11 @@ export const mutationsErrorsHandler = ({
   const message =
     graphQLErrors.map(e => e.message).join('\n') || 'Erro de Conexão';
   const title = 'Erro!';
+
   if (hideLoadingFunction) {
     hideLoadingFunction();
   }
+
   if (setSubmitting) {
     setSubmitting(false);
   }

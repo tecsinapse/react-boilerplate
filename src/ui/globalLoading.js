@@ -13,6 +13,7 @@ export const showGlobalLoading = () => {
     document.getElementById('fullscreenloading')
   );
 };
+
 /**
  * @function hideGlobalLoading
  * @description This method hides the loading circle at screen
