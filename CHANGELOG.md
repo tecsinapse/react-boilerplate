@@ -1,3 +1,9 @@
+## <small>4.5.3 (2021-04-15)</small>
+
+* update: update ui-kit ([5db2502](https://github.com/tecsinapse/react-boilerplate/commit/5db2502))
+
+
+
 ## <small>4.5.2 (2021-04-15)</small>
 
 * update: update axios ([35ecd3c](https://github.com/tecsinapse/react-boilerplate/commit/35ecd3c))
