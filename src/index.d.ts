@@ -55,34 +55,43 @@
  * });
  */
 
-export type initReturnProps = {
+export type InitReturnProps = {
   keycloak: object;
   client: object;
   store: object;
+  isPublicRoute: boolean;
 };
 
-export interface initProps {
+export type KeycloakConfig = {
+  url: string;
+  realm: string;
+  clientId: string;
+};
+
+export interface InitProps {
   hotjarId?: string;
-  analyticsCode?: string | null;
-  reduxOptions?: { appState?: object | null; middlewares?: unknown };
+  analyticsCode?: string;
+  reduxOptions?: { appState?: object; middlewares?: unknown };
   apolloOptions?: {
-    offlineApolloCacheOptions?: object | null;
+    offlineApolloCacheOptions?: object;
     uri: string;
     connectToDevTools?: boolean;
   };
-  axiosOptions?: { axiosBaseUri?: string; interceptors?: object };
+  axiosOptions?: { axiosBaseUri: string; interceptors?: object };
   keycloakOptions: {
-    keycloakConfig: object;
-    logoutFunction: Function;
+    keycloakConfig: KeycloakConfig;
+    logoutFunction?: (
+      props: Omit<InitReturnProps, 'isPublicRoute' | 'store'>
+    ) => void;
     publicUrls: string[];
     ignoreStandaloneLoginFlow?: boolean;
   };
   sentryOptions?: object;
   idpHint?: string;
-  renderFunction: (props: initReturnProps) => void;
+  renderFunction: (props: InitReturnProps) => void;
 }
 
-declare function init(props: initProps): initReturnProps;
+declare function init(props: InitProps): void;
 
 export { Providers, ChildProviders } from './providers';
 

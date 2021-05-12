@@ -72,22 +72,18 @@ import { isRunningStandalone } from './offline/offlineUtils';
 
 export const init = async ({
   hotjarId,
-  analyticsCode = null,
-  reduxOptions: { appState = null, middlewares = [] } = {},
-  apolloOptions: {
-    offlineApolloCacheOptions = null,
-    uri,
-    connectToDevTools,
-  } = {},
+  analyticsCode,
+  reduxOptions: { appState, middlewares = [] } = {},
+  apolloOptions: { offlineApolloCacheOptions, uri = "", connectToDevTools = true } = {},
   axiosOptions: { axiosBaseUri, interceptors } = {},
   keycloakOptions: {
     keycloakConfig,
-    logoutFunction,
+    logoutFunction = () => {},
     publicUrls = [],
     ignoreStandaloneLoginFlow = false,
   } = {},
   sentryOptions,
-  idpHint,
+  idpHint = "",
   renderFunction,
 }) => {
   const keycloak = Keycloak(keycloakConfig);
