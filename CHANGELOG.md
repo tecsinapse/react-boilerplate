@@ -1,3 +1,12 @@
+## <small>4.6.1 (2021-05-12)</small>
+
+* fix: update ts props ([6438d13](https://github.com/tecsinapse/react-boilerplate/commit/6438d13))
+* Bump highlight.js from 9.17.1 to 9.18.5 ([9465ae4](https://github.com/tecsinapse/react-boilerplate/commit/9465ae4))
+* Bump ini from 1.3.5 to 1.3.8 ([390eb04](https://github.com/tecsinapse/react-boilerplate/commit/390eb04))
+* Bump y18n from 3.2.1 to 3.2.2 ([8df66a9](https://github.com/tecsinapse/react-boilerplate/commit/8df66a9))
+
+
+
 ## 4.6.0 (2021-04-19)
 
 * update: update ui-kit ([967fe1c](https://github.com/tecsinapse/react-boilerplate/commit/967fe1c))
