@@ -40,6 +40,7 @@
  *    offlineApolloCacheOptions: null,
  *    uri: `http://localhost/api`,
  *    connectToDevTools: true,
+ *    extraHeaders: {},
  *  },
  *  keycloakOptions: {
  *    keycloakConfig: {},
@@ -76,6 +77,7 @@ export interface InitProps {
     offlineApolloCacheOptions?: object;
     uri: string;
     connectToDevTools?: boolean;
+    extraHeaders?: object;
   };
   axiosOptions?: { axiosBaseUri: string; interceptors?: object };
   keycloakOptions: {

@@ -74,7 +74,12 @@ export const init = async ({
   hotjarId,
   analyticsCode,
   reduxOptions: { appState, middlewares = [] } = {},
-  apolloOptions: { offlineApolloCacheOptions, uri = "", connectToDevTools = true } = {},
+  apolloOptions: {
+    offlineApolloCacheOptions,
+    uri = '',
+    connectToDevTools = true,
+    extraHeaders = {},
+  } = {},
   axiosOptions: { axiosBaseUri, interceptors } = {},
   keycloakOptions: {
     keycloakConfig,
@@ -83,7 +88,7 @@ export const init = async ({
     ignoreStandaloneLoginFlow = false,
   } = {},
   sentryOptions,
-  idpHint = "",
+  idpHint = '',
   renderFunction,
 }) => {
   const keycloak = Keycloak(keycloakConfig);
@@ -166,6 +171,7 @@ export const init = async ({
             headers: {
               ...headers,
               authorization: `Bearer ${keycloak.token}`,
+              ...extraHeaders,
             },
           }))
           .catch(() => {
