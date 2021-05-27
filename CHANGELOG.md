@@ -1,3 +1,9 @@
+## <small>4.6.2 (2021-05-27)</small>
+
+* chore: add apollo extra headers ([ead24d9](https://github.com/tecsinapse/react-boilerplate/commit/ead24d9))
+
+
+
 ## <small>4.6.1 (2021-05-12)</small>
 
 * fix: update ts props ([6438d13](https://github.com/tecsinapse/react-boilerplate/commit/6438d13))
