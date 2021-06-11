@@ -4,11 +4,15 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import { I18nProvider } from '@lingui/react';
 import { ThemeProvider } from '@tecsinapse/ui-kit';
 import { Router } from 'react-router';
-import { provideKeycloakContext } from '../keycloak/provideKeycloakContext';
+import {
+  logout,
+  provideKeycloakContext,
+} from '../keycloak/provideKeycloakContext';
 import { i18n } from '../i18n/i18n';
 import { appHistory } from '../router/history';
 import { SnackbarProvider } from '../ui/SnackbarProvider';
 import { useLocale } from '../hooks/useLocale';
+import { KeycloakContext } from '../keycloak';
 
 /**
  * Providers
@@ -64,17 +68,27 @@ export const Providers = ({
   return (
     <ReduxProvider {...(store == null ? {} : { store })}>
       <ApolloProvider client={client}>
-        <KeycloakProvider>
-          <I18nBoilerplateProvider>
-            <I18nProvider language={locale} i18n={i18n}>
-              <ThemeProvider variant={themeVariant} overrides={themeOverrides}>
-                <SnackbarProvider>
-                  <Router history={appHistory}>{children}</Router>
-                </SnackbarProvider>
-              </ThemeProvider>
-            </I18nProvider>
-          </I18nBoilerplateProvider>
-        </KeycloakProvider>
+        <KeycloakContext.Provider
+          value={{
+            keycloakCtx: keycloak,
+            logoutCtx: () => logout(keycloak, client),
+          }}
+        >
+          <KeycloakProvider>
+            <I18nBoilerplateProvider>
+              <I18nProvider language={locale} i18n={i18n}>
+                <ThemeProvider
+                  variant={themeVariant}
+                  overrides={themeOverrides}
+                >
+                  <SnackbarProvider>
+                    <Router history={appHistory}>{children}</Router>
+                  </SnackbarProvider>
+                </ThemeProvider>
+              </I18nProvider>
+            </I18nBoilerplateProvider>
+          </KeycloakProvider>
+        </KeycloakContext.Provider>
       </ApolloProvider>
     </ReduxProvider>
   );

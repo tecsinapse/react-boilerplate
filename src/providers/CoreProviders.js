@@ -1,7 +1,11 @@
 import React, { Fragment } from 'react';
 import { Provider } from 'react-redux';
 import { ApolloProvider } from '@apollo/react-hooks';
-import { provideKeycloakContext } from '../keycloak/provideKeycloakContext';
+import {
+  logout,
+  provideKeycloakContext,
+} from '../keycloak/provideKeycloakContext';
+import { KeycloakContext } from '../keycloak/KeycloakContext';
 
 export const CoreProviders = ({ keycloak, client, store, children }) => {
   const ReduxProvider = store == null ? Fragment : Provider;
@@ -10,7 +14,14 @@ export const CoreProviders = ({ keycloak, client, store, children }) => {
   return (
     <ReduxProvider {...(store == null ? {} : { store })}>
       <ApolloProvider client={client}>
-        <KeycloakProvider>{children}</KeycloakProvider>
+        <KeycloakContext.Provider
+          value={{
+            keycloakCtx: keycloak,
+            logoutCtx: () => logout(keycloak, client),
+          }}
+        >
+          <KeycloakProvider>{children}</KeycloakProvider>
+        </KeycloakContext.Provider>
       </ApolloProvider>
     </ReduxProvider>
   );

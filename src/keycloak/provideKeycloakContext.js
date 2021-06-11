@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import localforage from 'localforage';
 import { withApollo } from '@apollo/react-hoc';
 
-const logout = (keycloak, client) => {
+export const logout = (keycloak, client) => {
   client
     .clearStore()
     .then(() => localforage.clear())

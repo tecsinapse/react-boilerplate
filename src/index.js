@@ -314,7 +314,7 @@ export { Providers, ChildProviders } from './providers';
 
 export { i18n, withI18nLanguage } from './i18n';
 
-export { withKeycloak } from './keycloak';
+export { withKeycloak, useKeycloak, KeycloakContext } from './keycloak';
 
 export {
   hideGlobalLoading,
