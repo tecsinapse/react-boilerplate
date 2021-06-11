@@ -1,0 +1,972 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset='utf-8'>
+  <title>@tecsinapse/react-boilerplate 4.7.0 | Documentation</title>
+  <meta name='description' content='TecSinapse boilerplate for react projects'>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <link href='assets/bass.css' rel='stylesheet'>
+  <link href='assets/style.css' rel='stylesheet'>
+  <link href='assets/github.css' rel='stylesheet'>
+  <link href='assets/split.css' rel='stylesheet'>
+</head>
+<body class='documentation m0'>
+    <div class='flex'>
+      <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
+        <div class='py1 px2'>
+          <h3 class='mb0 no-anchor'>@tecsinapse/react-boilerplate</h3>
+          <div class='mb1'><code>4.7.0</code></div>
+          <input
+            placeholder='Filter'
+            id='filter-input'
+            class='col12 block input'
+            type='text' />
+          <div id='toc'>
+            <ul class='list-reset h5 py1-ul'>
+              
+                
+                <li><a
+                  href='#boilerplate'
+                  class="h5 bold black caps">
+                  Boilerplate
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#i18n'
+                  class="">
+                  i18n
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#withi18nlanguage'
+                  class="">
+                  withI18nLanguage
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#init'
+                  class="">
+                  init
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#withkeycloak'
+                  class="">
+                  withKeycloak
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#providers'
+                  class="">
+                  Providers
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#showgloballoading'
+                  class="">
+                  showGlobalLoading
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#hidegloballoading'
+                  class="">
+                  hideGlobalLoading
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#withsnackbarcontext'
+                  class="">
+                  withSnackbarContext
+                  
+                </a>
+                
+                </li>
+              
+            </ul>
+          </div>
+          <div class='mt1 h6 quiet'>
+            <a href='https://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+          </div>
+        </div>
+      </div>
+      <div id='split-right' class='relative overflow-auto height-viewport-100'>
+        
+          
+            <div class='keyline-top-not py2'><section class='py2 clearfix'>
+
+  <h2 id='boilerplate' class='mt0'>
+    Boilerplate
+  </h2>
+
+  
+    <p>Here are some helper components and functions for starting react projects</p>
+
+  
+</section></div>
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='i18n'>
+      i18n
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tecsinapse/react-boilerplate/blob/c55908c6749f0b80ea7861096e9431db201e4032/src/i18n/i18n.js#L17-L17'>
+      <span>src/i18n/i18n.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Provides support for internationalization</p>
+
+    <div class='pre p1 fill-light mt0'>i18n(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a></code>:
+        Returns i18n ready for use (check 
+<a href="https://www.npmjs.com/package/i18n">https://www.npmjs.com/package/i18n</a>
+)
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { i18n } <span class="hljs-keyword">from</span> <span class="hljs-string">'@tecsinapse/react-boilerplate/build/i18n/i18n'</span>;
+<span class="hljs-keyword">import</span> { Button } <span class="hljs-keyword">from</span> <span class="hljs-string">'@tecsinapse/ui-kit'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> ConfirmButton = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">label</span>=<span class="hljs-string">{i18n._(t</span>`<span class="hljs-attr">Confirmar</span>`)} /&gt;</span></span>;</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='withi18nlanguage'>
+      withI18nLanguage
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tecsinapse/react-boilerplate/blob/c55908c6749f0b80ea7861096e9431db201e4032/src/i18n/withI18nLanguage.js#L16-L20'>
+      <span>src/i18n/withI18nLanguage.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Composes support for multiple i18n languages</p>
+
+    <div class='pre p1 fill-light mt0'>withI18nLanguage(Component: <a href="https://developer.mozilla.org/docs/Web/API/Element">Element</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>Component</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/API/Element">Element</a>)</code>
+	    Receives a react component
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a></code>:
+        Returns a context
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='init'>
+      init
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tecsinapse/react-boilerplate/blob/c55908c6749f0b80ea7861096e9431db201e4032/src/index.js#L73-L311'>
+      <span>src/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>This method initializes your react app, useful to replace defaults on index</p>
+
+    <div class='pre p1 fill-light mt0'>init(props: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>props</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</code>
+	    Object containing all parameters to initialize the application for web
+
+          </div>
+          
+          <table class='mt1 mb2 fixed-table h5 col-12'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>props.hotjarId</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+  </td>
+  <td class='break-word'><span>Hotjar code for your app
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>props.analyticsCode</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+  </td>
+  <td class='break-word'><span>Google analytics code for tracking (default = null)
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>props.reduxOptions</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></code>
+  </td>
+  <td class='break-word'><span>Initial redux options (default = {})
+</span></td>
+</tr>
+
+  
+    <tr>
+  <td class='break-word'><span class='code bold'>props.reduxOptions.appState</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></code>
+  </td>
+  <td class='break-word'><span>Initial app state (default = null)
+</span></td>
+</tr>
+
+
+  
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>props.axiosOptions</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></code>
+  </td>
+  <td class='break-word'><span>Initial axios config (default = {})
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>props.apolloOptions</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></code>
+  </td>
+  <td class='break-word'><span>Initial apollo config (default = {})
+</span></td>
+</tr>
+
+  
+    <tr>
+  <td class='break-word'><span class='code bold'>props.apolloOptions.offlineApolloCacheOptions</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></code>
+  </td>
+  <td class='break-word'><span>Initial apollo cache config (default = null)
+</span></td>
+</tr>
+
+
+  
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>props.keycloakOptions</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></code>
+  </td>
+  <td class='break-word'><span>Initial KC config (default = {})
+</span></td>
+</tr>
+
+  
+    <tr>
+  <td class='break-word'><span class='code bold'>props.keycloakOptions.publicUrls</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></code>
+  </td>
+  <td class='break-word'><span>Initial public URL's (default = [])
+</span></td>
+</tr>
+
+
+  
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>props.sentryOptions</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></code>
+  </td>
+  <td class='break-word'><span>Initial sentry tracker config
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>props.idpHint</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+  </td>
+  <td class='break-word'><span>idpHint for kc login
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>props.renderFunction</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a></code>
+  </td>
+  <td class='break-word'><span>Render function
+</span></td>
+</tr>
+
+
+              
+            </tbody>
+          </table>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>init({
+ <span class="hljs-attr">analyticsCode</span>: <span class="hljs-string">"AAAA"</span>,
+ <span class="hljs-attr">hotjarId</span>: <span class="hljs-string">"BBBB"</span>,
+ <span class="hljs-attr">sentryOptions</span>: {
+   <span class="hljs-attr">dsn</span>: <span class="hljs-string">'https://sentry.io/'</span>,
+   <span class="hljs-attr">release</span>: process.env.REACT_APP_VERSION,
+   <span class="hljs-attr">environment</span>: process.env.REACT_APP_HOST,
+ },
+ <span class="hljs-attr">reduxOptions</span>: {
+   <span class="hljs-attr">appState</span>: store,
+   <span class="hljs-attr">middlewares</span>: [middlewares],
+ }
+ <span class="hljs-attr">axiosOptions</span>: {
+   <span class="hljs-attr">axiosBaseUri</span>: <span class="hljs-string">`http://localhost`</span>,
+   <span class="hljs-attr">interceptors</span>:{
+      <span class="hljs-attr">request</span>: [ [successInterceptor1, errorInterceptor1], [successInterceptor2, errorInterceptor2] ],
+      <span class="hljs-attr">response</span>: [ [successInterceptor3, errorInterceptor3], [successInterceptor4, errorInterceptor4] ],
+   }
+ },
+ <span class="hljs-attr">apolloOptions</span>: {
+   <span class="hljs-attr">offlineApolloCacheOptions</span>: <span class="hljs-literal">null</span>,
+   <span class="hljs-attr">uri</span>: <span class="hljs-string">`http://localhost/api`</span>,
+   <span class="hljs-attr">connectToDevTools</span>: <span class="hljs-literal">true</span>,
+ },
+ <span class="hljs-attr">keycloakOptions</span>: {
+   <span class="hljs-attr">keycloakConfig</span>: {},
+   <span class="hljs-attr">logoutFunction</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {},
+   <span class="hljs-attr">publicUrls</span>: [<span class="hljs-string">'/login'</span>],
+ },
+ <span class="hljs-attr">renderFunction</span>: <span class="hljs-function"><span class="hljs-params">props</span> =&gt;</span> {
+   ReactDOM.render(
+     <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Providers</span> /&gt;</span></span>,
+     <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'root'</span>)
+   );
+ }
+});</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='withkeycloak'>
+      withKeycloak
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tecsinapse/react-boilerplate/blob/c55908c6749f0b80ea7861096e9431db201e4032/src/keycloak/withKeycloak.js#L14-L18'>
+      <span>src/keycloak/withKeycloak.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Composes keycloack auth manager</p>
+
+    <div class='pre p1 fill-light mt0'>withKeycloak(Component: <a href="https://developer.mozilla.org/docs/Web/API/Element">Element</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>Component</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/API/Element">Element</a>)</code>
+	    Receives a react component
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a></code>:
+        Returns a context
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='providers'>
+      Providers
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tecsinapse/react-boilerplate/blob/c55908c6749f0b80ea7861096e9431db201e4032/src/providers/Providers.js#L54-L95'>
+      <span>src/providers/Providers.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>This element provides all resources to children components</p>
+
+    <div class='pre p1 fill-light mt0'>Providers</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>props</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</code>
+	    Object containing all parameters to JSX component
+
+          </div>
+          
+          <table class='mt1 mb2 fixed-table h5 col-12'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>props.keycloak</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></code>
+  </td>
+  <td class='break-word'><span>Keycloack config
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>props.client</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></code>
+  </td>
+  <td class='break-word'><span>Apollo client config
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>props.store</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></code>
+  </td>
+  <td class='break-word'><span>Redux store provider
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>props.children</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></code>
+  </td>
+  <td class='break-word'><span>Children element to render
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>props.catalogs</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></code>
+  
+    (default <code>{}</code>)
+  </td>
+  <td class='break-word'><span>Object containing list of i18n languages available
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>props.themeVariant</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+  
+    (default <code>&#39;orange&#39;</code>)
+  </td>
+  <td class='break-word'><span>UI-KIT theme variant
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>props.language</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | null)</code>
+  
+    (default <code>null</code>)
+  </td>
+  <td class='break-word'><span>Language being loaded on runtime
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>props.themeOverrides</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></code>
+  
+    (default <code>{}</code>)
+  </td>
+  <td class='break-word'><span>Object containing material-ui theme overrides
+</span></td>
+</tr>
+
+
+              
+            </tbody>
+          </table>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>JSX.Element</code>:
+        React element
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>&lt;Providers
+ themeVariant="orange"
+ catalogs={{
+   'pt-br': () =&gt; import(`./locales/pt-br/messages`),
+   en: () =&gt; import(`./locales/en/messages`)
+ }}
+ themeOverrides={{
+   MuiBadge: {
+     badge: {
+       backgroundColor: #FFF,
+     }
+   }
+ }}
+ {...props}
+&gt;
+ &lt;App /&gt;
+&lt;/Providers&gt;</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='showgloballoading'>
+      showGlobalLoading
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tecsinapse/react-boilerplate/blob/c55908c6749f0b80ea7861096e9431db201e4032/src/ui/globalLoading.js#L9-L15'>
+      <span>src/ui/globalLoading.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>This method render a loading circle at screen</p>
+
+    <div class='pre p1 fill-light mt0'>showGlobalLoading()</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='hidegloballoading'>
+      hideGlobalLoading
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tecsinapse/react-boilerplate/blob/c55908c6749f0b80ea7861096e9431db201e4032/src/ui/globalLoading.js#L21-L23'>
+      <span>src/ui/globalLoading.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>This method hides the loading circle at screen</p>
+
+    <div class='pre p1 fill-light mt0'>hideGlobalLoading()</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='withsnackbarcontext'>
+      withSnackbarContext
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/tecsinapse/react-boilerplate/blob/c55908c6749f0b80ea7861096e9431db201e4032/src/ui/withSnackbarContext.js#L14-L22'>
+      <span>src/ui/withSnackbarContext.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Composes wrapper to use snackbar alerts</p>
+
+    <div class='pre p1 fill-light mt0'>withSnackbarContext(Component: <a href="https://developer.mozilla.org/docs/Web/API/Element">Element</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>Component</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/API/Element">Element</a>)</code>
+	    Receives a react component
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a></code>:
+        Returns a context
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+      </div>
+    </div>
+  <script src='assets/anchor.js'></script>
+  <script src='assets/split.js'></script>
+  <script src='assets/site.js'></script>
+</body>
+</html>
