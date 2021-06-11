@@ -1,3 +1,9 @@
+## <small>4.6.3 (2021-06-09)</small>
+
+* fix: update ui-kit ([78c822e](https://github.com/tecsinapse/react-boilerplate/commit/78c822e))
+
+
+
 ## <small>4.6.2 (2021-05-27)</small>
 
 * chore: add apollo extra headers ([ead24d9](https://github.com/tecsinapse/react-boilerplate/commit/ead24d9))
