@@ -1,3 +1,9 @@
+## <small>4.7.1 (2021-07-09)</small>
+
+* chore: update ui-kit ([6c0801f](https://github.com/tecsinapse/react-boilerplate/commit/6c0801f))
+
+
+
 ## 4.7.0 (2021-06-11)
 
 * chore: add keycloak hook ([dbf193d](https://github.com/tecsinapse/react-boilerplate/commit/dbf193d))
