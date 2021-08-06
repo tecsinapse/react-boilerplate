@@ -1,3 +1,9 @@
+## <small>4.7.2 (2021-08-06)</small>
+
+* fix: add typings to snackbar context ([096f573](https://github.com/tecsinapse/react-boilerplate/commit/096f573))
+
+
+
 ## <small>4.7.1 (2021-07-09)</small>
 
 * chore: update ui-kit ([6c0801f](https://github.com/tecsinapse/react-boilerplate/commit/6c0801f))
