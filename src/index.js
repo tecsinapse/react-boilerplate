@@ -10,7 +10,7 @@ import localforage from 'localforage';
 import ReactGA from 'react-ga';
 import { GlobalAfterInitObjects } from './utils/GlobalAfterInitUtils';
 import { initHotjar } from './utils/initHotjar';
-import { bootstrapKC } from './keycloak/Keycloak';
+import { bootstrapKC } from './keycloak';
 import { isRunningStandalone } from './offline/offlineUtils';
 
 /**
@@ -315,6 +315,8 @@ export { Providers, ChildProviders } from './providers';
 export { i18n, withI18nLanguage } from './i18n';
 
 export { withKeycloak, useKeycloak, KeycloakContext } from './keycloak';
+
+export { SnackbarProviderContext } from './context';
 
 export {
   hideGlobalLoading,

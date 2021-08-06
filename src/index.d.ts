@@ -101,6 +101,8 @@ export { i18n, withI18nLanguage } from './i18n';
 
 export { withKeycloak, useKeycloak, KeycloakContext } from './keycloak';
 
+export { SnackbarProviderContext } from './context';
+
 export {
   hideGlobalLoading,
   showGlobalLoading,
