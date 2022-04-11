@@ -146,9 +146,12 @@ export const init = async ({
       },
     };
   }
+
+  const isPublicUrl = publicUrls.some(publicUrl => window.location.pathname.startsWith(publicUrl));
+
   const refreshKeycloakToken = (minValidity = 5) =>
     new Promise((resolve, reject) => {
-      if (navigator.onLine || !isRunningStandalone(ignoreStandaloneLoginFlow)) {
+      if ((navigator.onLine || !isRunningStandalone(ignoreStandaloneLoginFlow)) && !isPublicUrl) {
         keycloak
           .updateToken(minValidity)
           .then(() => {
@@ -163,9 +166,7 @@ export const init = async ({
     });
 
   const authMiddleware = setContext((operation, { headers }) =>
-    !publicUrls.some(publicUrl =>
-      window.location.pathname.startsWith(publicUrl)
-    )
+    !isPublicUrl
       ? refreshKeycloakToken()
           .then(() => ({
             headers: {
@@ -189,7 +190,9 @@ export const init = async ({
       .then(() => {
         const newConfig = config;
 
-        newConfig.headers.Authorization = `Bearer ${keycloak.token}`;
+        if (!isPublicUrl) {
+          newConfig.headers.Authorization = `Bearer ${keycloak.token}`;
+        }
 
         return Promise.resolve(newConfig);
       })
@@ -260,11 +263,7 @@ export const init = async ({
             ? { scope: 'offline_access', idpHint }
             : undefined;
 
-          if (
-            !publicUrls.some(publicUrl =>
-              window.location.pathname.startsWith(publicUrl)
-            )
-          ) {
+          if (!isPublicUrl) {
             keycloak.login(options);
           } else {
             renderFunction({
