@@ -1,3 +1,9 @@
+## <small>4.7.3 (2022-04-11)</small>
+
+* [#171756] - Autostar - Link enviado ao destinatário não funciona ([5c80da8](https://github.com/tecsinapse/react-boilerplate/commit/5c80da8)), closes [#171756](https://github.com/tecsinapse/react-boilerplate/issues/171756)
+
+
+
 ## <small>4.7.2 (2021-08-06)</small>
 
 * fix: add typings to snackbar context ([096f573](https://github.com/tecsinapse/react-boilerplate/commit/096f573))
