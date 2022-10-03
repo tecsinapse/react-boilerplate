@@ -7,7 +7,7 @@ import { HttpLink } from 'apollo-link-http';
 import axios from 'axios';
 import Keycloak from 'keycloak-js';
 import localforage from 'localforage';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import { GlobalAfterInitObjects } from './utils/GlobalAfterInitUtils';
 import { initHotjar } from './utils/initHotjar';
 import { bootstrapKC } from './keycloak';
