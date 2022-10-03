@@ -1,7 +1,7 @@
 import { createBrowserHistory } from 'history';
-import { pageview } from 'react-ga';
+import ReactGA from 'react-ga4';
 
 export const appHistory = createBrowserHistory();
 appHistory.listen((location, action) => {
-  pageview(location.pathname);
+  ReactGA.send({ hitType: "pageview", page: location.pathname });
 });
