@@ -1,3 +1,9 @@
+## <small>4.7.4 (2022-10-03)</small>
+
+* chore: update ga to v4 ([56d2701](https://github.com/tecsinapse/react-boilerplate/commit/56d2701))
+
+
+
 ## <small>4.7.3 (2022-04-11)</small>
 
 * [#171756] - Autostar - Link enviado ao destinatário não funciona ([5c80da8](https://github.com/tecsinapse/react-boilerplate/commit/5c80da8)), closes [#171756](https://github.com/tecsinapse/react-boilerplate/issues/171756)
