@@ -1,3 +1,9 @@
+## <small>4.1.5 (2022-10-03)</small>
+
+* chore: upgrade ga to v4 on 4.1.4 ([7c9941a](https://github.com/tecsinapse/react-boilerplate/commit/7c9941a))
+
+
+
 ## <small>4.1.4 (2020-07-08)</small>
 
 * Adicionado parametro para ignorar fluxo de login para apps standalone ([6c37a7b](https://github.com/tecsinapse/react-boilerplate/commit/6c37a7b))
