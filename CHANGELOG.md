@@ -1,3 +1,9 @@
+## <small>4.7.5 (2023-01-24)</small>
+
+* [#184846] - Avaliar uso do Identity Provider no realm do Wingo Fluxos ([b940444](https://github.com/tecsinapse/react-boilerplate/commit/b940444)), closes [#184846](https://github.com/tecsinapse/react-boilerplate/issues/184846)
+
+
+
 ## <small>4.7.4 (2022-10-03)</small>
 
 * chore: update ga to v4 ([56d2701](https://github.com/tecsinapse/react-boilerplate/commit/56d2701))
