@@ -88,7 +88,7 @@ export const init = async ({
     ignoreStandaloneLoginFlow = false,
   } = {},
   sentryOptions,
-  idpHint = '',
+  idpHint,
   renderFunction,
 }) => {
   const keycloak = Keycloak(keycloakConfig);
@@ -176,7 +176,7 @@ export const init = async ({
             },
           }))
           .catch(() => {
-            keycloak.login({ prompt: 'none' });
+            keycloak.login({ idpHint, prompt: 'none' });
           })
       : () => {}
   );
@@ -197,7 +197,7 @@ export const init = async ({
         return Promise.resolve(newConfig);
       })
       .catch(() => {
-        keycloak.login({ prompt: 'none' });
+        keycloak.login({ idpHint, prompt: 'none' });
       })
   );
 
@@ -261,7 +261,7 @@ export const init = async ({
         if (!authenticated && navigator.onLine) {
           const options = isRunningStandalone(ignoreStandaloneLoginFlow)
             ? { scope: 'offline_access', idpHint }
-            : undefined;
+            : { idpHint };
 
           if (!isPublicUrl) {
             keycloak.login(options);
