@@ -1,7 +1,7 @@
 ## <small>4.7.6 (2023-05-22)</small>
 
 * [#187811] - Alterações de identidade da marca ([e5d6164](https://github.com/tecsinapse/react-boilerplate/commit/e5d61641126de4ba9cbc8935f2533178682f7a74))
-* update: update ui-kit ([fe47888]([https://github.com/tecsinapse/react-boilerplate/commit/b940444](https://github.com/tecsinapse/react-boilerplate/commit/fe478884a761f16244124dbd7f0b0ffed850a313)))
+* update: update ui-kit ([fe47888](https://github.com/tecsinapse/react-boilerplate/commit/fe478884a761f16244124dbd7f0b0ffed850a313))
 
 
 
