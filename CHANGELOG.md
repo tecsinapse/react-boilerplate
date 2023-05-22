@@ -1,3 +1,8 @@
+## <small>4.7.7 (2023-05-22)</small>
+
+
+
+
 ## <small>4.7.6 (2023-05-22)</small>
 
 * [#187811] [Portal][Bajaj][Setup] Alterações de identidade da marca ([16fbb43](https://github.com/tecsinapse/react-boilerplate/commit/16fbb43)), closes [#187811](https://github.com/tecsinapse/react-boilerplate/issues/187811)
