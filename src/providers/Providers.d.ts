@@ -22,7 +22,8 @@ export interface ProvidersProps {
     | 'lightOrange'
     | 'blueOcean'
     | 'shallowBlue'
-    | 'wingo';
+    | 'wingo'
+    | 'bajaj';
   language?: string | null;
   themeOverrides?: object;
 }
