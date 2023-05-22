@@ -19,7 +19,8 @@ export interface ChildProvidersProps {
     | 'lightOrange'
     | 'blueOcean'
     | 'shallowBlue'
-    | 'wingo';
+    | 'wingo'
+    | 'bajaj';
   language?: string | null;
 }
 
