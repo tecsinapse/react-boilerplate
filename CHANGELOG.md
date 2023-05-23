@@ -1,22 +1,10 @@
 ## <small>4.7.7 (2023-05-22)</small>
 
-
-
-
-## <small>4.7.6 (2023-05-22)</small>
-
 * [#187811] [Portal][Bajaj][Setup] Alterações de identidade da marca ([16fbb43](https://github.com/tecsinapse/react-boilerplate/commit/16fbb43)), closes [#187811](https://github.com/tecsinapse/react-boilerplate/issues/187811)
 * [#187811] [Portal][Bajaj][Setup] Alterações de identidade da marca ([5283c76](https://github.com/tecsinapse/react-boilerplate/commit/5283c76)), closes [#187811](https://github.com/tecsinapse/react-boilerplate/issues/187811)
 * [#187811] [Portal][Bajaj][Setup] Alterações de identidade da marca ([2d8d264](https://github.com/tecsinapse/react-boilerplate/commit/2d8d264)), closes [#187811](https://github.com/tecsinapse/react-boilerplate/issues/187811)
 * Adicionando o cliente Bajaj ([e5d6164](https://github.com/tecsinapse/react-boilerplate/commit/e5d6164))
 * Atualizando versão do ui-kit ([fe47888](https://github.com/tecsinapse/react-boilerplate/commit/fe47888))
-
-
-
-## <small>4.7.6 (2023-05-22)</small>
-
-* [#187811] - Alterações de identidade da marca ([e5d6164](https://github.com/tecsinapse/react-boilerplate/commit/e5d61641126de4ba9cbc8935f2533178682f7a74))
-* update: update ui-kit ([fe47888](https://github.com/tecsinapse/react-boilerplate/commit/fe478884a761f16244124dbd7f0b0ffed850a313))
 
 
 
