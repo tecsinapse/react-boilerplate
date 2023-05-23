@@ -1,3 +1,10 @@
+## <small>4.7.8 (2023-05-23)</small>
+
+* [#187811] [Portal][Bajaj][Setup] Alterações de identidade da marca ([d30c0f7](https://github.com/tecsinapse/react-boilerplate/commit/d30c0f7)), closes [#187811](https://github.com/tecsinapse/react-boilerplate/issues/187811)
+* [#187811] [Portal][Bajaj][Setup] Alterações de identidade da marca ([288ac81](https://github.com/tecsinapse/react-boilerplate/commit/288ac81)), closes [#187811](https://github.com/tecsinapse/react-boilerplate/issues/187811)
+
+
+
 ## <small>4.7.7 (2023-05-22)</small>
 
 * [#187811] [Portal][Bajaj][Setup] Alterações de identidade da marca ([16fbb43](https://github.com/tecsinapse/react-boilerplate/commit/16fbb43)), closes [#187811](https://github.com/tecsinapse/react-boilerplate/issues/187811)
