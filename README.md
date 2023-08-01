@@ -1,3 +1,4 @@
+# Ao iniciar novos projetos, dê preferência ao template [vite](https://github.com/tecsinapse/template-react-vitejs)
 # Iniciando
 
 [![Build Status](https://travis-ci.org/tecsinapse/react-boilerplate.svg?branch=master)](https://travis-ci.org/tecsinapse/react-boilerplate)
