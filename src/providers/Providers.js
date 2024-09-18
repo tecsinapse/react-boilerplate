@@ -61,8 +61,9 @@ export const Providers = ({
   language = null,
   themeOverrides = {},
 }) => {
+  const FragmentWrapper = (props) => <Fragment>{props.children}</Fragment>;
   const ReduxProvider = store == null ? Fragment : Provider;
-  const KeycloakProvider = provideKeycloakContext(keycloak)(Fragment);
+  const KeycloakProvider = provideKeycloakContext(keycloak)(FragmentWrapper);
   const { I18nBoilerplateProvider } = useLocale({ language, catalogs });
 
   return (
