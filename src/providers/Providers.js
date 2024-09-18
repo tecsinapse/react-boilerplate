@@ -1,18 +1,18 @@
-import React, { Fragment } from 'react';
-import { Provider } from 'react-redux';
-import { ApolloProvider } from '@apollo/react-hooks';
+import { ApolloProvider } from '@apollo/client';
 import { I18nProvider } from '@lingui/react';
 import { ThemeProvider } from '@tecsinapse/ui-kit';
+import React, { Fragment } from 'react';
+import { Provider } from 'react-redux';
 import { Router } from 'react-router';
+import { useLocale } from '../hooks/useLocale';
+import { i18n } from '../i18n/i18n';
+import { KeycloakContext } from '../keycloak';
 import {
   logout,
   provideKeycloakContext,
 } from '../keycloak/provideKeycloakContext';
-import { i18n } from '../i18n/i18n';
 import { appHistory } from '../router/history';
 import { SnackbarProvider } from '../ui/SnackbarProvider';
-import { useLocale } from '../hooks/useLocale';
-import { KeycloakContext } from '../keycloak';
 
 /**
  * Providers
@@ -63,7 +63,7 @@ export const Providers = ({
 }) => {
   const ReduxProvider = store == null ? Fragment : Provider;
   const KeycloakProvider = provideKeycloakContext(keycloak)(Fragment);
-  const { locale, I18nBoilerplateProvider } = useLocale({ language, catalogs });
+  const { I18nBoilerplateProvider } = useLocale({ language, catalogs });
 
   return (
     <ReduxProvider {...(store == null ? {} : { store })}>
@@ -76,7 +76,7 @@ export const Providers = ({
         >
           <KeycloakProvider>
             <I18nBoilerplateProvider>
-              <I18nProvider language={locale} i18n={i18n}>
+              <I18nProvider i18n={i18n}>
                 <ThemeProvider
                   variant={themeVariant}
                   overrides={themeOverrides}

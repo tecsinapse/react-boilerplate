@@ -1,14 +1,7 @@
 module.exports = function presets(api) {
-  const env = api.cache(() => process.env.NODE_ENV);
+  api.cache(true);
   const envConfig = { modules: false };
-  const plugins = [];
-
-  if (env === 'test') {
-    delete envConfig.modules;
-    plugins.push('@babel/plugin-transform-modules-commonjs');
-  }
-  plugins.push('@babel/plugin-syntax-dynamic-import');
-  plugins.push('macros');
+  const plugins = ['macros', '@babel/plugin-syntax-dynamic-import'];
 
   return {
     presets: ['@babel/preset-react', ['@babel/preset-env', envConfig]],

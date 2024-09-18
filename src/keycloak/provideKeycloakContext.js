@@ -1,7 +1,7 @@
-import { withContext, compose } from 'recompose';
-import PropTypes from 'prop-types';
+import { withApollo } from '@apollo/client/react/hoc';
 import localforage from 'localforage';
-import { withApollo } from '@apollo/react-hoc';
+import PropTypes from 'prop-types';
+import { compose, withContext } from 'recompose';
 
 export const logout = (keycloak, client) => {
   client

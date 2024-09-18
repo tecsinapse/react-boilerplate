@@ -1,17 +1,19 @@
+import {
+  ApolloClient,
+  ApolloLink,
+  HttpLink,
+  InMemoryCache,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 import * as Sentry from '@sentry/browser';
-import { InMemoryCache } from 'apollo-cache-inmemory';
-import ApolloClient from 'apollo-client';
-import { ApolloLink } from 'apollo-link';
-import { setContext } from 'apollo-link-context';
-import { HttpLink } from 'apollo-link-http';
 import axios from 'axios';
 import Keycloak from 'keycloak-js';
 import localforage from 'localforage';
 import ReactGA from 'react-ga4';
-import { GlobalAfterInitObjects } from './utils/GlobalAfterInitUtils';
-import { initHotjar } from './utils/initHotjar';
 import { bootstrapKC } from './keycloak';
 import { isRunningStandalone } from './offline/offlineUtils';
+import { GlobalAfterInitObjects } from './utils/GlobalAfterInitUtils';
+import { initHotjar } from './utils/initHotjar';
 
 /**
  * @function init
@@ -91,7 +93,7 @@ export const init = async ({
   idpHint,
   renderFunction,
 }) => {
-  const keycloak = Keycloak(keycloakConfig);
+  const keycloak = new Keycloak(keycloakConfig);
 
   bootstrapKC(keycloak);
 
@@ -129,7 +131,7 @@ export const init = async ({
   // offline cache config options
   if (offlineApolloCacheOptions) {
     const { maxSize = 1048576 * 20 } = offlineApolloCacheOptions;
-    const { persistCache } = await import('apollo-cache-persist');
+    const { persistCache } = await import('apollo3-cache-persist');
 
     persistCache({
       cache,
@@ -147,25 +149,30 @@ export const init = async ({
     };
   }
 
-  const isPublicUrl = publicUrls.some(publicUrl => window.location.pathname.startsWith(publicUrl));
+  const isPublicUrl = publicUrls.some(publicUrl =>
+    window.location.pathname.startsWith(publicUrl)
+  );
 
   const refreshKeycloakToken = (minValidity = 5) =>
     new Promise((resolve, reject) => {
-      if ((navigator.onLine || !isRunningStandalone(ignoreStandaloneLoginFlow)) && !isPublicUrl) {
+      if (
+        (navigator.onLine || !isRunningStandalone(ignoreStandaloneLoginFlow)) &&
+        !isPublicUrl
+      ) {
         keycloak
           .updateToken(minValidity)
           .then(() => {
             localforage.setItem('token', keycloak.token);
             localforage.setItem('refreshToken', keycloak.refreshToken);
-            resolve();
+            resolve(true);
           })
           .catch(error => reject(error));
       } else {
-        resolve();
+        resolve(false);
       }
     });
 
-  const authMiddleware = setContext((operation, { headers }) =>
+  const authMiddleware = setContext((_, { headers }) =>
     !isPublicUrl
       ? refreshKeycloakToken()
           .then(() => ({
@@ -196,8 +203,8 @@ export const init = async ({
 
         return Promise.resolve(newConfig);
       })
-      .catch(() => {
-        keycloak.login({ idpHint, prompt: 'none' });
+      .catch(async () => {
+        await keycloak.login({ idpHint, prompt: 'none' });
       })
   );
 
@@ -309,11 +316,11 @@ export const init = async ({
   };
 };
 
-export { Providers, ChildProviders } from './providers';
+export { ChildProviders, Providers } from './providers';
 
 export { i18n, withI18nLanguage } from './i18n';
 
-export { withKeycloak, useKeycloak, KeycloakContext } from './keycloak';
+export { KeycloakContext, useKeycloak, withKeycloak } from './keycloak';
 
 export { SnackbarProviderContext } from './context';
 
