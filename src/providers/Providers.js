@@ -4,6 +4,7 @@ import { ThemeProvider } from '@tecsinapse/ui-kit';
 import React, { Fragment } from 'react';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router';
+import { Container } from '@material-ui/core';
 import { useLocale } from '../hooks/useLocale';
 import { i18n } from '../i18n/i18n';
 import { KeycloakContext } from '../keycloak';
@@ -61,9 +62,12 @@ export const Providers = ({
   language = null,
   themeOverrides = {},
 }) => {
-  const FragmentWrapper = (props) => <Fragment>{props.children}</Fragment>;
   const ReduxProvider = store == null ? Fragment : Provider;
-  const KeycloakProvider = provideKeycloakContext(keycloak)(FragmentWrapper);
+
+  // TODO: Descomentar após corrector do i18n
+  // const KeycloakProvider = provideKeycloakContext(
+  //   keycloak
+  // )(({ children: childrenTest }) => <>{childrenTest}</>);
   const { I18nBoilerplateProvider } = useLocale({ language, catalogs });
 
   return (
@@ -75,20 +79,16 @@ export const Providers = ({
             logoutCtx: () => logout(keycloak, client),
           }}
         >
-          <KeycloakProvider>
-            <I18nBoilerplateProvider>
-              <I18nProvider i18n={i18n}>
-                <ThemeProvider
-                  variant={themeVariant}
-                  overrides={themeOverrides}
-                >
-                  <SnackbarProvider>
-                    <Router history={appHistory}>{children}</Router>
-                  </SnackbarProvider>
-                </ThemeProvider>
-              </I18nProvider>
-            </I18nBoilerplateProvider>
-          </KeycloakProvider>
+          {/* TODO: Descomentar após correção do i18n */}
+          {/* <I18nBoilerplateProvider> */}
+          {/*  <I18nProvider i18n={i18n}> */}
+          <ThemeProvider variant={themeVariant} overrides={themeOverrides}>
+            <SnackbarProvider>
+              <Router history={appHistory}>{children}</Router>
+            </SnackbarProvider>
+          </ThemeProvider>
+          {/*  </I18nProvider> */}
+          {/* </I18nBoilerplateProvider> */}
         </KeycloakContext.Provider>
       </ApolloProvider>
     </ReduxProvider>
