@@ -1,19 +1,16 @@
 import { ApolloProvider } from '@apollo/client';
-import { I18nProvider } from '@lingui/react';
 import { ThemeProvider } from '@tecsinapse/ui-kit';
 import React, { Fragment } from 'react';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router';
-import { Container } from '@material-ui/core';
+import { I18nProvider } from '@lingui/react';
 import { useLocale } from '../hooks/useLocale';
 import { i18n } from '../i18n/i18n';
 import { KeycloakContext } from '../keycloak';
-import {
-  logout,
-  provideKeycloakContext,
-} from '../keycloak/provideKeycloakContext';
+import { logout } from '../keycloak/provideKeycloakContext';
 import { appHistory } from '../router/history';
-import { SnackbarProvider } from '../ui/SnackbarProvider';
+import { SnackbarProvider } from '../ui';
+import { I18nContext } from '../context/i18nContext';
 
 /**
  * Providers
@@ -57,7 +54,6 @@ export const Providers = ({
   client,
   store,
   children,
-  catalogs = {},
   themeVariant = 'orange',
   language = null,
   themeOverrides = {},
@@ -65,10 +61,7 @@ export const Providers = ({
   const ReduxProvider = store == null ? Fragment : Provider;
 
   // TODO: Descomentar após corrector do i18n
-  // const KeycloakProvider = provideKeycloakContext(
-  //   keycloak
-  // )(({ children: childrenTest }) => <>{childrenTest}</>);
-  const { I18nBoilerplateProvider } = useLocale({ language, catalogs });
+  const { changeLanguage, locale } = useLocale({ language });
 
   return (
     <ReduxProvider {...(store == null ? {} : { store })}>
@@ -80,15 +73,20 @@ export const Providers = ({
           }}
         >
           {/* TODO: Descomentar após correção do i18n */}
-          {/* <I18nBoilerplateProvider> */}
-          {/*  <I18nProvider i18n={i18n}> */}
-          <ThemeProvider variant={themeVariant} overrides={themeOverrides}>
-            <SnackbarProvider>
-              <Router history={appHistory}>{children}</Router>
-            </SnackbarProvider>
-          </ThemeProvider>
-          {/*  </I18nProvider> */}
-          {/* </I18nBoilerplateProvider> */}
+          <I18nContext.Provider
+            value={{
+              changeLanguageCtx: changeLanguage,
+              currentLocaleCtx: locale,
+            }}
+          >
+            <I18nProvider i18n={i18n}>
+              <ThemeProvider variant={themeVariant} overrides={themeOverrides}>
+                <SnackbarProvider>
+                  <Router history={appHistory}>{children}</Router>
+                </SnackbarProvider>
+              </ThemeProvider>
+            </I18nProvider>
+          </I18nContext.Provider>
         </KeycloakContext.Provider>
       </ApolloProvider>
     </ReduxProvider>

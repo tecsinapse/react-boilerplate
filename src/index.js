@@ -14,6 +14,7 @@ import { bootstrapKC } from './keycloak';
 import { isRunningStandalone } from './offline/offlineUtils';
 import { GlobalAfterInitObjects } from './utils/GlobalAfterInitUtils';
 import { initHotjar } from './utils/initHotjar';
+import { i18n, withI18nLanguage } from './i18n';
 
 /**
  * @function init
@@ -92,7 +93,11 @@ export const init = async ({
   sentryOptions,
   idpHint,
   renderFunction,
+  catalogs,
+  defaultLocale,
 }) => {
+  i18n.load(catalogs);
+  i18n.activate(defaultLocale);
   const keycloak = new Keycloak(keycloakConfig);
 
   bootstrapKC(keycloak);
@@ -318,11 +323,13 @@ export const init = async ({
 
 export { ChildProviders, Providers } from './providers';
 
-export { i18n, withI18nLanguage } from './i18n';
+export { i18n, withI18nLanguage };
 
 export { KeycloakContext, useKeycloak, withKeycloak } from './keycloak';
 
 export { SnackbarProviderContext } from './context';
+
+export { useI18n } from './hooks/usei18n';
 
 export {
   hideGlobalLoading,
