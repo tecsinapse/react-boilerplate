@@ -10,11 +10,11 @@ import axios from 'axios';
 import Keycloak from 'keycloak-js';
 import localforage from 'localforage';
 import ReactGA from 'react-ga4';
+import { i18n, withI18nLanguage } from './i18n';
 import { bootstrapKC } from './keycloak';
 import { isRunningStandalone } from './offline/offlineUtils';
 import { GlobalAfterInitObjects } from './utils/GlobalAfterInitUtils';
 import { initHotjar } from './utils/initHotjar';
-import { i18n, withI18nLanguage } from './i18n';
 
 /**
  * @function init
@@ -93,11 +93,7 @@ export const init = async ({
   sentryOptions,
   idpHint,
   renderFunction,
-  catalogs,
-  defaultLocale,
 }) => {
-  i18n.load(catalogs);
-  i18n.activate(defaultLocale);
   const keycloak = new Keycloak(keycloakConfig);
 
   bootstrapKC(keycloak);

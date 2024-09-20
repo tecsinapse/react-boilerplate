@@ -3,14 +3,10 @@ import { ThemeProvider } from '@tecsinapse/ui-kit';
 import React, { Fragment } from 'react';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router';
-import { I18nProvider } from '@lingui/react';
-import { useLocale } from '../hooks/useLocale';
-import { i18n } from '../i18n/i18n';
 import { KeycloakContext } from '../keycloak';
 import { logout } from '../keycloak/provideKeycloakContext';
 import { appHistory } from '../router/history';
 import { SnackbarProvider } from '../ui';
-import { I18nContext } from '../context/i18nContext';
 
 /**
  * Providers
@@ -55,13 +51,9 @@ export const Providers = ({
   store,
   children,
   themeVariant = 'orange',
-  language = null,
   themeOverrides = {},
 }) => {
   const ReduxProvider = store == null ? Fragment : Provider;
-
-  // TODO: Descomentar após corrector do i18n
-  const { changeLanguage, locale } = useLocale({ language });
 
   return (
     <ReduxProvider {...(store == null ? {} : { store })}>
@@ -72,21 +64,11 @@ export const Providers = ({
             logoutCtx: () => logout(keycloak, client),
           }}
         >
-          {/* TODO: Descomentar após correção do i18n */}
-          <I18nContext.Provider
-            value={{
-              changeLanguageCtx: changeLanguage,
-              currentLocaleCtx: locale,
-            }}
-          >
-            <I18nProvider i18n={i18n}>
-              <ThemeProvider variant={themeVariant} overrides={themeOverrides}>
-                <SnackbarProvider>
-                  <Router history={appHistory}>{children}</Router>
-                </SnackbarProvider>
-              </ThemeProvider>
-            </I18nProvider>
-          </I18nContext.Provider>
+          <ThemeProvider variant={themeVariant} overrides={themeOverrides}>
+            <SnackbarProvider>
+              <Router history={appHistory}>{children}</Router>
+            </SnackbarProvider>
+          </ThemeProvider>
         </KeycloakContext.Provider>
       </ApolloProvider>
     </ReduxProvider>
