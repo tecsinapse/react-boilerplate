@@ -2,10 +2,9 @@ import { ApolloProvider } from '@apollo/client';
 import { ThemeProvider } from '@tecsinapse/ui-kit';
 import React, { Fragment } from 'react';
 import { Provider } from 'react-redux';
-import { Router } from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
 import { KeycloakContext } from '../keycloak';
 import { logout } from '../keycloak/provideKeycloakContext';
-import { appHistory } from '../router/history';
 import { SnackbarProvider } from '../ui';
 
 /**
@@ -66,7 +65,7 @@ export const Providers = ({
         >
           <ThemeProvider variant={themeVariant} overrides={themeOverrides}>
             <SnackbarProvider>
-              <Router history={appHistory}>{children}</Router>
+              <BrowserRouter>{children}</BrowserRouter>
             </SnackbarProvider>
           </ThemeProvider>
         </KeycloakContext.Provider>

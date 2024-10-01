@@ -1,7 +1,7 @@
 {
   "name": "@tecsinapse/react-boilerplate",
   "description": "TecSinapse boilerplate for react projects",
-  "version": "5.1.0-0",
+  "version": "5.1.0-1",
   "main": "build/index.js",
   "module": "build/index.js",
   "dependencies": {
@@ -10,11 +10,13 @@
     "apollo3-cache-persist": "^0.15.0",
     "axios": "~0.28",
     "graphql": "^16",
+    "history": "^5.3.0",
     "keycloak-js": "^25",
     "localforage": "^1",
     "react-confirm": "~0.1",
     "react-ga4": "^2",
     "react-redux": "^6",
+    "react-router-dom": "^6.26.2",
     "recompose": "^0.30.0",
     "redux": "^4"
   },
@@ -25,8 +27,8 @@
     "@babel/preset-env": "~7.11",
     "@babel/preset-react": "~7.10",
     "@lingui/core": "^4",
-    "@lingui/react": "^4",
     "@lingui/macro": "^4",
+    "@lingui/react": "^4",
     "@material-ui/core": "*",
     "@material-ui/icons": "*",
     "@tecsinapse/eslint-config-tecsinapse-js": "^3.0.2",
@@ -40,7 +42,7 @@
     "prop-types": "^15.6.2",
     "react": "^16",
     "react-dom": "^16",
-    "react-router": "^4",
+    "react-router": "^6",
     "regenerator-runtime": "^0.14",
     "rimraf": "latest"
   },
@@ -56,15 +58,14 @@
     "prepare": "husky"
   },
   "peerDependencies": {
-    "react": ">=16.13.0 <= 17",
-    "react-dom": ">=16.13.0 <= 17",
-    "react-router": "^4",
-    "@tecsinapse/ui-kit": "^5.7.0",
-    "@material-ui/core": "^4.11.1",
-    "@material-ui/icons": "^4.11.1",
     "@lingui/core": "^4",
     "@lingui/react": "^4",
-    "@lingui/macro": "^4"
+    "@material-ui/core": "^4.11.1",
+    "@material-ui/icons": "^4.11.1",
+    "@tecsinapse/ui-kit": "^5.7.0",
+    "react": ">=16.13.0 <= 17",
+    "react-dom": ">=16.13.0 <= 17",
+    "react-router": "^6"
   },
   "lint-staged": {
     "*.js": [
