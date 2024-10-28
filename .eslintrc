@@ -1,7 +1,7 @@
 {
   "plugins": ["eslint-plugin-no-inline-styles", "prettier"],
   "extends": [
-    "@tecsinapse/tecsinapse-js",
+    "@tecsinapse/eslint-config-tecsinapse-js",
     "plugin:prettier/recommended"
   ],
   "settings": {
@@ -10,5 +10,8 @@
         "moduleDirectory": ["node_modules", "src/"]
       }
     }
+  },
+  "rules": {
+    "react/jsx-props-no-spreading": "off"
   }
 }

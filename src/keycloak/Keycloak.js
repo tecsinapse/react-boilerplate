@@ -15,9 +15,9 @@ function bootstrapKC(kc) {
     }
     return kc.profile;
   };
-  Sentry.configureScope(scope => {
-    scope.setUser({ email: kc.profile.email });
-  });
+  if (kc?.profile?.email) {
+    Sentry.getCurrentScope().setUser({ email: kc.profile.email });
+  }
   return kc;
 }
 export { bootstrapKC };
